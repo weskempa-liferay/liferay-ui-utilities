@@ -1,0 +1,843 @@
+<div class="lfr-builder-portal">
+
+<main class="main">
+  <div class="wrap">
+
+    <!-- VIEW: Dashboard -->
+    <section class="page-view" id="view-dashboard" data-view="dashboard">
+      <div class="hero">
+        <div class="hero-text">
+          <div class="hero-badge" data-lfr-editable-id="hero-badge-dashboard" data-lfr-editable-type="text">🗺️ Service Availability</div>
+          <h2 data-lfr-editable-id="hero-title-dashboard" data-lfr-editable-type="text">Check service availability before you break ground</h2>
+          <p data-lfr-editable-id="hero-desc-dashboard" data-lfr-editable-type="text">Use the GIS map to verify gas infrastructure, network capacity, and service territory for your project site — built into every new project request.</p>
+        </div>
+        <a class="hero-cta" href="#newproject" data-nav="newproject" data-lfr-editable-id="hero-cta-dashboard" data-lfr-editable-type="link">Start a Project Request</a>
+      </div>
+
+      <div class="banner banner-info">
+        <span class="b-ico">📋</span>
+        <div data-lfr-editable-id="banner-info-dashboard" data-lfr-editable-type="text"><strong>3 approvals are pending</strong> across your active projects, and 2 inspections are scheduled this week. <a href="#permits" data-nav="permits">Review approvals &amp; permits →</a></div>
+        <button class="b-close">✕</button>
+      </div>
+
+      <div class="section-title" data-lfr-editable-id="sectitle-overview-dashboard" data-lfr-editable-type="text">Project Overview</div>
+      <div class="grid g-4">
+        <div class="stat-card stat-accent">
+          <div class="label" data-lfr-editable-id="stat-label-active" data-lfr-editable-type="text">Active Projects</div>
+          <div class="value">6</div>
+          <div class="sub" data-lfr-editable-id="stat-sub-active" data-lfr-editable-type="text">3 sites in construction</div>
+          <div class="trend ok" data-lfr-editable-id="stat-trend-active" data-lfr-editable-type="text">2 nearing completion</div>
+        </div>
+        <div class="stat-card">
+          <div class="label" data-lfr-editable-id="stat-label-pending" data-lfr-editable-type="text">Pending Approvals</div>
+          <div class="value">3</div>
+          <div class="sub" data-lfr-editable-id="stat-sub-pending" data-lfr-editable-type="text">plan review &amp; permits</div>
+          <div class="trend up" data-lfr-editable-id="stat-trend-pending" data-lfr-editable-type="text">1 needs response</div>
+        </div>
+        <div class="stat-card">
+          <div class="label" data-lfr-editable-id="stat-label-inspect" data-lfr-editable-type="text">Upcoming Inspections</div>
+          <div class="value">2 <span class="unit">this wk</span></div>
+          <div class="sub" data-lfr-editable-id="stat-sub-inspect" data-lfr-editable-type="text">meter set &amp; pressure test</div>
+          <div class="trend ok" data-lfr-editable-id="stat-trend-inspect" data-lfr-editable-type="text">Confirmed</div>
+        </div>
+        <div class="stat-card">
+          <div class="label" data-lfr-editable-id="stat-label-completed" data-lfr-editable-type="text">Completed (2026)</div>
+          <div class="value">4</div>
+          <div class="sub" data-lfr-editable-id="stat-sub-completed" data-lfr-editable-type="text">services energized YTD</div>
+          <div class="trend down" data-lfr-editable-id="stat-trend-completed" data-lfr-editable-type="text">On schedule</div>
+        </div>
+      </div>
+
+      <div class="grid g-21 section-gap">
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-active-projects" data-lfr-editable-type="text">Active Projects</h3>
+            <a class="link" href="#projects" data-nav="projects" data-lfr-editable-id="link-all-projects" data-lfr-editable-type="link">All projects →</a>
+          </div>
+          <table class="tbl">
+            <thead>
+              <tr><th>Project</th><th>Request #</th><th>Type</th><th>Stage</th><th>Target Energize</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="t-strong">Elmwood Commons</td><td>GC‑1988</td><td>Multi‑family (48u)</td><td><span class="chip chip-info">Plan review</span></td><td>Aug 2026</td></tr>
+              <tr><td class="t-strong">Cedar Ridge Phase 2</td><td>GC‑1976</td><td>Subdivision (22 lots)</td><td><span class="chip chip-amber">Permit</span></td><td>Sep 2026</td></tr>
+              <tr><td class="t-strong">Harbor Point Retail</td><td>GC‑1965</td><td>Commercial</td><td><span class="chip chip-green">Construction</span></td><td>Jul 2026</td></tr>
+              <tr><td class="t-strong">Westgate Warehouse</td><td>GC‑1958</td><td>Industrial</td><td><span class="chip chip-green">Inspection</span></td><td>Jun 2026</td></tr>
+              <tr><td class="t-strong">Maplewood Infill</td><td>GC‑1942</td><td>Residential (6u)</td><td><span class="chip chip-gray">Availability</span></td><td>Oct 2026</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-actions" data-lfr-editable-type="text">Approvals &amp; Actions</h3>
+            <a class="link" href="#permits" data-nav="permits" data-lfr-editable-id="link-manage-actions" data-lfr-editable-type="link">Manage</a>
+          </div>
+          <div class="row">
+            <div class="r-main">
+              <span class="dot amber"></span>
+              <div>
+                <div class="r-title">Plan revision — Elmwood</div>
+                <div class="r-sub">Meter location comment from GAS</div>
+              </div>
+            </div>
+            <span class="chip chip-amber">Respond</span>
+          </div>
+          <div class="row">
+            <div class="r-main">
+              <span class="dot blue"></span>
+              <div>
+                <div class="r-title">Permit issued — Harbor Point</div>
+                <div class="r-sub">Ready to schedule install</div>
+              </div>
+            </div>
+            <span class="chip chip-info">Action</span>
+          </div>
+          <div class="row">
+            <div class="r-main">
+              <span class="dot blue"></span>
+              <div>
+                <div class="r-title">Capacity confirmation — Cedar Ridge</div>
+                <div class="r-sub">Engineering review in progress</div>
+              </div>
+            </div>
+            <span class="chip chip-info">Pending</span>
+          </div>
+          <a class="btn btn-ghost btn-sm btn-block" href="#newproject" data-nav="newproject" data-lfr-editable-id="btn-newproject-action" data-lfr-editable-type="link">+ New Project Request</a>
+        </div>
+      </div>
+
+      <div class="section-title section-gap" data-lfr-editable-id="sectitle-quick-dashboard" data-lfr-editable-type="text">Quick Actions</div>
+      <div class="qa-grid">
+        <a class="qa-btn" href="#newproject" data-nav="newproject">
+          <div class="qa-ico">➕</div>
+          <div class="qa-label" data-lfr-editable-id="qa-label-new" data-lfr-editable-type="text">New Project Request</div>
+        </a>
+        <a class="qa-btn" href="#gis" data-nav="gis">
+          <div class="qa-ico">🗺️</div>
+          <div class="qa-label" data-lfr-editable-id="qa-label-gis" data-lfr-editable-type="text">Service Availability</div>
+        </a>
+        <a class="qa-btn" href="#permits" data-nav="permits">
+          <div class="qa-ico">📋</div>
+          <div class="qa-label" data-lfr-editable-id="qa-label-permits" data-lfr-editable-type="text">Permit Tracking</div>
+        </a>
+        <a class="qa-btn" href="#documents" data-nav="documents">
+          <div class="qa-ico">📐</div>
+          <div class="qa-label" data-lfr-editable-id="qa-label-plans" data-lfr-editable-type="text">Plans &amp; Documents</div>
+        </a>
+        <a class="qa-btn" href="#permits" data-nav="permits">
+          <div class="qa-ico">🔍</div>
+          <div class="qa-label" data-lfr-editable-id="qa-label-inspections" data-lfr-editable-type="text">Inspections</div>
+        </a>
+        <a class="qa-btn" href="#documents" data-nav="documents">
+          <div class="qa-ico">⬆️</div>
+          <div class="qa-label" data-lfr-editable-id="qa-label-upload" data-lfr-editable-type="text">Upload Documents</div>
+        </a>
+        <a class="qa-btn" href="#notifications" data-nav="notifications">
+          <div class="qa-ico">💬</div>
+          <div class="qa-label" data-lfr-editable-id="qa-label-messages" data-lfr-editable-type="text">Messages</div>
+        </a>
+        <a class="qa-btn" href="#users" data-nav="users">
+          <div class="qa-ico">👥</div>
+          <div class="qa-label" data-lfr-editable-id="qa-label-team" data-lfr-editable-type="text">Team Access</div>
+        </a>
+      </div>
+
+      <div class="grid g-21 section-gap">
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-notifications" data-lfr-editable-type="text">Project Notifications</h3>
+            <a class="link" href="#notifications" data-nav="notifications" data-lfr-editable-id="link-all-notifications" data-lfr-editable-type="link">See all</a>
+          </div>
+          <div class="media">
+            <div class="media-ico mi-warn">📐</div>
+            <div class="media-body">
+              <p><strong>Plan comment:</strong> GAS engineering requested a revised meter location for Elmwood Commons.</p>
+              <div class="time">Today, 11:02 AM</div>
+            </div>
+          </div>
+          <div class="media">
+            <div class="media-ico mi-ok">✓</div>
+            <div class="media-body">
+              <p><strong>Permit issued:</strong> Harbor Point Retail service connection permit approved.</p>
+              <div class="time">Apr 28, 2026</div>
+            </div>
+          </div>
+          <div class="media">
+            <div class="media-ico mi-info">🔍</div>
+            <div class="media-body">
+              <p><strong>Inspection scheduled:</strong> Westgate Warehouse meter set on May 5, 8–10 AM.</p>
+              <div class="time">Apr 26, 2026</div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-documents" data-lfr-editable-type="text">Recent Documents</h3>
+            <a class="link" href="#documents" data-nav="documents" data-lfr-editable-id="link-doc-workspace" data-lfr-editable-type="link">Workspace</a>
+          </div>
+          <div class="row">
+            <div class="r-main">
+              <span class="media-ico mi-info" style="width:34px;height:34px;margin:0">📐</span>
+              <div>
+                <div class="r-title">Elmwood site plan v3</div>
+                <div class="r-sub">Uploaded today</div>
+              </div>
+            </div>
+            <span class="chip chip-amber">In review</span>
+          </div>
+          <div class="row">
+            <div class="r-main">
+              <span class="media-ico mi-ok" style="width:34px;height:34px;margin:0">📄</span>
+              <div>
+                <div class="r-title">Harbor Point permit.pdf</div>
+                <div class="r-sub">Apr 28</div>
+              </div>
+            </div>
+            <span class="chip chip-green">Approved</span>
+          </div>
+          <div class="row">
+            <div class="r-main">
+              <span class="media-ico mi-info" style="width:34px;height:34px;margin:0">📐</span>
+              <div>
+                <div class="r-title">Cedar Ridge load calc</div>
+                <div class="r-sub">Apr 22</div>
+              </div>
+            </div>
+            <span class="chip chip-info">Submitted</span>
+          </div>
+        </div>
+      </div>
+      <p class="req-note" data-lfr-editable-id="reqnote-dashboard" data-lfr-editable-type="text">Covers: Core Platform &amp; Experience · Applications &amp; Requests (project/service‑connection requests) · GIS &amp; Service Availability · Document Management · Communications &amp; Notifications · Analytics.</p>
+    </section>
+
+    <!-- VIEW: All Projects -->
+    <section class="page-view" id="view-projects" data-view="projects">
+      <div class="page-head">
+        <div class="breadcrumb"><a href="#dashboard" data-nav="dashboard">Dashboard</a> › All Projects</div>
+        <h1 data-lfr-editable-id="title-projects" data-lfr-editable-type="text">Projects</h1>
+        <p data-lfr-editable-id="desc-projects" data-lfr-editable-type="text">Track every development from service‑availability check through energization. Filter by stage, type, or target date, and drill into any project's workflow.</p>
+      </div>
+
+      <div class="grid g-4">
+        <div class="stat-card">
+          <div class="label" data-lfr-editable-id="stat-projects-total" data-lfr-editable-type="text">Total Projects</div>
+          <div class="value">10</div>
+          <div class="sub" data-lfr-editable-id="stat-projects-totalsub" data-lfr-editable-type="text">6 active · 4 completed</div>
+        </div>
+        <div class="stat-card stat-accent">
+          <div class="label" data-lfr-editable-id="stat-projects-const" data-lfr-editable-type="text">In Construction</div>
+          <div class="value">3</div>
+          <div class="sub" data-lfr-editable-id="stat-projects-constsub" data-lfr-editable-type="text">on or ahead of schedule</div>
+        </div>
+        <div class="stat-card">
+          <div class="label" data-lfr-editable-id="stat-projects-gas" data-lfr-editable-type="text">Awaiting GAS</div>
+          <div class="value">3</div>
+          <div class="sub" data-lfr-editable-id="stat-projects-gassub" data-lfr-editable-type="text">plan / permit review</div>
+        </div>
+        <div class="stat-card">
+          <div class="label" data-lfr-editable-id="stat-projects-energized" data-lfr-editable-type="text">Energized (YTD)</div>
+          <div class="value">4</div>
+          <div class="sub" data-lfr-editable-id="stat-projects-energizedsub" data-lfr-editable-type="text">services live in 2026</div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:24px;margin-bottom:24px">
+        <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between">
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="chip chip-gray">All stages ▾</span>
+            <span class="chip chip-gray">All types ▾</span>
+            <span class="chip chip-info">Active</span>
+          </div>
+          <a class="btn btn-primary btn-sm" href="#newproject" data-nav="newproject" data-lfr-editable-id="btn-projects-new" data-lfr-editable-type="link">+ New Project Request</a>
+        </div>
+      </div>
+
+      <div class="kanban">
+        <div class="kcol kt-intake kcol-top">
+          <div class="kcol-head"><span class="kt">Availability</span><span class="kn">1</span></div>
+          <div class="kcard">
+            <div class="kc-name">Maplewood Infill</div>
+            <div class="kc-meta">GC‑1942 · Residential 6u</div>
+            <div class="kc-foot"><span class="avatar-sm">JR</span><span class="kc-amt">Oct '26</span></div>
+          </div>
+        </div>
+        <div class="kcol kt-elig kcol-top">
+          <div class="kcol-head"><span class="kt">Plan Review</span><span class="kn">1</span></div>
+          <div class="kcard" style="border-color:var(--amber)">
+            <div class="kc-name">Elmwood Commons</div>
+            <div class="kc-meta">GC‑1988 · Multi‑family 48u</div>
+            <div class="kc-foot"><span class="avatar-sm">JR</span><span class="chip chip-amber" style="padding:1px 7px">Revise</span></div>
+          </div>
+        </div>
+        <div class="kcol kt-gas kcol-top">
+          <div class="kcol-head"><span class="kt">Permit</span><span class="kn">1</span></div>
+          <div class="kcard">
+            <div class="kc-name">Cedar Ridge Ph2</div>
+            <div class="kc-meta">GC‑1976 · Subdivision 22 lots</div>
+            <div class="kc-foot"><span class="avatar-sm">PL</span><span class="chip chip-info" style="padding:1px 7px">GAS</span></div>
+          </div>
+        </div>
+        <div class="kcol kt-elig kcol-top" style="border-top-color:var(--green)">
+          <div class="kcol-head"><span class="kt">Construction</span><span class="kn">2</span></div>
+          <div class="kcard">
+            <div class="kc-name">Harbor Point Retail</div>
+            <div class="kc-meta">GC‑1965 · Commercial</div>
+            <div class="kc-foot"><span class="avatar-sm">PL</span><span class="kc-amt">Jul '26</span></div>
+          </div>
+          <div class="kcard">
+            <div class="kc-name">Westgate Warehouse</div>
+            <div class="kc-meta">GC‑1958 · Industrial</div>
+            <div class="kc-foot"><span class="avatar-sm">JR</span><span class="kc-amt">Jun '26</span></div>
+          </div>
+        </div>
+        <div class="kcol kt-appr kcol-top">
+          <div class="kcol-head"><span class="kt">Energized</span><span class="kn">4</span></div>
+          <div class="kcard">
+            <div class="kc-name">Birchwood Lofts</div>
+            <div class="kc-meta">GC‑1901 · Multi‑family</div>
+            <div class="kc-foot"><span class="avatar-sm">PL</span><span class="kc-amt" style="color:var(--green)">Live</span></div>
+          </div>
+          <div class="kcard">
+            <div class="kc-name">Summit Plaza</div>
+            <div class="kc-meta">GC‑1888 · Commercial</div>
+            <div class="kc-foot"><span class="avatar-sm">JR</span><span class="kc-amt" style="color:var(--green)">Live</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="req-note" data-lfr-editable-id="reqnote-projects" data-lfr-editable-type="text">Covers: Applications &amp; Requests (project lifecycle &amp; workflow, multi‑stage status tracking) · Service Connections · Core Platform · Analytics.</p>
+    </section>
+
+    <!-- VIEW: New Project Request -->
+    <section class="page-view" id="view-newproject" data-view="newproject">
+      <div class="page-head">
+        <div class="breadcrumb"><a href="#dashboard" data-nav="dashboard">Dashboard</a> › New Project Request</div>
+        <h1 data-lfr-editable-id="title-newproject" data-lfr-editable-type="text">New Project / Service Connection Request</h1>
+        <p data-lfr-editable-id="desc-newproject" data-lfr-editable-type="text">Request new gas service for a development. The guided workflow checks service availability on the GIS map, captures load, and routes plans to GAS engineering.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3 data-lfr-editable-id="header-newproj-title" data-lfr-editable-type="text">Project Request — Elmwood Commons</h3>
+          <span class="chip chip-info">Draft · GC‑1988</span>
+        </div>
+        <div class="steps">
+          <div class="step done"><div class="dot-n">✓</div><div class="slab">Site &amp; address</div></div>
+          <div class="step done"><div class="dot-n">✓</div><div class="slab">Availability</div></div>
+          <div class="step active"><div class="dot-n">3</div><div class="slab">Load &amp; meters</div></div>
+          <div class="step"><div class="dot-n">4</div><div class="slab">Upload plans</div></div>
+          <div class="step"><div class="dot-n">5</div><div class="slab">Submit to GAS</div></div>
+        </div>
+        <div class="divider"></div>
+        <div class="grid g-2">
+          <div class="field">
+            <label>Project type</label>
+            <select>
+              <option>Multi‑family residential</option>
+              <option>Single‑family subdivision</option>
+              <option>Commercial</option>
+              <option>Industrial</option>
+            </select>
+          </div>
+          <div class="field"><label>Number of units / meters</label><input type="text" value="48 units · 48 meters" readonly></div>
+          <div class="field"><label>Estimated peak load</label><input type="text" value="190 MMBtu/day" readonly></div>
+          <div class="field"><label>Requested energize date</label><input type="text" value="Aug 2026" readonly></div>
+        </div>
+        <div class="banner banner-green" style="margin:6px 0 18px">
+          <span class="b-ico">✓</span>
+          <div data-lfr-editable-id="banner-green-newproject" data-lfr-editable-type="text"><strong>Service available at this site.</strong> Gas infrastructure is present with sufficient network capacity for the estimated load. Continue to load details and plan upload.</div>
+        </div>
+        <div style="display:flex;gap:12px">
+          <a class="btn btn-ghost btn-sm" href="#gis" data-nav="gis" data-lfr-editable-id="btn-recheck-avail" data-lfr-editable-type="link">Re‑check availability</a>
+          <a class="btn btn-primary btn-sm" href="#documents" data-nav="documents" data-lfr-editable-id="btn-continue-plans" data-lfr-editable-type="link">Continue to plans</a>
+        </div>
+      </div>
+
+      <div class="grid g-2 section-gap">
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-avail-snapshot" data-lfr-editable-type="text">Service Availability — Site Snapshot</h3>
+            <a class="link" href="#gis" data-nav="gis" data-lfr-editable-id="link-open-gis" data-lfr-editable-type="link">Open full GIS →</a>
+          </div>
+          <div style="background:linear-gradient(135deg,#16294D,#24386A);border-radius:12px;height:200px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center">
+            <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 42% 50%, rgba(21,115,71,.4), transparent 38%), linear-gradient(90deg, transparent 30%, rgba(10,94,176,.25) 31% 34%, transparent 35%)"></div>
+            <div style="position:relative;text-align:center;color:#fff">
+              <div style="font-size:34px">🗺️</div>
+              <div style="font-size:13px;font-weight:700;margin-top:6px">220 Elmwood Dr, Naperville IL</div>
+              <div style="font-size:11.5px;color:#B8C6DD;margin-top:3px">Main within 40 ft · capacity OK</div>
+            </div>
+          </div>
+          <div class="grid g-3" style="margin-top:16px">
+            <div style="text-align:center"><div class="value" style="font-size:18px;color:var(--green)">Yes</div><div class="muted" style="font-size:11px">In territory</div></div>
+            <div style="text-align:center"><div class="value" style="font-size:18px;color:var(--green)">40 ft</div><div class="muted" style="font-size:11px">To main</div></div>
+            <div style="text-align:center"><div class="value" style="font-size:18px;color:var(--green)">OK</div><div class="muted" style="font-size:11px">Capacity</div></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-required-submit" data-lfr-editable-type="text">Required for Submission</h3>
+          </div>
+          <div class="row"><div class="r-main"><span class="checkbox on">✓</span><div class="r-title">Site address verified</div></div><span class="chip chip-green">Done</span></div>
+          <div class="row"><div class="r-main"><span class="checkbox on">✓</span><div class="r-title">Service availability confirmed</div></div><span class="chip chip-green">Done</span></div>
+          <div class="row"><div class="r-main"><span class="checkbox on">✓</span><div class="r-title">Load estimate entered</div></div><span class="chip chip-green">Done</span></div>
+          <div class="row"><div class="r-main"><span class="checkbox">　</span><div class="r-title">Site plan uploaded</div></div><span class="chip chip-amber">Pending</span></div>
+          <div class="row"><div class="r-main"><span class="checkbox">　</span><div class="r-title">Load calculation sheet</div></div><span class="chip chip-amber">Pending</span></div>
+        </div>
+      </div>
+      <p class="req-note" data-lfr-editable-id="reqnote-newproject" data-lfr-editable-type="text">Covers: Applications &amp; Requests (service‑connection request workflow, eligibility/availability logic) · GIS &amp; Service Availability · Document Management (plan upload) · Account &amp; Portfolio.</p>
+    </section>
+
+    <!-- VIEW: Messages -->
+    <section class="page-view" id="view-notifications" data-view="notifications">
+      <div class="page-head">
+        <div class="breadcrumb"><a href="#dashboard" data-nav="dashboard">Dashboard</a> › Messages &amp; Notifications</div>
+        <h1 data-lfr-editable-id="title-messages" data-lfr-editable-type="text">Messages &amp; Notifications</h1>
+        <p data-lfr-editable-id="desc-messages" data-lfr-editable-type="text">Track plan comments, permit decisions, and inspection updates across projects, and message the GAS engineering team directly per project.</p>
+      </div>
+
+      <div class="grid g-21">
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-messages-inbox" data-lfr-editable-type="text">Inbox</h3>
+            <div style="display:flex;gap:8px"><span class="chip chip-red">3 unread</span><a class="link" href="#">Mark all read</a></div>
+          </div>
+          <div class="media" style="background:var(--blue-soft);margin:0 -24px;padding:16px 24px">
+            <div class="media-ico mi-warn">📐</div>
+            <div class="media-body">
+              <p><strong>Plan comment:</strong> GAS engineering requested a revised meter location for Elmwood Commons (Site plan v3). <a href="#documents" data-nav="documents" style="color:var(--blue);font-weight:700;text-decoration:none">Reply &amp; re‑upload →</a></p>
+              <div class="time">Today, 11:02 AM · Plan review</div>
+            </div>
+          </div>
+          <div class="media" style="background:var(--blue-soft);margin:0 -24px;padding:16px 24px">
+            <div class="media-ico mi-ok">✓</div>
+            <div class="media-body">
+              <p><strong>Permit issued:</strong> Harbor Point Retail service connection permit approved. <a href="#permits" data-nav="permits" style="color:var(--blue);font-weight:700;text-decoration:none">Download →</a></p>
+              <div class="time">Apr 28, 2026 · Permit</div>
+            </div>
+          </div>
+          <div class="media" style="background:var(--blue-soft);margin:0 -24px;padding:16px 24px">
+            <div class="media-ico mi-info">🔍</div>
+            <div class="media-body">
+              <p><strong>Inspection scheduled:</strong> Westgate Warehouse meter set on May 5, 8–10 AM. <a href="#permits" data-nav="permits" style="color:var(--blue);font-weight:700;text-decoration:none">Details →</a></p>
+              <div class="time">Apr 26, 2026 · Inspection</div>
+            </div>
+          </div>
+          <div class="media">
+            <div class="media-ico mi-info">💬</div>
+            <div class="media-body">
+              <p>GAS engineering replied on Cedar Ridge load calculation review.</p>
+              <div class="time">Apr 24, 2026 · Message</div>
+            </div>
+          </div>
+          <div class="media">
+            <div class="media-ico mi-ok">✓</div>
+            <div class="media-body">
+              <p>Service availability confirmed for 220 Elmwood Dr.</p>
+              <div class="time">Apr 20, 2026 · GIS</div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-msg-engineering" data-lfr-editable-type="text">Message GAS Engineering</h3>
+          </div>
+          <div class="field">
+            <label>Project</label>
+            <select>
+              <option>Elmwood Commons — GC‑1988</option>
+              <option>Cedar Ridge Ph2 — GC‑1976</option>
+              <option>Harbor Point — GC‑1965</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Regarding</label>
+            <select>
+              <option>Plan review</option>
+              <option>Permit</option>
+              <option>Inspection</option>
+              <option>Service availability</option>
+              <option>General</option>
+            </select>
+          </div>
+          <div class="field"><label>Message</label><textarea rows="3" placeholder="Type your message to GAS engineering…"></textarea></div>
+          <a class="btn btn-primary btn-block" href="#" data-lfr-editable-id="btn-send-message" data-lfr-editable-type="link">Send Message</a>
+          <div class="divider"></div>
+          <div class="card-header" style="margin-bottom:12px">
+            <h3 style="font-size:14px" data-lfr-editable-id="header-msg-delivery" data-lfr-editable-type="text">Delivery</h3>
+          </div>
+          <div class="toggle-row" style="padding-top:0">
+            <div><div class="t-label" data-lfr-editable-id="tlabel-decisions" data-lfr-editable-type="text">Email + SMS for plan/permit decisions</div></div>
+            <div class="switch on"></div>
+          </div>
+          <div class="toggle-row">
+            <div><div class="t-label" data-lfr-editable-id="tlabel-reminders" data-lfr-editable-type="text">Inspection reminders</div></div>
+            <div class="switch on"></div>
+          </div>
+        </div>
+      </div>
+      <p class="req-note" data-lfr-editable-id="reqnote-messages" data-lfr-editable-type="text">Covers: Communications &amp; Notifications (omnichannel alerts, plan/permit/inspection notices, per‑project two‑way messaging with GAS engineering).</p>
+    </section>
+
+    <!-- VIEW: Permits & Inspections -->
+    <section class="page-view" id="view-permits" data-view="permits">
+      <div class="page-head">
+        <div class="breadcrumb"><a href="#dashboard" data-nav="dashboard">Dashboard</a> › Permits &amp; Inspections</div>
+        <h1 data-lfr-editable-id="title-permits" data-lfr-editable-type="text">Permits, Approvals &amp; Inspections</h1>
+        <p data-lfr-editable-id="desc-permits" data-lfr-editable-type="text">Track plan reviews, permit issuance, and inspection scheduling across all projects, and respond to GAS engineering comments in one place.</p>
+      </div>
+
+      <div class="grid g-4">
+        <div class="stat-card stat-accent">
+          <div class="label" data-lfr-editable-id="stat-permits-open" data-lfr-editable-type="text">Open Approvals</div>
+          <div class="value">3</div>
+          <div class="sub" data-lfr-editable-id="stat-permits-opensub" data-lfr-editable-type="text">1 needs your response</div>
+        </div>
+        <div class="stat-card">
+          <div class="label" data-lfr-editable-id="stat-permits-issued" data-lfr-editable-type="text">Permits Issued</div>
+          <div class="value">5</div>
+          <div class="sub" data-lfr-editable-id="stat-permits-issuedsub" data-lfr-editable-type="text">this year</div>
+        </div>
+        <div class="stat-card">
+          <div class="label" data-lfr-editable-id="stat-permits-scheduled" data-lfr-editable-type="text">Inspections Scheduled</div>
+          <div class="value">2</div>
+          <div class="sub" data-lfr-editable-id="stat-permits-schedsub" data-lfr-editable-type="text">this week</div>
+        </div>
+        <div class="stat-card">
+          <div class="label" data-lfr-editable-id="stat-permits-avg" data-lfr-editable-type="text">Avg Review Time</div>
+          <div class="value">6.4 <span class="unit">days</span></div>
+          <div class="trend down" data-lfr-editable-id="stat-permits-avgtrend" data-lfr-editable-type="text">▼ 1.1 vs last qtr</div>
+        </div>
+      </div>
+
+      <div class="card section-gap">
+        <div class="card-header">
+          <h3 data-lfr-editable-id="header-permits-reviews" data-lfr-editable-type="text">Approvals &amp; Plan Reviews</h3>
+          <a class="link" href="#documents" data-nav="documents" data-lfr-editable-id="link-permits-docs" data-lfr-editable-type="link">Document workspace →</a>
+        </div>
+        <table class="tbl">
+          <thead>
+            <tr><th>Project</th><th>Item</th><th>Submitted</th><th>Status</th><th></th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="t-strong">Elmwood Commons</td><td>Site plan v3 — meter location</td><td>Today</td><td><span class="chip chip-amber">Revision requested</span></td><td><a class="link" href="#">Respond</a></td></tr>
+            <tr><td class="t-strong">Cedar Ridge Ph2</td><td>Load calculation review</td><td>Apr 22</td><td><span class="chip chip-info">In review</span></td><td><a class="link" href="#">View</a></td></tr>
+            <tr><td class="t-strong">Harbor Point Retail</td><td>Service connection permit</td><td>Apr 18</td><td><span class="chip chip-green">Issued</span></td><td><a class="link" href="#">Download</a></td></tr>
+            <tr><td class="t-strong">Westgate Warehouse</td><td>Pressure test approval</td><td>Apr 10</td><td><span class="chip chip-green">Approved</span></td><td><a class="link" href="#">View</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid g-2 section-gap">
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-permits-schedule" data-lfr-editable-type="text">Inspection Schedule</h3>
+            <a class="link" href="#" data-lfr-editable-id="link-permits-calendar" data-lfr-editable-type="link">Calendar</a>
+          </div>
+          <div class="row">
+            <div class="r-main">
+              <span class="dot blue"></span>
+              <div>
+                <div class="r-title">Westgate — meter set</div>
+                <div class="r-sub">May 5, 8–10 AM</div>
+              </div>
+            </div>
+            <span class="chip chip-info">Confirmed</span>
+          </div>
+          <div class="row">
+            <div class="r-main">
+              <span class="dot blue"></span>
+              <div>
+                <div class="r-title">Harbor Point — pressure test</div>
+                <div class="r-sub">May 7, 1–3 PM</div>
+              </div>
+            </div>
+            <span class="chip chip-info">Confirmed</span>
+          </div>
+          <div class="row">
+            <div class="r-main">
+              <span class="dot amber"></span>
+              <div>
+                <div class="r-title">Cedar Ridge — pre‑construction</div>
+                <div class="r-sub">Request a date</div>
+              </div>
+            </div>
+            <span class="chip chip-amber">Schedule</span>
+          </div>
+          <a class="btn btn-ghost btn-sm btn-block" href="#" data-lfr-editable-id="btn-req-inspection" data-lfr-editable-type="link">+ Request inspection</a>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-permits-pipeline" data-lfr-editable-type="text">Permit Pipeline</h3>
+          </div>
+          <div class="bar-row"><span class="mo">Submitted</span><div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--navy-soft)"></div></div><span class="val">6</span></div>
+          <div class="bar-row"><span class="mo">In review</span><div class="bar-track"><div class="bar-fill" style="width:50%;background:var(--info)"></div></div><span class="val">3</span></div>
+          <div class="bar-row"><span class="mo">Revision</span><div class="bar-track"><div class="bar-fill" style="width:17%;background:var(--amber)"></div></div><span class="val">1</span></div>
+          <div class="bar-row"><span class="mo">Issued</span><div class="bar-track"><div class="bar-fill" style="width:83%;background:var(--green)"></div></div><span class="val">5</span></div>
+          <div class="divider"></div>
+          <p class="muted" style="font-size:12.5px" data-lfr-editable-id="txt-permits-status" data-lfr-editable-type="text">💬 Elmwood plan revision is the only item awaiting your response. <a href="#documents" data-nav="documents">Open it →</a></p>
+        </div>
+      </div>
+      <p class="req-note" data-lfr-editable-id="reqnote-permits" data-lfr-editable-type="text">Covers: Applications &amp; Requests (permit &amp; approval workflow, plan review, inspection scheduling, case &amp; status tracking) · Service Connections · Analytics.</p>
+    </section>
+
+    <!-- VIEW: Document Workspace -->
+    <section class="page-view" id="view-documents" data-view="documents">
+      <div class="page-head">
+        <div class="breadcrumb"><a href="#dashboard" data-nav="dashboard">Dashboard</a> › Document Workspace</div>
+        <h1 data-lfr-editable-id="title-documents" data-lfr-editable-type="text">Plans &amp; Document Workspace</h1>
+        <p data-lfr-editable-id="desc-documents" data-lfr-editable-type="text">Upload and version site plans, load calculations, and permits; track review status; and exchange marked‑up documents with GAS engineering per project.</p>
+      </div>
+
+      <div class="grid g-12">
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-doc-projects" data-lfr-editable-type="text">Projects</h3>
+          </div>
+          <a class="nav-item active" href="#">
+            <span class="ico">📐</span> 
+            <span data-lfr-editable-id="docproj-elmwood" data-lfr-editable-type="text">Elmwood Commons</span> 
+            <span class="nav-badge">1</span>
+          </a>
+          <a class="nav-item" href="#"><span class="ico">📐</span> <span data-lfr-editable-id="docproj-cedar" data-lfr-editable-type="text">Cedar Ridge Ph2</span></a>
+          <a class="nav-item" href="#"><span class="ico">📐</span> <span data-lfr-editable-id="docproj-harbor" data-lfr-editable-type="text">Harbor Point Retail</span></a>
+          <a class="nav-item" href="#"><span class="ico">📐</span> <span data-lfr-editable-id="docproj-westgate" data-lfr-editable-type="text">Westgate Warehouse</span></a>
+          <a class="nav-item" href="#"><span class="ico">📐</span> <span data-lfr-editable-id="docproj-maple" data-lfr-editable-type="text">Maplewood Infill</span></a>
+          <div class="divider"></div>
+          <a class="btn btn-ghost btn-sm btn-block" href="#" data-lfr-editable-id="btn-upload-document" data-lfr-editable-type="link">Upload document</a>
+          <p class="req-note" style="margin-top:14px" data-lfr-editable-id="txt-upload-hint" data-lfr-editable-type="text">Drag &amp; drop or browse. PDF, DWG, JPG up to 50 MB. Versions are tracked automatically.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-elmwood-documents" data-lfr-editable-type="text">Elmwood Commons — Documents</h3>
+            <div class="field" style="margin:0;width:220px"><input type="text" placeholder="🔍 Search documents…"></div>
+          </div>
+          <table class="tbl">
+            <thead>
+              <tr><th>Document</th><th>Version</th><th>Type</th><th>Status</th><th></th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="t-strong">Site plan</td><td>v3</td><td>Plan (PDF/DWG)</td><td><span class="chip chip-amber">Revision requested</span></td><td><a class="link" href="#">Open</a></td></tr>
+              <tr><td class="t-strong">Load calculation sheet</td><td>v2</td><td>Calc (XLSX)</td><td><span class="chip chip-green">Accepted</span></td><td><a class="link" href="#">Open</a></td></tr>
+              <tr><td class="t-strong">Meter layout</td><td>v1</td><td>Plan (PDF)</td><td><span class="chip chip-info">In review</span></td><td><a class="link" href="#">Open</a></td></tr>
+              <tr><td class="t-strong">Service agreement</td><td>—</td><td>Contract</td><td><span class="chip chip-green">Signed</span></td><td><a class="link" href="#">Open</a></td></tr>
+            </tbody>
+          </table>
+          <div class="divider"></div>
+          <div class="banner banner-amber" style="margin:0">
+            <span class="b-ico">📐</span>
+            <div data-lfr-editable-id="banner-gas-comment" data-lfr-editable-type="text"><strong>GAS comment on Site plan v3:</strong> Relocate the meter bank 6 ft clear of the electrical service entrance, then re‑upload as v4. <a href="#">Reply &amp; upload revision →</a></div>
+          </div>
+        </div>
+      </div>
+      <p class="req-note" data-lfr-editable-id="reqnote-documents" data-lfr-editable-type="text">Covers: Document Management (versioned plan repository, upload, status tracking, markup exchange) · Applications &amp; Requests (plan review) · Knowledge &amp; Help (search).</p>
+    </section>
+
+    <!-- VIEW: GIS & Availability -->
+    <section class="page-view" id="view-gis" data-view="gis">
+      <div class="page-head">
+        <div class="breadcrumb"><a href="#dashboard" data-nav="dashboard">Dashboard</a> › GIS &amp; Service Availability</div>
+        <h1 data-lfr-editable-id="title-gis-page" data-lfr-editable-type="text">GIS &amp; Service Availability</h1>
+        <p data-lfr-editable-id="desc-gis-page" data-lfr-editable-type="text">Check whether gas service is available at a site before you break ground — verify service territory, distance to main, and network capacity on the map.</p>
+      </div>
+
+      <div class="grid g-21">
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-service-map" data-lfr-editable-type="text">Service Map</h3>
+            <div class="field" style="margin:0;width:280px"><input type="text" value="220 Elmwood Dr, Naperville IL" readonly></div>
+          </div>
+          <div style="background:linear-gradient(135deg,#16294D,#24386A);border-radius:12px;height:360px;position:relative;overflow:hidden">
+            <div style="position:absolute;inset:0;background-image:linear-gradient(90deg, transparent 28%, rgba(10,94,176,.5) 29% 31%, transparent 32%), linear-gradient(0deg, transparent 60%, rgba(10,94,176,.4) 61% 63%, transparent 64%), radial-gradient(circle at 45% 42%, rgba(21,115,71,.45), transparent 30%)"></div>
+            <div style="position:absolute;left:43%;top:39%;width:18px;height:18px;border-radius:50%;background:var(--red);border:3px solid #fff;box-shadow:0 0 0 6px rgba(200,16,46,.3)"></div>
+            <div style="position:absolute;left:46%;top:43%;color:#fff;font-size:11px;font-weight:700;background:rgba(0,0,0,.35);padding:3px 8px;border-radius:6px" data-lfr-editable-id="gis-map-badge" data-lfr-editable-type="text">Site · 40 ft to main</div>
+            <div style="position:absolute;bottom:14px;left:14px;color:#B8C6DD;font-size:11px;background:rgba(0,0,0,.3);padding:6px 10px;border-radius:8px">
+              <span style="display:inline-block;width:10px;height:3px;background:var(--info);vertical-align:middle"></span> Gas main &nbsp; <span class="dot green" style="vertical-align:middle"></span> In‑territory zone
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-avail-result" data-lfr-editable-type="text">Availability Result</h3>
+          </div>
+          <div class="banner banner-green" style="margin:0 0 16px">
+            <span class="b-ico">✓</span>
+            <div data-lfr-editable-id="banner-gis-available" data-lfr-editable-type="text"><strong>Service available.</strong></div>
+          </div>
+          <div class="row"><div class="r-main"><span class="dot green"></span><div class="r-title">Within service territory</div></div><span class="chip chip-green">Yes</span></div>
+          <div class="row"><div class="r-main"><span class="dot green"></span><div class="r-title">Distance to nearest main</div></div><span class="val">~40 ft</span></div>
+          <div class="row"><div class="r-main"><span class="dot green"></span><div class="r-title">Network capacity (est. 190 MMBtu/d)</div></div><span class="chip chip-green">Sufficient</span></div>
+          <div class="row"><div class="r-main"><span class="dot amber"></span><div class="r-title">Main extension required</div></div><span class="chip chip-amber">Minor</span></div>
+          <a class="btn btn-primary btn-block" href="#newproject" data-nav="newproject" style="margin-top:14px" data-lfr-editable-id="btn-gis-startproject" data-lfr-editable-type="link">Start project request for this site</a>
+          <p class="req-note" style="margin-top:12px" data-lfr-editable-id="txt-gis-disclaimer" data-lfr-editable-type="text">Availability is preliminary; final capacity is confirmed by GAS engineering during plan review.</p>
+        </div>
+      </div>
+
+      <div class="card section-gap">
+        <div class="card-header">
+          <h3 data-lfr-editable-id="header-gis-recent" data-lfr-editable-type="text">Recent Availability Checks</h3>
+        </div>
+        <table class="tbl">
+          <thead>
+            <tr><th>Address</th><th>Checked</th><th>Territory</th><th>Capacity</th><th></th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="t-strong">220 Elmwood Dr, Naperville</td><td>Today</td><td><span class="chip chip-green">In</span></td><td><span class="chip chip-green">Sufficient</span></td><td><a class="link" href="#newproject" data-nav="newproject">Start request</a></td></tr>
+            <tr><td class="t-strong">15 Cedar Ridge Rd, Aurora</td><td>Apr 20</td><td><span class="chip chip-green">In</span></td><td><span class="chip chip-amber">Extension needed</span></td><td><a class="link" href="#projects" data-nav="projects">View project</a></td></tr>
+            <tr><td class="t-strong">980 Industrial Blvd, Joliet</td><td>Apr 8</td><td><span class="chip chip-green">In</span></td><td><span class="chip chip-green">Sufficient</span></td><td><a class="link" href="#projects" data-nav="projects">View project</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="req-note" data-lfr-editable-id="reqnote-gis" data-lfr-editable-type="text">Covers: GIS &amp; Service Availability (map‑based territory, distance‑to‑main, capacity checks) · Applications &amp; Requests (pre‑application screening) · Analytics.</p>
+    </section>
+
+    <!-- VIEW: Team Access & Settings -->
+    <section class="page-view" id="view-users" data-view="users">
+      <div class="page-head">
+        <div class="breadcrumb"><a href="#dashboard" data-nav="dashboard">Dashboard</a> › Team Access &amp; Settings</div>
+        <h1 data-lfr-editable-id="title-users-page" data-lfr-editable-type="text">Team Access &amp; Settings</h1>
+        <p data-lfr-editable-id="desc-users-page" data-lfr-editable-type="text">Give project managers, engineers, and subcontractors scoped access to the projects they work on, and manage account security and notifications.</p>
+      </div>
+
+      <div class="grid g-2">
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-users-members" data-lfr-editable-type="text">Team Members</h3>
+            <a class="link" href="#" data-lfr-editable-id="link-invite-member" data-lfr-editable-type="link">+ Invite member</a>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--border-soft)">
+            <span class="avatar" style="background:linear-gradient(135deg,var(--navy),var(--navy-mid))">JR</span>
+            <div style="flex:1;min-width:0">
+              <div class="r-title">Jordan Reyes</div>
+              <div class="r-sub">All projects · submit &amp; approve</div>
+            </div>
+            <span class="role-pill">Account Admin</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--border-soft)">
+            <span class="avatar" style="background:linear-gradient(135deg,var(--blue),var(--navy-soft))">PL</span>
+            <div style="flex:1;min-width:0">
+              <div class="r-title">Priya Lal</div>
+              <div class="r-sub">Harbor Point, Westgate · project mgmt</div>
+            </div>
+            <span class="chip chip-info">Project Mgr</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--border-soft)">
+            <span class="avatar" style="background:linear-gradient(135deg,var(--blue),var(--navy-soft))">ME</span>
+            <div style="flex:1;min-width:0">
+              <div class="r-title">Marcus Eng</div>
+              <div class="r-sub">All projects · plans &amp; documents</div>
+            </div>
+            <span class="chip chip-info">Engineer</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:14px 0">
+            <span class="avatar" style="background:linear-gradient(135deg,var(--text-3),var(--steel))">NS</span>
+            <div style="flex:1;min-width:0">
+              <div class="r-title">NorthStar Mechanical</div>
+              <div class="r-sub">Cedar Ridge · documents (read‑only)</div>
+            </div>
+            <span class="chip chip-gray">Subcontractor</span>
+          </div>
+          <p class="req-note" data-lfr-editable-id="txt-subcontractor-scope" data-lfr-editable-type="text">Subcontractor access is project‑scoped, read‑only by default, and revocable any time.</p>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-users-security" data-lfr-editable-type="text">Security &amp; Sign‑in</h3>
+          </div>
+          <div class="toggle-row">
+            <div>
+              <div class="t-label">SSO (company identity provider)</div>
+              <div class="t-desc">Federate sign‑in with your org's IdP.</div>
+            </div>
+            <div class="switch on"></div>
+          </div>
+          <div class="toggle-row">
+            <div>
+              <div class="t-label">Multi‑factor authentication</div>
+              <div class="t-desc">Required for admins and engineers.</div>
+            </div>
+            <div class="switch on"></div>
+          </div>
+          <div class="toggle-row">
+            <div>
+              <div class="t-label">Step‑up verification</div>
+              <div class="t-desc">Re‑verify before submitting plans to GAS.</div>
+            </div>
+            <div class="switch on"></div>
+          </div>
+          <a class="btn btn-ghost btn-sm" href="#" data-lfr-editable-id="btn-users-accesslog" data-lfr-editable-type="link">View access log</a>
+        </div>
+      </div>
+
+      <div class="grid g-2 section-gap">
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-users-roles" data-lfr-editable-type="text">Roles &amp; Permissions</h3>
+          </div>
+          <table class="tbl">
+            <thead>
+              <tr><th>Capability</th><th>Admin</th><th>Project Mgr</th><th>Engineer</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="t-strong">View projects &amp; documents</td><td><span class="dot green"></span></td><td><span class="dot green"></span></td><td><span class="dot green"></span></td></tr>
+              <tr><td class="t-strong">Upload &amp; revise plans</td><td><span class="dot green"></span></td><td><span class="dot green"></span></td><td><span class="dot green"></span></td></tr>
+              <tr><td class="t-strong">Submit requests to GAS</td><td><span class="dot green"></span></td><td><span class="dot green"></span></td><td><span class="dot" style="background:var(--border)"></span></td></tr>
+              <tr><td class="t-strong">Manage team</td><td><span class="dot green"></span></td><td><span class="dot" style="background:var(--border)"></span></td><td><span class="dot" style="background:var(--border)"></span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-users-notifpref" data-lfr-editable-type="text">Notification Preferences</h3>
+          </div>
+          <div class="toggle-row">
+            <div>
+              <div class="t-label">Plan review &amp; comments</div>
+              <div class="t-desc">When GAS engineering responds.</div>
+            </div>
+            <div class="switch on"></div>
+          </div>
+          <div class="toggle-row">
+            <div>
+              <div class="t-label">Permit &amp; approval updates</div>
+              <div class="t-desc">Issuance and status changes.</div>
+            </div>
+            <div class="switch on"></div>
+          </div>
+          <div class="toggle-row">
+            <div>
+              <div class="t-label">Inspection scheduling</div>
+              <div class="t-desc">Confirmations and reminders.</div>
+            </div>
+            <div class="switch on"></div>
+          </div>
+          <div class="field" style="margin:14px 0 0">
+            <label>Route project alerts to</label>
+            <select>
+              <option>Assigned project manager</option>
+              <option>Admin only</option>
+              <option>Admin + PM</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <p class="req-note" data-lfr-editable-id="reqnote-users" data-lfr-editable-type="text">Covers: Security &amp; Controls (SSO, MFA, step‑up, audit) · Account &amp; Portfolio (multi‑user roles, project‑scoped &amp; subcontractor access) · Communications &amp; Notifications policy.</p>
+    </section>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div data-lfr-editable-id="footer-copyright" data-lfr-editable-type="text">© 2026 Northern Illinois Gas Company d/b/a Nicor Gas, a Southern Company Gas company. Builder &amp; developer portal — for RFP 004161 illustration only.</div>
+  <div>
+    <a href="#users" data-nav="users" data-lfr-editable-id="footer-link-privacy" data-lfr-editable-type="link">Privacy</a> &nbsp;·&nbsp;
+    <a href="#users" data-nav="users" data-lfr-editable-id="footer-link-terms" data-lfr-editable-type="link">Terms</a> &nbsp;·&nbsp;
+    <a href="#users" data-nav="users" data-lfr-editable-id="footer-link-access" data-lfr-editable-type="link">Accessibility</a>
+  </div>
+</footer>
+
+[#if configuration.showAiAssistant]
+<button class="ai-fab" onclick="alert('Nicor Gas Builder Assistant\n\nSource-grounded AI help powered by Liferay AI Hub. Ask about service availability, new service connections, permits, plan requirements, or inspection scheduling — answers are grounded in your projects and Nicor knowledge base.')">
+  <span class="spark">✦</span> <span data-lfr-editable-id="ai-fab-text" data-lfr-editable-type="text">Ask Builder Assistant</span>
+</button>
+[/#if]
+
+</div>

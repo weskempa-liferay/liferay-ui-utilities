@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nicor Gas — Energy Assistance Agency Portal | Southern Company Gas (RFP 004161)</title>
+<style>
+/* ============================================================
+   Southern Company Gas — X-Suite Residential Portal
+   Shared design system  (Nicor Gas example branding)
+   Navy / red corporate palette · generous whitespace
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Brand */
+  --navy:        #16294D;   /* primary deep navy */
+  --navy-mid:    #24386A;
+  --navy-soft:   #34508C;
+  --blue:        #0A5EB0;   /* corporate accent blue */
+  --blue-soft:   #E8F1FB;
+  --red:         #C8102E;   /* Southern Company red */
+  --red-dark:    #9B0B22;
+  --red-light:   #FCEAED;
+
+  /* Neutrals */
+  --bg:          #F4F6FA;   /* app background */
+  --surface:     #FFFFFF;
+  --surface-2:   #FAFBFD;
+  --border:      #E3E8F0;
+  --border-soft: #EDF1F7;
+  --text:        #16294D;
+  --text-2:      #475571;   /* secondary */
+  --text-3:      #7A879E;   /* muted */
+
+  /* Status */
+  --green:       #157347;
+  --green-bg:    #E9F7EF;
+  --amber:       #B45309;
+  --amber-bg:    #FEF6E7;
+  --info:        #0A5EB0;
+  --info-bg:     #E8F1FB;
+
+  /* System */
+  --font:        Arial, Helvetica, sans-serif;
+  --sidebar-w:   248px;
+  --topbar-h:    62px;
+  --radius:      14px;
+  --radius-sm:   10px;
+  --shadow:      0 1px 2px rgba(22,41,77,.04), 0 4px 16px rgba(22,41,77,.05);
+  --shadow-lg:   0 8px 30px rgba(22,41,77,.10);
+  --maxw:        1180px;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.55;
+}
+a { color: inherit; }
+
+/* ───────────────────────── Top bar ───────────────────────── */
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; height: var(--topbar-h);
+  background: var(--navy);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 28px; z-index: 100;
+}
+.topbar-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.topbar-logo .mark {
+  width: 30px; height: 30px; position: relative; flex-shrink: 0;
+}
+.topbar-logo .mark::before {
+  content: ''; position: absolute; inset: 0;
+  background: var(--red);
+  clip-path: polygon(50% 8%, 100% 92%, 0 92%);
+}
+.topbar-logo .mark::after {
+  content: ''; position: absolute; left: 50%; top: 46%; transform: translateX(-50%);
+  width: 0; height: 0;
+  border-left: 7px solid transparent; border-right: 7px solid transparent;
+  border-bottom: 11px solid var(--blue);
+}
+.topbar-logo .brand { color: #fff; font-size: 15px; font-weight: 700; letter-spacing: .2px; line-height: 1.1; }
+.topbar-logo .brand .sub { display: block; color: #9DB0CC; font-size: 11px; font-weight: 400; letter-spacing: .3px; }
+
+.topbar-right { display: flex; align-items: center; gap: 8px; }
+.acct-switch {
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14);
+  color: #DCE6F2; font-size: 12.5px; padding: 7px 12px; border-radius: 8px;
+  cursor: pointer; text-decoration: none;
+}
+.acct-switch:hover { background: rgba(255,255,255,.14); }
+.acct-switch .dot { width: 7px; height: 7px; border-radius: 50%; background: #4ADE80; }
+.icon-btn {
+  position: relative; background: none; border: none; cursor: pointer;
+  color: #9DB0CC; padding: 9px; border-radius: 8px; line-height: 0; font-size: 17px;
+  text-decoration: none;
+}
+.icon-btn:hover { background: rgba(255,255,255,.1); color: #fff; }
+.notif-badge {
+  position: absolute; top: 3px; right: 3px; min-width: 16px; height: 16px;
+  background: var(--red); border-radius: 8px; font-size: 9.5px; color: #fff;
+  display: flex; align-items: center; justify-content: center; font-weight: 700;
+  border: 2px solid var(--navy); padding: 0 3px;
+}
+.user-chip { display: flex; align-items: center; gap: 9px; color: #fff; font-size: 13px; padding-left: 8px; }
+.avatar {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--red), var(--red-dark));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12.5px; font-weight: 700; color: #fff; letter-spacing: .3px;
+}
+.user-chip .uname { line-height: 1.15; }
+.user-chip .uname small { display: block; color: #9DB0CC; font-size: 11px; }
+
+/* ───────────────────────── Sidebar ───────────────────────── */
+.sidebar {
+  position: fixed; top: var(--topbar-h); left: 0; bottom: 0; width: var(--sidebar-w);
+  background: var(--surface); border-right: 1px solid var(--border);
+  overflow-y: auto; padding: 18px 14px 28px; z-index: 90;
+}
+.sidebar-section { margin-bottom: 18px; }
+.sidebar-label {
+  font-size: 10.5px; font-weight: 700; color: var(--text-3);
+  text-transform: uppercase; letter-spacing: 1.2px; padding: 6px 12px 8px;
+}
+.nav-item {
+  display: flex; align-items: center; gap: 12px; padding: 10px 12px;
+  font-size: 13.5px; color: var(--text-2); cursor: pointer;
+  border-radius: 9px; text-decoration: none; transition: background .14s, color .14s;
+  margin-bottom: 2px; font-weight: 500;
+}
+.nav-item:hover { background: var(--surface-2); color: var(--navy); }
+.nav-item.active { background: var(--blue-soft); color: var(--blue); font-weight: 700; }
+.nav-item .ico { width: 20px; text-align: center; font-size: 15px; flex-shrink: 0; opacity: .92; }
+.nav-item .nav-badge {
+  margin-left: auto; background: var(--red); color: #fff; font-size: 10px;
+  font-weight: 700; padding: 1px 7px; border-radius: 9px;
+}
+.nav-item.active .ico { opacity: 1; }
+
+/* ───────────────────────── Main ───────────────────────── */
+.main { margin-left: var(--sidebar-w); margin-top: var(--topbar-h); padding: 34px 40px 110px; }
+.wrap { max-width: var(--maxw); margin: 0 auto; }
+
+.page-head { margin-bottom: 30px; }
+.breadcrumb { font-size: 12px; color: var(--text-3); margin-bottom: 10px; }
+.breadcrumb a { color: var(--text-3); text-decoration: none; }
+.breadcrumb a:hover { color: var(--blue); }
+.page-head h1 { font-size: 26px; font-weight: 700; letter-spacing: -.3px; }
+.page-head p { font-size: 14px; color: var(--text-2); margin-top: 6px; max-width: 640px; }
+
+/* ───────────────────────── Hero (dashboard) ───────────────────────── */
+.hero {
+  background: linear-gradient(115deg, var(--navy) 0%, var(--navy-mid) 60%, var(--navy-soft) 100%);
+  border-radius: var(--radius); padding: 34px 38px; margin-bottom: 28px;
+  display: flex; justify-content: space-between; align-items: center; gap: 28px;
+  position: relative; overflow: hidden;
+}
+.hero::after { content:''; position:absolute; right:-60px; top:-60px; width:260px; height:260px; border-radius:50%; background:rgba(255,255,255,.045); }
+.hero::before { content:''; position:absolute; right:90px; bottom:-90px; width:180px; height:180px; border-radius:50%; background:rgba(10,94,176,.18); }
+.hero-text { position: relative; z-index: 1; }
+.hero-badge { background: rgba(255,255,255,.12); border-radius: 20px; padding: 5px 13px; font-size: 11.5px; color: #BFE0FF; font-weight: 600; margin-bottom: 12px; display: inline-block; }
+.hero-text h2 { font-size: 23px; font-weight: 700; color: #fff; margin-bottom: 8px; letter-spacing: -.2px; }
+.hero-text p { font-size: 13.5px; color: #B8C6DD; max-width: 480px; }
+.hero-cta { position: relative; z-index: 1; background: var(--red); color: #fff; border: none; padding: 13px 26px; border-radius: 9px; font-size: 13.5px; font-weight: 700; cursor: pointer; white-space: nowrap; font-family: var(--font); transition: background .15s, transform .15s; text-decoration: none; display: inline-block; }
+.hero-cta:hover { background: var(--red-dark); transform: translateY(-1px); }
+
+/* ───────────────────────── Section title ───────────────────────── */
+.section-title { font-size: 12px; font-weight: 700; color: var(--text-3); text-transform: uppercase; letter-spacing: 1px; margin: 0 0 16px; }
+.section-gap { margin-top: 34px; }
+
+/* ───────────────────────── Cards & grid ───────────────────────── */
+.grid { display: grid; gap: 20px; margin-bottom: 4px; align-items: start; }
+.g-2 { grid-template-columns: 1fr 1fr; }
+.g-3 { grid-template-columns: repeat(3, 1fr); }
+.g-4 { grid-template-columns: repeat(4, 1fr); }
+.g-21 { grid-template-columns: 2fr 1fr; }
+.g-12 { grid-template-columns: 1fr 2fr; }
+
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
+.card.tight { padding: 20px; }
+.card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; gap: 12px; }
+.card-header h3 { font-size: 15px; font-weight: 700; color: var(--text); }
+.card-header .link { font-size: 12.5px; color: var(--blue); text-decoration: none; font-weight: 600; white-space: nowrap; }
+.card-header .link:hover { text-decoration: underline; }
+.card-sub { font-size: 12.5px; color: var(--text-3); margin-top: -10px; margin-bottom: 16px; }
+
+/* ───────────────────────── Stat cards ───────────────────────── */
+.stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 24px; box-shadow: var(--shadow); }
+.stat-card .label { font-size: 11px; color: var(--text-3); font-weight: 700; text-transform: uppercase; letter-spacing: .6px; margin-bottom: 10px; }
+.stat-card .value { font-size: 29px; font-weight: 700; color: var(--text); line-height: 1; letter-spacing: -.5px; }
+.stat-card .value .unit { font-size: 15px; font-weight: 500; color: var(--text-2); }
+.stat-card .sub { font-size: 12px; color: var(--text-3); margin-top: 8px; }
+.stat-card .trend { font-size: 11.5px; font-weight: 600; margin-top: 6px; display: inline-flex; align-items: center; gap: 4px; }
+.trend.up { color: var(--amber); }
+.trend.down { color: var(--green); }
+.trend.ok { color: var(--green); }
+.stat-accent { border-top: 3px solid var(--red); }
+
+/* ───────────────────────── Buttons ───────────────────────── */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: none; cursor: pointer; font-family: var(--font); font-weight: 700; font-size: 13.5px; padding: 12px 22px; border-radius: 9px; text-decoration: none; transition: background .15s, transform .15s, box-shadow .15s; }
+.btn-primary { background: var(--red); color: #fff; }
+.btn-primary:hover { background: var(--red-dark); transform: translateY(-1px); }
+.btn-navy { background: var(--navy); color: #fff; }
+.btn-navy:hover { background: var(--navy-mid); transform: translateY(-1px); }
+.btn-ghost { background: var(--surface); color: var(--navy); border: 1.5px solid var(--border); }
+.btn-ghost:hover { border-color: var(--blue); color: var(--blue); }
+.btn-block { width: 100%; }
+.btn-sm { padding: 8px 15px; font-size: 12.5px; }
+
+/* ───────────────────────── Badges / chips ───────────────────────── */
+.chip { font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 20px; display: inline-flex; align-items: center; gap: 5px; }
+.chip-green { background: var(--green-bg); color: var(--green); }
+.chip-amber { background: var(--amber-bg); color: var(--amber); }
+.chip-info  { background: var(--info-bg); color: var(--info); }
+.chip-red   { background: var(--red-light); color: var(--red); }
+.chip-gray  { background: var(--surface-2); color: var(--text-2); border: 1px solid var(--border); }
+.dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.dot.green { background: var(--green); } .dot.amber { background: var(--amber); } .dot.red { background: var(--red); } .dot.blue { background: var(--blue); }
+
+/* ───────────────────────── Bill block ───────────────────────── */
+.bill-amount { font-size: 40px; font-weight: 700; letter-spacing: -1px; }
+.bill-due { font-size: 13px; color: var(--text-2); margin: 6px 0 20px; }
+.autopay-badge { background: var(--green-bg); color: var(--green); font-size: 11.5px; font-weight: 700; padding: 5px 11px; border-radius: 20px; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 16px; }
+.inline-links { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 16px; }
+.inline-links a { font-size: 12.5px; color: var(--blue); text-decoration: none; font-weight: 600; }
+.inline-links a:hover { text-decoration: underline; }
+
+/* ───────────────────────── Lists / rows ───────────────────────── */
+.row { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--border-soft); font-size: 13.5px; gap: 12px; }
+.row:last-child { border-bottom: none; }
+.row .r-main { display: flex; align-items: center; gap: 12px; min-width: 0; flex: 1; }
+.row .r-title { font-weight: 600; color: var(--text); }
+.row .r-sub { font-size: 12px; color: var(--text-3); margin-top: 2px; }
+.row .val { font-weight: 700; }
+
+.media { display: flex; gap: 14px; padding: 15px 0; border-bottom: 1px solid var(--border-soft); }
+.media:last-child { border-bottom: none; }
+.media-ico { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 17px; flex-shrink: 0; }
+.mi-warn { background: var(--amber-bg); } .mi-info { background: var(--info-bg); } .mi-ok { background: var(--green-bg); } .mi-red { background: var(--red-light); }
+.media-body p { font-size: 13.5px; color: var(--text); }
+.media-body .time { font-size: 11.5px; color: var(--text-3); margin-top: 3px; }
+
+/* ───────────────────────── Quick actions ───────────────────────── */
+.qa-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.qa-btn { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 20px 14px; text-align: center; cursor: pointer; transition: border-color .15s, background .15s, transform .15s; text-decoration: none; display: block; }
+.qa-btn:hover { border-color: var(--blue); background: var(--blue-soft); transform: translateY(-2px); }
+.qa-btn .qa-ico { font-size: 24px; margin-bottom: 10px; }
+.qa-btn .qa-label { font-size: 12.5px; font-weight: 700; color: var(--navy); }
+
+/* ───────────────────────── Usage bars / chart ───────────────────────── */
+.bar-row { display: flex; align-items: center; gap: 14px; padding: 11px 0; font-size: 13px; }
+.bar-row .mo { color: var(--text-2); width: 92px; flex-shrink: 0; }
+.bar-track { flex: 1; height: 10px; background: var(--surface-2); border-radius: 6px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 6px; }
+.bar-row .val { width: 78px; text-align: right; font-weight: 700; }
+
+.colchart { display: flex; align-items: flex-end; gap: 12px; height: 200px; padding: 8px 4px 0; }
+.colchart .col { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; height: 100%; justify-content: flex-end; }
+.colchart .bar { width: 100%; max-width: 38px; border-radius: 7px 7px 0 0; background: linear-gradient(180deg, var(--blue), var(--navy-soft)); transition: opacity .15s; }
+.colchart .bar:hover { opacity: .82; }
+.colchart .bar.hi { background: linear-gradient(180deg, var(--red), var(--red-dark)); }
+.colchart .clab { font-size: 11px; color: var(--text-3); }
+
+/* ───────────────────────── Steps / progress ───────────────────────── */
+.steps { display: flex; gap: 0; margin: 8px 0 4px; }
+.step { flex: 1; text-align: center; position: relative; }
+.step:not(:last-child)::after { content: ''; position: absolute; top: 16px; left: 50%; width: 100%; height: 2px; background: var(--border); z-index: 0; }
+.step.done:not(:last-child)::after { background: var(--green); }
+.step .dot-n { width: 34px; height: 34px; border-radius: 50%; background: var(--surface); border: 2px solid var(--border); color: var(--text-3); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; margin: 0 auto 8px; position: relative; z-index: 1; }
+.step.done .dot-n { background: var(--green); border-color: var(--green); color: #fff; }
+.step.active .dot-n { background: var(--blue); border-color: var(--blue); color: #fff; }
+.step .slab { font-size: 11.5px; color: var(--text-2); font-weight: 600; }
+.step.active .slab { color: var(--blue); }
+
+/* ───────────────────────── Tables ───────────────────────── */
+.tbl { width: 100%; border-collapse: collapse; font-size: 13px; }
+.tbl th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: .6px; color: var(--text-3); font-weight: 700; padding: 10px 12px; border-bottom: 1px solid var(--border); }
+.tbl td { padding: 14px 12px; border-bottom: 1px solid var(--border-soft); color: var(--text); }
+.tbl tr:last-child td { border-bottom: none; }
+.tbl tr:hover td { background: var(--surface-2); }
+.tbl .t-strong { font-weight: 700; }
+
+/* ───────────────────────── Forms ───────────────────────── */
+.field { margin-bottom: 18px; }
+.field label { display: block; font-size: 12.5px; font-weight: 700; color: var(--text-2); margin-bottom: 7px; }
+.field input, .field select, .field textarea { width: 100%; padding: 11px 13px; border: 1.5px solid var(--border); border-radius: 9px; font-family: var(--font); font-size: 13.5px; color: var(--text); background: var(--surface); }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px var(--blue-soft); }
+.field .hint { font-size: 11.5px; color: var(--text-3); margin-top: 6px; }
+.toggle-row { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid var(--border-soft); }
+.toggle-row:last-child { border-bottom: none; }
+.toggle-row .t-label { font-size: 13.5px; font-weight: 600; }
+.toggle-row .t-desc { font-size: 12px; color: var(--text-3); margin-top: 2px; max-width: 440px; }
+.switch { width: 44px; height: 24px; border-radius: 14px; background: var(--border); position: relative; cursor: pointer; flex-shrink: 0; transition: background .15s; }
+.switch.on { background: var(--green); }
+.switch::after { content: ''; position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: #fff; transition: left .15s; box-shadow: 0 1px 3px rgba(0,0,0,.2); }
+.switch.on::after { left: 23px; }
+
+/* ───────────────────────── Banners ───────────────────────── */
+.banner { display: flex; align-items: flex-start; gap: 12px; padding: 16px 20px; border-radius: var(--radius-sm); margin-bottom: 24px; font-size: 13.5px; line-height: 1.5; }
+.banner .b-ico { font-size: 18px; flex-shrink: 0; line-height: 1.3; }
+.banner-amber { background: var(--amber-bg); color: #7C3A06; border: 1px solid #F3DDB5; }
+.banner-info  { background: var(--info-bg); color: #0A3F77; border: 1px solid #C5DDF5; }
+.banner-green { background: var(--green-bg); color: #0E4F31; border: 1px solid #BCE6CF; }
+.banner a { font-weight: 700; text-decoration: underline; }
+.banner .b-close { margin-left: auto; cursor: pointer; opacity: .6; background: none; border: none; font-size: 16px; }
+
+/* ───────────────────────── AI assistant widget ───────────────────────── */
+.ai-fab { position: fixed; right: 28px; bottom: 28px; z-index: 95; display: flex; align-items: center; gap: 10px; background: var(--navy); color: #fff; border: none; padding: 13px 20px; border-radius: 30px; font-family: var(--font); font-size: 13.5px; font-weight: 700; cursor: pointer; box-shadow: var(--shadow-lg); transition: transform .15s, background .15s; }
+.ai-fab:hover { transform: translateY(-2px); background: var(--navy-mid); }
+.ai-fab .spark { font-size: 16px; }
+
+/* ───────────────────────── Misc ───────────────────────── */
+.muted { color: var(--text-3); }
+.divider { height: 1px; background: var(--border-soft); margin: 22px 0; }
+.tag-list { display: flex; flex-wrap: wrap; gap: 8px; }
+.flag-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-2); background: var(--surface-2); border: 1px solid var(--border); padding: 6px 11px; border-radius: 20px; }
+.req-note { font-size: 11px; color: var(--text-3); margin-top: 14px; font-style: italic; }
+
+/* ───────────────────────── Footer ───────────────────────── */
+.foot { margin-left: var(--sidebar-w); padding: 22px 40px; border-top: 1px solid var(--border); color: var(--text-3); font-size: 11.5px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; background: var(--surface); }
+.foot a { color: var(--text-3); text-decoration: none; }
+.foot a:hover { color: var(--blue); }
+
+/* ───────────────────────── Responsive ───────────────────────── */
+@media (max-width: 1100px) {
+  .g-4 { grid-template-columns: repeat(2, 1fr); }
+  .g-3 { grid-template-columns: 1fr 1fr; }
+  .qa-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 860px) {
+  .sidebar { display: none; }
+  .main, .foot { margin-left: 0; }
+  .g-2, .g-3, .g-4, .g-21, .g-12 { grid-template-columns: 1fr; }
+  .main { padding: 24px 18px 56px; }
+  .user-chip .uname { display: none; }
+  .acct-switch span { display: none; }
+}
+
+/* ───────── C&I additions ───────── */
+.acct-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 18px 20px; box-shadow: var(--shadow); }
+.acct-card .ac-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+.acct-card .ac-name { font-size: 14.5px; font-weight: 700; }
+.acct-card .ac-sub { font-size: 12px; color: var(--text-3); margin-top: 2px; }
+.acct-card .ac-figs { display: flex; gap: 24px; }
+.acct-card .ac-fig .n { font-size: 19px; font-weight: 700; }
+.acct-card .ac-fig .l { font-size: 11px; color: var(--text-3); text-transform: uppercase; letter-spacing: .4px; }
+.facility-ico { width: 40px; height: 40px; border-radius: 10px; background: var(--blue-soft); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+.donut { width: 132px; height: 132px; border-radius: 50%; display: grid; place-items: center; }
+.donut .hole { width: 86px; height: 86px; border-radius: 50%; background: var(--surface); display: grid; place-items: center; text-align: center; }
+.donut .hole .dn { font-size: 20px; font-weight: 700; } .donut .hole .dl { font-size: 10.5px; color: var(--text-3); }
+.legend { display: flex; flex-direction: column; gap: 10px; }
+.legend .lg { display: flex; align-items: center; gap: 9px; font-size: 13px; }
+.legend .sw { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+.checkbox { width: 18px; height: 18px; border: 1.5px solid var(--border); border-radius: 5px; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; }
+.checkbox.on { background: var(--blue); border-color: var(--blue); color: #fff; font-size: 12px; }
+.role-pill { font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 20px; background: var(--navy); color: #fff; }
+
+/* ───────── EAA / case-management additions ───────── */
+.kanban { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; align-items: start; }
+.kcol { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px; }
+.kcol-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; padding: 0 2px; }
+.kcol-head .kt { font-size: 12px; font-weight: 700; color: var(--text-2); text-transform: uppercase; letter-spacing: .5px; }
+.kcol-head .kn { font-size: 11px; font-weight: 700; background: var(--surface); border: 1px solid var(--border); color: var(--text-2); padding: 1px 8px; border-radius: 10px; }
+.kcard { background: var(--surface); border: 1px solid var(--border); border-radius: 9px; padding: 12px; margin-bottom: 10px; box-shadow: var(--shadow); cursor: pointer; transition: border-color .14s, transform .14s; }
+.kcard:hover { border-color: var(--blue); transform: translateY(-1px); }
+.kcard:last-child { margin-bottom: 0; }
+.kcard .kc-name { font-size: 13px; font-weight: 700; }
+.kcard .kc-meta { font-size: 11px; color: var(--text-3); margin-top: 3px; }
+.kcard .kc-foot { display: flex; align-items: center; justify-content: space-between; margin-top: 9px; }
+.kcard .kc-amt { font-size: 12.5px; font-weight: 700; color: var(--navy); }
+.kcol-top { border-top: 3px solid var(--text-3); }
+.kt-intake { border-top-color: var(--steel); }
+.kt-elig { border-top-color: var(--info); }
+.kt-gas { border-top-color: var(--amber); }
+.kt-appr { border-top-color: var(--green); }
+.kt-deny { border-top-color: var(--red); }
+.avatar-sm { width: 22px; height: 22px; border-radius: 50%; background: var(--navy); color: #fff; font-size: 9.5px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; }
+.progress { height: 8px; background: var(--surface-2); border-radius: 5px; overflow: hidden; }
+.progress > span { display: block; height: 100%; background: linear-gradient(90deg, var(--blue), var(--navy-soft)); border-radius: 5px; }
+.fund-bar { height: 26px; border-radius: 7px; background: var(--surface-2); overflow: hidden; position: relative; }
+.fund-bar > span { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 7px; }
+@media (max-width: 1100px) { .kanban { grid-template-columns: repeat(2, 1fr); } }
+
+.page-view { display: none; }
+.page-view.active { display: block; animation: fadeIn .18s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="topbar-logo" href="#dashboard" data-nav="dashboard">
+    <span class="mark"></span>
+    <span class="brand">Nicor Gas<small class="sub">Energy Assistance · Agency Portal</small></span>
+  </a>
+  <div class="topbar-right">
+    <a class="acct-switch" href="#caseworkers" data-nav="caseworkers" title="Agency">
+      <span class="dot"></span><span>Lakeshore Community Action · Agency</span> ▾
+    </a>
+    <a class="icon-btn" href="#notifications" data-nav="notifications" title="Notifications">🔔<span class="notif-badge">3</span></a>
+    <a class="icon-btn" href="#caseworkers" data-nav="caseworkers" title="Access &amp; settings">⚙️</a>
+    <a class="user-chip" href="#caseworkers" data-nav="caseworkers" style="text-decoration:none">
+      <span class="avatar">AD</span>
+      <span class="uname">Angela Dunn<small>Agency Admin · Lakeshore CAA</small></span>
+    </a>
+  </div>
+</div>
+
+<nav class="sidebar">
+  <div class="sidebar-section">
+    <div class="sidebar-label">AGENCY</div>
+    <a class="nav-item" href="#dashboard" data-nav="dashboard"><span class="ico">📊</span> Dashboard </a>
+    <a class="nav-item" href="#pipeline" data-nav="pipeline"><span class="ico">📋</span> Case Pipeline </a>
+    <a class="nav-item" href="#apply" data-nav="apply"><span class="ico">➕</span> New Application </a>
+    <a class="nav-item" href="#notifications" data-nav="notifications"><span class="ico">🔔</span> Notifications <span class="nav-badge">3</span></a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-label">CASES & DOCS</div>
+    <a class="nav-item" href="#documents" data-nav="documents"><span class="ico">📁</span> Documents & Eligibility <span class="nav-badge">6</span></a>
+    <a class="nav-item" href="#programs" data-nav="programs"><span class="ico">🏛️</span> Programs & Funds </a>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-label">INSIGHTS & ADMIN</div>
+    <a class="nav-item" href="#reports" data-nav="reports"><span class="ico">📈</span> Program Reports </a>
+    <a class="nav-item" href="#caseworkers" data-nav="caseworkers"><span class="ico">👥</span> Case Workers & Access </a>
+  </div>
+</nav>
+
+<main class="main">
+  <div class="wrap">
+<section class="page-view" id="view-dashboard" data-view="dashboard">
+<div class="hero">
+      <div class="hero-text">
+        <div class="hero-badge">🏛️ LIHEAP 2025–26</div>
+        <h2>LIHEAP enrollment deadline extended to May 31, 2026</h2>
+        <p>Your agency has 12 cases in progress that are eligible. Complete and submit them before the deadline so your households receive heating assistance benefits.</p>
+      </div>
+      <a class="hero-cta" href="#pipeline" data-nav="pipeline">Review Eligible Cases</a>
+    </div>
+
+    <div class="banner banner-amber">
+      <span class="b-ico">⏳</span>
+      <div><strong>6 cases need documents.</strong> Income verification or ID is missing on 6 applications, blocking submission. <a href="#documents" data-nav="documents">Resolve missing documents →</a></div>
+      <button class="b-close" onclick="this.parentElement.style.display='none'">✕</button>
+    </div>
+
+    <div class="section-title">Agency Caseload — April 2026</div>
+    <div class="grid g-4">
+      <div class="stat-card stat-accent"><div class="label">Active Cases</div><div class="value">34</div><div class="sub">across 4 caseworkers</div><div class="trend up">▲ 8 this week</div></div>
+      <div class="stat-card"><div class="label">Approved (MTD)</div><div class="value">18</div><div class="sub">April to date</div><div class="trend down">82% approval rate</div></div>
+      <div class="stat-card"><div class="label">Documents Needed</div><div class="value">6 <span class="unit">cases</span></div><div class="sub">blocking submission</div><div class="trend up">Action required</div></div>
+      <div class="stat-card"><div class="label">Benefits Issued (YTD)</div><div class="value">$21,480</div><div class="sub">to 96 households</div><div class="trend down">On pace vs allocation</div></div>
+    </div>
+
+    <div class="grid g-21 section-gap">
+      <div class="card">
+        <div class="card-header"><h3>Recent Cases</h3><a class="link" href="#pipeline" data-nav="pipeline">View pipeline →</a></div>
+        <table class="tbl">
+          <thead><tr><th>Case ID</th><th>Household</th><th>Program</th><th>Caseworker</th><th>Stage</th></tr></thead>
+          <tbody>
+            <tr><td class="t-strong">EAP‑4418</td><td>Jones, D.</td><td>LIHEAP</td><td>S. Okafor</td><td><span class="chip chip-amber">Docs needed</span></td></tr>
+            <tr><td class="t-strong">EAP‑4402</td><td>Wilson, M.</td><td>LIHEAP</td><td>S. Okafor</td><td><span class="chip chip-green">Approved</span></td></tr>
+            <tr><td class="t-strong">EAP‑4399</td><td>Garcia, L.</td><td>Nicor LIFT</td><td>T. Brooks</td><td><span class="chip chip-info">Eligibility review</span></td></tr>
+            <tr><td class="t-strong">EAP‑4390</td><td>Adams, K.</td><td>LIHEAP</td><td>T. Brooks</td><td><span class="chip chip-gray">Intake</span></td></tr>
+            <tr><td class="t-strong">EAP‑4385</td><td>Hernandez, R.</td><td>LIHEAP</td><td>J. Patel</td><td><span class="chip chip-red">Denied</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><h3>Case Alerts</h3><a class="link" href="#notifications" data-nav="notifications">See all</a></div>
+        <div class="media"><div class="media-ico mi-ok">✓</div><div class="media-body"><p><strong>Approved:</strong> Case EAP‑4402 (Wilson, M.) — benefit of $240 issued to account.</p><div class="time">Today, 10:21 AM</div></div></div>
+        <div class="media"><div class="media-ico mi-warn">📄</div><div class="media-body"><p><strong>Documents needed:</strong> Case EAP‑4418 (Jones, D.) requires income verification.</p><div class="time">Today, 9:05 AM</div></div></div>
+        <div class="media"><div class="media-ico mi-red">✕</div><div class="media-body"><p><strong>Denied:</strong> Case EAP‑4385 (Hernandez, R.) — income over threshold. Appeal available.</p><div class="time">Apr 28, 2026</div></div></div>
+      </div>
+    </div>
+
+    <div class="section-title section-gap">Quick Actions</div>
+    <div class="qa-grid">
+      <a class="qa-btn" href="#apply" data-nav="apply"><div class="qa-ico">➕</div><div class="qa-label">New Application</div></a>
+      <a class="qa-btn" href="#pipeline" data-nav="pipeline"><div class="qa-ico">📋</div><div class="qa-label">Case Pipeline</div></a>
+      <a class="qa-btn" href="#documents" data-nav="documents"><div class="qa-ico">⬆️</div><div class="qa-label">Upload Documents</div></a>
+      <a class="qa-btn" href="#programs" data-nav="programs"><div class="qa-ico">🏛️</div><div class="qa-label">Programs &amp; Funds</div></a>
+      <a class="qa-btn" href="#reports" data-nav="reports"><div class="qa-ico">📊</div><div class="qa-label">Program Reports</div></a>
+      <a class="qa-btn" href="#documents" data-nav="documents"><div class="qa-ico">✔️</div><div class="qa-label">Eligibility Checklist</div></a>
+      <a class="qa-btn" href="#caseworkers" data-nav="caseworkers"><div class="qa-ico">👥</div><div class="qa-label">Case Workers</div></a>
+      <a class="qa-btn" href="#notifications" data-nav="notifications"><div class="qa-ico">💬</div><div class="qa-label">Contact GAS</div></a>
+    </div>
+
+    <div class="grid g-21 section-gap">
+      <div class="card">
+        <div class="card-header"><h3>Program Performance</h3><a class="link" href="#reports" data-nav="reports">Full reports →</a></div>
+        <div class="bar-row"><span class="mo">LIHEAP</span><div class="bar-track"><div class="bar-fill" style="width:78%;background:var(--blue)"></div></div><span class="val">62 cases</span></div>
+        <div class="bar-row"><span class="mo">Nicor LIFT</span><div class="bar-track"><div class="bar-fill" style="width:30%;background:var(--navy-soft)"></div></div><span class="val">18 cases</span></div>
+        <div class="bar-row"><span class="mo">Budget Billing</span><div class="bar-track"><div class="bar-fill" style="width:18%;background:var(--amber)"></div></div><span class="val">11 cases</span></div>
+        <div class="divider"></div>
+        <p class="muted" style="font-size:12.5px">💬 LIHEAP funds are 71% disbursed for this cycle. <a href="#programs" data-nav="programs" style="color:var(--blue);font-weight:600;text-decoration:none">View remaining allocation →</a></p>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3>Eligible — Action Before May 31</h3></div>
+        <div class="row"><div class="r-main"><span class="dot amber"></span><div><div class="r-title">12 cases ready to submit</div><div class="r-sub">Eligibility met · docs complete</div></div></div><a class="btn btn-primary btn-sm" href="#pipeline" data-nav="pipeline">Submit batch</a></div>
+        <div class="row"><div class="r-main"><span class="dot blue"></span><div><div class="r-title">6 cases awaiting documents</div><div class="r-sub">Income / ID outstanding</div></div></div><a class="link" href="#documents" data-nav="documents">Resolve</a></div>
+        <div class="row"><div class="r-main"><span class="dot green"></span><div><div class="r-title">18 cases approved this month</div><div class="r-sub">$4,320 in benefits issued</div></div></div><a class="link" href="#reports" data-nav="reports">Report</a></div>
+      </div>
+    </div>
+    <p class="req-note">Covers: Core Platform &amp; Experience (agency caseworker shell) · Applications &amp; Requests · Document Management · Analytics &amp; Insights · Communications &amp; Notifications · Account &amp; Portfolio (delegated/third‑party access).</p>
+</section>
+<section class="page-view" id="view-pipeline" data-view="pipeline">
+<div class="page-head">
+      <div class="breadcrumb"><a href="#dashboard" data-nav="dashboard">Dashboard</a> › Case Pipeline</div>
+      <h1>Case Pipeline</h1>
+      <p>Track every assistance application through its lifecycle — from intake to disbursement — across all caseworkers in your agency.</p>
+    </div>
+
+    <div class="card" style="margin-bottom:24px">
+      <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between">
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <span class="chip chip-gray">All caseworkers ▾</span>
+          <span class="chip chip-gray">All programs ▾</span>
+          <span class="chip chip-info">LIHEAP</span>
+          <span class="chip chip-gray">This cycle ▾</span>
+        </div>
+        <a class="btn btn-primary btn-sm" href="#apply" data-nav="apply">+ New Application</a>
+      </div>
+    </div>
+
+    <div class="kanban">
+      <div class="kcol kt-intake kcol-top">
+        <div class="kcol-head"><span class="kt">Intake</span><span class="kn">5</span></div>
+        <div class="kcard"><div class="kc-name">Adams, K.</div><div class="kc-meta">EAP‑4390 · LIHEAP</div><div class="kc-foot"><span class="avatar-sm">TB</span><span class="kc-amt">Est. $260</span></div></div>
+        <div class="kcard"><div class="kc-name">Nguyen, P.</div><div class="kc-meta">EAP‑4391 · LIHEAP</div><div class="kc-foot"><span class="avatar-sm">TB</span><span class="kc-amt">Est. $240</span></div></div>
+        <div class="kcard"><div class="kc-name">Foster, J.</div><div class="kc-meta">EAP‑4393 · LIFT</div><div class="kc-foot"><span class="avatar-sm">SO</span><span class="kc-amt">Est. $180</span></div></div>
+        <div class="kcard"><div class="kc-name">Reed, A.</div><div class="kc-meta">EAP‑4396 · LIHEAP</div><div class="kc-foot"><span class="avatar-sm">JP</span><span class="kc-amt">Est. $250</span></div></div>
+      </div>
+      <div class="kcol kt-elig kcol-top">
+        <div class="kcol-head"><span class="kt">Eligibility</span><span class="kn">4</span></div>
+        <div class="kcard"><div class="kc-name">Garcia, L.</div><div class="kc-meta">EAP‑4399 · Nicor LIFT</div><div class="kc-foot"><span class="avatar-sm">TB</span><span class="kc-amt">Est. $200</span></div></div>
+        <div class="kcard"><div class="kc-name">Brown, T.</div><div class="kc-meta">EAP‑4400 · LIHEAP</div><div class="kc-foot"><span class="avatar-sm">SO</span><span class="kc-amt">Est. $240</span></div></div>
+        <div class="kcard"><div class="kc-name">Diaz, M.</div><div class="kc-meta">EAP‑4401 · LIHEAP</div><div class="kc-foot"><span class="avatar-sm">JP</span><span class="kc-amt">Est. $230</span></div></div>
+      </div>
+      <div class="kcol kt-gas kcol-top">
+        <div class="kcol-head"><span class="kt">Docs / Pending GAS</span><span class="kn">6</span></div>
+        <div class="kcard" style="border-color:var(--amber)"><div class="kc-name">Jones, D.</div><div class="kc-meta">EAP‑4418 · needs income verif.</div><div class="kc-foot"><span class="avatar-sm">SO</span><span class="chip chip-amber" style="padding:1px 7px">Docs</span></div></div>
+        <div class="kcard"><div class="kc-name">Clark, S.</div><div class="kc-meta">EAP‑4410 · submitted to GAS</div><div class="kc-foot"><span class="avatar-sm">TB</span><span class="chip chip-info" style="padding:1px 7px">GAS</span></div></div>
+        <div class="kcard"><div class="kc-name">Lewis, R.</div><div class="kc-meta">EAP‑4412 · submitted to GAS</div><div class="kc-foot"><span class="avatar-sm">JP</span><span class="chip chip-info" style="padding:1px 7px">GAS</span></div></div>
+      </div>
+      <div class="kcol kt-appr kcol-top">
+        <div class="kcol-head"><span class="kt">Approved</span><span class="kn">18</span></div>
+        <div class="kcard"><div class="kc-name">Wilson, M.</div><div class="kc-meta">EAP‑4402 · LIHEAP</div><div class="kc-foot"><span class="avatar-sm">SO</span><span class="kc-amt" style="color:var(--green)">$240 issued</span></div></div>
+        <div class="kcard"><div class="kc-name">Taylor, B.</div><div class="kc-meta">EAP‑4395 · LIHEAP</div><div class="kc-foot"><span class="avatar-sm">TB</span><span class="kc-amt" style="color:var(--green)">$260 issued</span></div></div>
+        <div class="kcard"><div class="kc-name">Morgan, E.</div><div class="kc-meta">EAP‑4388 · Nicor LIFT</div><div class="kc-foot"><span class="avatar-sm">JP</span><span class="kc-amt" style="color:var(--green)">$200 issued</span></div></div>
+      </div>
+      <div class="kcol kt-deny kcol-top">
+        <div class="kcol-head"><span class="kt">Denied / Appeal</span><span class="kn">1</span></div>
+        <div class="kcard" style="border-color:var(--red)"><div class="kc-name">Hernandez, R.</div><div class="kc-meta">EAP‑4385 · income over threshold</div><div class="kc-foot"><span class="avatar-sm">JP</span><span class="chip chip-red" style="padding:1px 7px">Appeal</span></div></div>
+      </div>
+    </div>
+    <p class="req-note">Covers: Applications &amp; Requests (case &amp; workflow management, status tracking, multi‑stage pipeline) · Service Requests · Core Platform (agency shell) · Analytics.</p>
+</section>
+<section class="page-view" id="view-apply" data-view="apply">
+<div class="page-head">
+      <div class="breadcrumb"><a href="#dashboard" data-nav="dashboard">Dashboard</a> › New Application</div>
+      <h1>New Assistance Application</h1>
+      <p>Submit an energy assistance application on behalf of a household. The guided workflow checks eligibility and required documents as you go.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><h3>Application — Garcia, L.</h3><span class="chip chip-info">Draft · EAP‑4399</span></div>
+      <div class="steps">
+        <div class="step done"><div class="dot-n">✓</div><div class="slab">Household</div></div>
+        <div class="step done"><div class="dot-n">✓</div><div class="slab">Income</div></div>
+        <div class="step active"><div class="dot-n">3</div><div class="slab">Program &amp; benefit</div></div>
+        <div class="step"><div class="dot-n">4</div><div class="slab">Documents</div></div>
+        <div class="step"><div class="dot-n">5</div><div class="slab">Review &amp; submit</div></div>
+      </div>
+      <div class="divider"></div>
+      <div class="grid g-2">
+        <div class="field"><label>Program</label><select><option>LIHEAP — Heating Assistance</option><option>Nicor LIFT</option><option>Budget Billing enrollment</option></select></div>
+        <div class="field"><label>Linked Nicor Gas account</label><input type="text" value="8821‑6610 · Verified ✓" readonly></div>
+        <div class="field"><label>Household size</label><input type="text" value="4" readonly></div>
+        <div class="field"><label>Monthly household income</label><input type="text" value="$2,140" readonly></div>
+        <div class="field"><label>Estimated benefit</label><input type="text" value="$200 (within program limits)" readonly></div>
+        <div class="field"><label>Priority status</label><select><option>Standard</option><option>Elderly / disabled (expedited)</option><option>Disconnection notice (urgent)</option></select></div>
+      </div>
+      <div class="banner banner-green" style="margin:6px 0 18px"><span class="b-ico">✓</span><div><strong>Eligibility met.</strong> Income is within 60% of state median for a household of 4. This application is ready to advance to document collection.</div></div>
+      <div style="display:flex;gap:12px"><a class="btn btn-ghost btn-sm" href="#">Save draft</a><a class="btn btn-primary btn-sm" href="#documents" data-nav="documents">Continue to documents</a></div>
+    </div>
+
+    <div class="grid g-2 section-gap">
+      <div class="card">
+        <div class="card-header"><h3>Eligibility Checklist</h3></div>
+        <div class="row"><div class="r-main"><span class="checkbox on">✓</span><div><div class="r-title">Identity verified</div></div></div><span class="chip chip-green">Done</span></div>
+        <div class="row"><div class="r-main"><span class="checkbox on">✓</span><div><div class="r-title">Household size confirmed</div></div></div><span class="chip chip-green">Done</span></div>
+        <div class="row"><div class="r-main"><span class="checkbox on">✓</span><div><div class="r-title">Income within threshold</div></div></div><span class="chip chip-green">Done</span></div>
+        <div class="row"><div class="r-main"><span class="checkbox">　</span><div><div class="r-title">Proof of income uploaded</div></div></div><span class="chip chip-amber">Pending</span></div>
+        <div class="row"><div class="r-main"><span class="checkbox">　</span><div><div class="r-title">Recent utility bill uploaded</div></div></div><span class="chip chip-amber">Pending</span></div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3>Need Help?</h3></div>
+        <div class="media"><div class="media-ico mi-info">📘</div><div class="media-body"><p><strong>LIHEAP eligibility guide</strong> — income tables and required documents.</p><div class="time">Knowledge base</div></div></div>
+        <div class="media"><div class="media-ico mi-ok">✦</div><div class="media-body"><p><strong>Ask the Assistant</strong> — "What documents does a household of 4 need?"</p><div class="time">AI‑assisted help</div></div></div>
+        <div class="media"><div class="media-ico mi-warn">💬</div><div class="media-body"><p><strong>Contact GAS program team</strong> for case‑specific questions.</p><div class="time">Two‑way messaging</div></div></div>
+      </div>
+    </div>
+    <p class="req-note">Covers: Applications &amp; Requests (digital application forms &amp; workflows, eligibility logic) · Knowledge &amp; Help (guides, AI assist) · Account &amp; Portfolio (linked account verification) · Document Management.</p>
+</section>
+<section class="page-view" id="view-notifications" data-view="notifications">
+<div class="page-head">
+      <div class="breadcrumb"><a href="#dashboard" data-nav="dashboard">Dashboard</a> › Notifications</div>
+      <h1>Notifications &amp; Messages</h1>
+      <p>Stay on top of case decisions, document requests, and program announcements from Nicor Gas — and message the GAS program team directly.</p>
+    </div>
+
+    <div class="grid g-21">
+      <div class="card">
+        <div class="card-header"><h3>Inbox</h3><div style="display:flex;gap:8px"><span class="chip chip-red">3 unread</span><a class="link" href="#">Mark all read</a></div></div>
+        <div class="media" style="background:var(--blue-soft);margin:0 -24px;padding:16px 24px"><div class="media-ico mi-ok">✓</div><div class="media-body"><p><strong>Case approved:</strong> EAP‑4402 (Wilson, M.) — $240 benefit issued to the household's account. <a href="#pipeline" data-nav="pipeline" style="color:var(--blue);font-weight:700;text-decoration:none">View case →</a></p><div class="time">Today, 10:21 AM · Decision</div></div></div>
+        <div class="media" style="background:var(--blue-soft);margin:0 -24px;padding:16px 24px"><div class="media-ico mi-warn">📄</div><div class="media-body"><p><strong>Documents needed:</strong> EAP‑4418 (Jones, D.) requires income verification to proceed. <a href="#documents" data-nav="documents" style="color:var(--blue);font-weight:700;text-decoration:none">Upload →</a></p><div class="time">Today, 9:05 AM · Document request</div></div></div>
+        <div class="media" style="background:var(--blue-soft);margin:0 -24px;padding:16px 24px"><div class="media-ico mi-info">🏛️</div><div class="media-body"><p><strong>Program update:</strong> LIHEAP enrollment deadline extended to May 31, 2026. <a href="#programs" data-nav="programs" style="color:var(--blue);font-weight:700;text-decoration:none">Details →</a></p><div class="time">Apr 28, 2026 · Announcement</div></div></div>
+        <div class="media"><div class="media-ico mi-red">✕</div><div class="media-body"><p><strong>Case denied:</strong> EAP‑4385 (Hernandez, R.) — income over threshold. An appeal can be filed within 30 days.</p><div class="time">Apr 28, 2026 · Decision</div></div></div>
+        <div class="media"><div class="media-ico mi-info">💬</div><div class="media-body"><p>GAS program team replied to your question on case EAP‑4399.</p><div class="time">Apr 27, 2026 · Message</div></div></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><h3>Delivery &amp; Messaging</h3></div>
+        <p class="card-sub">How your agency is notified.</p>
+        <table class="tbl">
+          <thead><tr><th>Type</th><th>Email</th><th>SMS</th><th>In‑app</th></tr></thead>
+          <tbody>
+            <tr><td class="t-strong">Case decisions</td><td><span class="dot green"></span></td><td><span class="dot green"></span></td><td><span class="dot blue"></span></td></tr>
+            <tr><td class="t-strong">Document requests</td><td><span class="dot green"></span></td><td><span class="dot green"></span></td><td><span class="dot blue"></span></td></tr>
+            <tr><td class="t-strong">Deadlines</td><td><span class="dot green"></span></td><td><span class="dot green"></span></td><td><span class="dot blue"></span></td></tr>
+            <tr><td class="t-strong">Program announcements</td><td><span class="dot green"></span></td><td><span class="dot" style="background:var(--border)"></span></td><td><span class="dot blue"></span></td></tr>
+          </tbody>
+        </table>
+        <div class="divider"></div>
+        <div class="card-header" style="margin-bottom:12px"><h3 style="font-size:14px">Message GAS Program Team</h3></div>
+        <div class="field"><label>Regarding case (optional)</label><select><option>General question</option><option>EAP‑4399 — Garcia, L.</option><option>EAP‑4418 — Jones, D.</option></select></div>
+        <div class="field"><label>Message</label><textarea rows="3" placeholder="Type your message to the GAS program team…"></textarea></div>
+        <a class="btn btn-primary btn-block" href="#">Send Message</a>
+      </div>
+    </div>
+    <p class="req-note">Covers: Communications &amp; Notifications (omnichannel alerts, case status &amp; decision notices, document requests, deadlines, two‑way messaging with GAS).</p>
+</section>
+<section class="page-view" id="view-documents" data-view="documents">
+<div class="page-head">
+      <div class="breadcrumb"><a href="#dashboard" data-nav="dashboard">Dashboard</a> › Documents &amp; Eligibility</div>
+      <h1>Documents &amp; Eligibility</h1>
+      <p>Upload and manage eligibility documents per case, resolve outstanding items, and access program guides — all in one secure repository.</p>
+    </div>
+
+    <div class="banner banner-amber">
+      <span class="b-ico">📄</span>
+      <div><strong>6 cases are blocked on documents.</strong> Upload the outstanding items below to advance them to submission before the May 31 deadline.</div>
+    </div>
+
+    <div class="grid g-12">
+      <div class="card">
+        <div class="card-header"><h3>Document Library</h3></div>
+        <a class="nav-item active" href="#"><span class="ico">⏳</span> Outstanding <span class="nav-badge">6</span></a>
+        <a class="nav-item" href="#"><span class="ico">📄</span> Income verification</a>
+        <a class="nav-item" href="#"><span class="ico">🪪</span> Identity / ID</a>
+        <a class="nav-item" href="#"><span class="ico">🧾</span> Utility bills</a>
+        <a class="nav-item" href="#"><span class="ico">📘</span> Program guides</a>
+        <div class="divider"></div>
+        <a class="btn btn-ghost btn-sm btn-block" href="#">⬆️ Upload document</a>
+        <p class="req-note" style="margin-top:14px">Drag &amp; drop or browse. PDF, JPG, PNG up to 10 MB. Documents are encrypted and retained per program policy.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><h3>Cases Awaiting Documents</h3><div class="field" style="margin:0;width:220px"><input type="text" placeholder="🔍 Search cases…"></div></div>
+        <table class="tbl">
+          <thead><tr><th>Case</th><th>Household</th><th>Missing item</th><th>Caseworker</th><th></th></tr></thead>
+          <tbody>
+            <tr><td class="t-strong">EAP‑4418</td><td>Jones, D.</td><td>Income verification</td><td>S. Okafor</td><td><a class="link" href="#">Upload</a></td></tr>
+            <tr><td class="t-strong">EAP‑4421</td><td>Murphy, C.</td><td>Photo ID</td><td>T. Brooks</td><td><a class="link" href="#">Upload</a></td></tr>
+            <tr><td class="t-strong">EAP‑4423</td><td>Bell, A.</td><td>Recent utility bill</td><td>S. Okafor</td><td><a class="link" href="#">Upload</a></td></tr>
+            <tr><td class="t-strong">EAP‑4425</td><td>Ortiz, V.</td><td>Income verification</td><td>J. Patel</td><td><a class="link" href="#">Upload</a></td></tr>
+            <tr><td class="t-strong">EAP‑4427</td><td>Ross, D.</td><td>Proof of address</td><td>T. Brooks</td><td><a class="link" href="#">Upload</a></td></tr>
+            <tr><td class="t-strong">EAP‑4429</td><td>Khan, S.</td><td>Income verification</td><td>J. Patel</td><td><a class="link" href="#">Upload</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card section-gap">
+      <div class="card-header"><h3>LIHEAP Eligibility Reference</h3><a class="link" href="#">Open full program guide →</a></div>
+      <table class="tbl">
+        <thead><tr><th>Household Size</th><th>Monthly Income Limit (60% SMI)</th><th>Required Documents</th></tr></thead>
+        <tbody>
+          <tr><td class="t-strong">1</td><td>$2,430</td><td>ID · proof of income · recent utility bill</td></tr>
+          <tr><td class="t-strong">2</td><td>$3,177</td><td>IDs · proof of income · recent utility bill</td></tr>
+          <tr><td class="t-strong">3</td><td>$3,925</td><td>IDs · proof of income · recent utility bill</td></tr>
+          <tr><td class="t-strong">4</td><td>$4,672</td><td>IDs · proof of income · recent utility bill</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="req-note">Covers: Document Management (upload, repository, retention, per‑case docs) · Applications &amp; Requests (eligibility checklist) · Knowledge &amp; Help (program guides) · Security (encrypted documents).</p>
+</section>
+<section class="page-view" id="view-programs" data-view="programs">
+<div class="page-head">
+      <div class="breadcrumb"><a href="#dashboard" data-nav="dashboard">Dashboard</a> › Programs &amp; Funds</div>
+      <h1>Programs &amp; Funds</h1>
+      <p>Manage the assistance programs your agency administers, track fund allocation and disbursement, and monitor pledges against your remaining balance.</p>
+    </div>
+
+    <div class="grid g-3">
+      <div class="card" style="border-top:3px solid var(--blue)">
+        <div class="card-header"><h3>🏛️ LIHEAP 2025–26</h3><span class="chip chip-green">Open</span></div>
+        <p class="muted" style="font-size:12.5px;margin-bottom:14px">Federal heating assistance. Deadline extended to May 31, 2026.</p>
+        <div style="font-size:12px;color:var(--text-2);margin-bottom:6px;display:flex;justify-content:space-between"><span>$71,000 disbursed</span><span>of $100,000</span></div>
+        <div class="fund-bar"><span style="width:71%;background:linear-gradient(90deg,var(--blue),var(--navy-soft))"></span></div>
+        <div class="ac-figs" style="margin-top:16px"><div class="ac-fig"><div class="n">62</div><div class="l">Cases</div></div><div class="ac-fig"><div class="n">$29K</div><div class="l">Remaining</div></div></div>
+      </div>
+      <div class="card" style="border-top:3px solid var(--green)">
+        <div class="card-header"><h3>🤝 Nicor LIFT</h3><span class="chip chip-green">Open</span></div>
+        <p class="muted" style="font-size:12.5px;margin-bottom:14px">Nicor Gas hardship fund for past‑due balances.</p>
+        <div style="font-size:12px;color:var(--text-2);margin-bottom:6px;display:flex;justify-content:space-between"><span>$12,400 disbursed</span><span>of $25,000</span></div>
+        <div class="fund-bar"><span style="width:50%;background:linear-gradient(90deg,var(--green),#0E5A38)"></span></div>
+        <div class="ac-figs" style="margin-top:16px"><div class="ac-fig"><div class="n">18</div><div class="l">Cases</div></div><div class="ac-fig"><div class="n">$12.6K</div><div class="l">Remaining</div></div></div>
+      </div>
+      <div class="card" style="border-top:3px solid var(--amber)">
+        <div class="card-header"><h3>📊 Budget Billing</h3><span class="chip chip-info">Enrollment</span></div>
+        <p class="muted" style="font-size:12.5px;margin-bottom:14px">Even monthly payments to stabilize household bills.</p>
+        <div style="font-size:12px;color:var(--text-2);margin-bottom:6px;display:flex;justify-content:space-between"><span>11 enrolled</span><span>this cycle</span></div>
+        <div class="fund-bar"><span style="width:35%;background:linear-gradient(90deg,var(--amber),#8A3E06)"></span></div>
+        <div class="ac-figs" style="margin-top:16px"><div class="ac-fig"><div class="n">11</div><div class="l">Enrolled</div></div><div class="ac-fig"><div class="n">No cap</div><div class="l">Funds</div></div></div>
+      </div>
+    </div>
+
+    <div class="grid g-2 section-gap">
+      <div class="card">
+        <div class="card-header"><h3>Recent Pledges &amp; Disbursements</h3><a class="link" href="#reports" data-nav="reports">Full ledger</a></div>
+        <div class="row"><div class="r-main"><span class="dot green"></span><div><div class="r-title">Wilson, M. — $240</div><div class="r-sub">LIHEAP · pledged to acct 8821‑4402</div></div></div><span class="chip chip-green">Issued</span></div>
+        <div class="row"><div class="r-main"><span class="dot green"></span><div><div class="r-title">Taylor, B. — $260</div><div class="r-sub">LIHEAP · pledged to acct 8821‑4395</div></div></div><span class="chip chip-green">Issued</span></div>
+        <div class="row"><div class="r-main"><span class="dot blue"></span><div><div class="r-title">Garcia, L. — $200</div><div class="r-sub">Nicor LIFT · pledge pending GAS</div></div></div><span class="chip chip-info">Pending</span></div>
+        <div class="row"><div class="r-main"><span class="dot amber"></span><div><div class="r-title">Morgan, E. — $200</div><div class="r-sub">Nicor LIFT · awaiting confirmation</div></div></div><span class="chip chip-amber">Processing</span></div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3>Program Resources</h3></div>
+        <div class="media"><div class="media-ico mi-info">📘</div><div class="media-body"><p><strong>LIHEAP Program Guide 2025–26</strong> — eligibility, benefit tables, deadlines.</p><div class="time">Updated Apr 2026</div></div></div>
+        <div class="media"><div class="media-ico mi-ok">📗</div><div class="media-body"><p><strong>Nicor LIFT Administrator Handbook</strong> — pledge process and limits.</p><div class="time">Updated Mar 2026</div></div></div>
+        <div class="media"><div class="media-ico mi-warn">📋</div><div class="media-body"><p><strong>Required documents quick reference</strong> by program and household size.</p><div class="time">Knowledge base</div></div></div>
+      </div>
+    </div>
+    <p class="req-note">Covers: Account &amp; Portfolio (program management, pledges to customer accounts) · Billing &amp; Payments (benefit application, budget billing) · Analytics (fund tracking) · Knowledge &amp; Help.</p>
+</section>
+<section class="page-view" id="view-reports" data-view="reports">
+<div class="page-head">
+      <div class="breadcrumb"><a href="#dashboard" data-nav="dashboard">Dashboard</a> › Program Reports</div>
+      <h1>Program Reports &amp; Analytics</h1>
+      <p>Monitor your agency's performance — application volume, approval rates, benefits issued, and caseworker throughput — and export reports for funders.</p>
+    </div>
+
+    <div class="grid g-4">
+      <div class="stat-card stat-accent"><div class="label">Applications (YTD)</div><div class="value">117</div><div class="trend up">▲ 14 this month</div></div>
+      <div class="stat-card"><div class="label">Approval Rate</div><div class="value">82%</div><div class="sub">96 approved · 21 other</div></div>
+      <div class="stat-card"><div class="label">Benefits Issued</div><div class="value">$21,480</div><div class="sub">to 96 households</div></div>
+      <div class="stat-card"><div class="label">Avg Time to Decision</div><div class="value">4.2 <span class="unit">days</span></div><div class="trend down">▼ 0.6 vs last cycle</div></div>
+    </div>
+
+    <div class="grid g-21 section-gap">
+      <div class="card">
+        <div class="card-header"><h3>Applications by Month</h3><div style="display:flex;gap:8px"><span class="chip chip-gray">FY 2025–26</span><a class="link" href="#">Export CSV</a></div></div>
+        <div class="colchart">
+          <div class="col"><div class="bar" style="height:30%"></div><div class="clab">Oct</div></div>
+          <div class="col"><div class="bar" style="height:48%"></div><div class="clab">Nov</div></div>
+          <div class="col"><div class="bar" style="height:72%"></div><div class="clab">Dec</div></div>
+          <div class="col"><div class="bar hi" style="height:100%"></div><div class="clab">Jan</div></div>
+          <div class="col"><div class="bar" style="height:86%"></div><div class="clab">Feb</div></div>
+          <div class="col"><div class="bar" style="height:64%"></div><div class="clab">Mar</div></div>
+          <div class="col"><div class="bar" style="height:58%"></div><div class="clab">Apr</div></div>
+        </div>
+        <div class="divider"></div>
+        <div class="tag-list">
+          <span class="flag-pill">📅 By program</span>
+          <span class="flag-pill">👥 By caseworker</span>
+          <span class="flag-pill">✅ Approval / denial</span>
+          <span class="flag-pill">💰 Benefits issued</span>
+          <span class="flag-pill">⬇️ Funder report (PDF)</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3>Outcomes</h3></div>
+        <div style="display:flex;gap:20px;align-items:center">
+          <div class="donut" style="background:conic-gradient(var(--green) 0 82%, var(--red) 82% 91%, var(--amber) 91% 100%)"><div class="hole"><div><div class="dn">117</div><div class="dl">cases</div></div></div></div>
+          <div class="legend">
+            <div class="lg"><span class="sw" style="background:var(--green)"></span>Approved · 82%</div>
+            <div class="lg"><span class="sw" style="background:var(--red)"></span>Denied · 9%</div>
+            <div class="lg"><span class="sw" style="background:var(--amber)"></span>In progress · 9%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card section-gap">
+      <div class="card-header"><h3>Caseworker Performance</h3><a class="link" href="#caseworkers" data-nav="caseworkers">Manage team →</a></div>
+      <table class="tbl">
+        <thead><tr><th>Caseworker</th><th>Active</th><th>Approved (MTD)</th><th>Avg Decision</th><th>Approval Rate</th></tr></thead>
+        <tbody>
+          <tr><td class="t-strong">S. Okafor</td><td>11</td><td>7</td><td>3.8 days</td><td><span class="chip chip-green">86%</span></td></tr>
+          <tr><td class="t-strong">T. Brooks</td><td>10</td><td>6</td><td>4.1 days</td><td><span class="chip chip-green">84%</span></td></tr>
+          <tr><td class="t-strong">J. Patel</td><td>9</td><td>4</td><td>4.6 days</td><td><span class="chip chip-amber">76%</span></td></tr>
+          <tr><td class="t-strong">M. Adeyemi</td><td>4</td><td>1</td><td>5.0 days</td><td><span class="chip chip-amber">72%</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="req-note">Covers: Analytics &amp; Insights (administrative/operational insights, approval analytics, caseworker throughput, dashboards, funder exports) · Reporting.</p>
+</section>
+<section class="page-view" id="view-caseworkers" data-view="caseworkers">
+<div class="page-head">
+      <div class="breadcrumb"><a href="#dashboard" data-nav="dashboard">Dashboard</a> › Case Workers &amp; Access</div>
+      <h1>Case Workers &amp; Access</h1>
+      <p>Manage your agency's caseworkers and roles, control what each can see and do, and govern your agency's delegated access to Nicor Gas accounts.</p>
+    </div>
+
+    <div class="grid g-2">
+      <div class="card">
+        <div class="card-header"><h3>Agency Team</h3><a class="link" href="#">+ Invite caseworker</a></div>
+        <div style="display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--border-soft)"><span class="avatar" style="background:linear-gradient(135deg,var(--navy),var(--navy-mid))">AD</span><div style="flex:1;min-width:0"><div class="r-title">Angela Dunn</div><div class="r-sub">All cases · team management · reports</div></div><span class="role-pill">Agency Admin</span></div>
+        <div style="display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--border-soft)"><span class="avatar" style="background:linear-gradient(135deg,var(--blue),var(--navy-soft))">SO</span><div style="flex:1;min-width:0"><div class="r-title">Samuel Okafor</div><div class="r-sub">Own caseload · submit applications</div></div><span class="chip chip-info">Caseworker</span></div>
+        <div style="display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--border-soft)"><span class="avatar" style="background:linear-gradient(135deg,var(--blue),var(--navy-soft))">TB</span><div style="flex:1;min-width:0"><div class="r-title">Tasha Brooks</div><div class="r-sub">Own caseload · submit applications</div></div><span class="chip chip-info">Caseworker</span></div>
+        <div style="display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--border-soft)"><span class="avatar" style="background:linear-gradient(135deg,var(--blue),var(--navy-soft))">JP</span><div style="flex:1;min-width:0"><div class="r-title">Jay Patel</div><div class="r-sub">Own caseload · submit applications</div></div><span class="chip chip-info">Caseworker</span></div>
+        <div style="display:flex;align-items:center;gap:12px;padding:14px 0"><span class="avatar" style="background:linear-gradient(135deg,var(--text-3),var(--steel))">MA</span><div style="flex:1;min-width:0"><div class="r-title">Maria Adeyemi</div><div class="r-sub">Intake only · read‑only on decisions</div></div><span class="chip chip-gray">Intake</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><h3>Security &amp; Sign‑in</h3></div>
+        <div class="toggle-row"><div><div class="t-label">SSO (agency identity provider)</div><div class="t-desc">Federate sign‑in with your organization's IdP.</div></div><div class="switch on"></div></div>
+        <div class="toggle-row"><div><div class="t-label">Multi‑factor authentication</div><div class="t-desc">Required for all caseworkers handling PII.</div></div><div class="switch on"></div></div>
+        <div class="toggle-row"><div><div class="t-label">Step‑up verification</div><div class="t-desc">Re‑verify before submitting or disbursing benefits.</div></div><div class="switch on"></div></div>
+        <div class="toggle-row"><div><div class="t-label">Auto sign‑out (15 min idle)</div><div class="t-desc">Protect household PII on shared workstations.</div></div><div class="switch on"></div></div>
+        <a class="btn btn-ghost btn-sm" href="#" style="margin-top:14px">View access audit log</a>
+      </div>
+    </div>
+
+    <div class="grid g-2 section-gap">
+      <div class="card">
+        <div class="card-header"><h3>Roles &amp; Permissions</h3></div>
+        <table class="tbl">
+          <thead><tr><th>Capability</th><th>Admin</th><th>Caseworker</th><th>Intake</th></tr></thead>
+          <tbody>
+            <tr><td class="t-strong">Create applications</td><td><span class="dot green"></span></td><td><span class="dot green"></span></td><td><span class="dot green"></span></td></tr>
+            <tr><td class="t-strong">Submit to GAS</td><td><span class="dot green"></span></td><td><span class="dot green"></span></td><td><span class="dot" style="background:var(--border)"></span></td></tr>
+            <tr><td class="t-strong">View all caseloads</td><td><span class="dot green"></span></td><td><span class="dot" style="background:var(--border)"></span></td><td><span class="dot" style="background:var(--border)"></span></td></tr>
+            <tr><td class="t-strong">Manage funds &amp; pledges</td><td><span class="dot green"></span></td><td><span class="dot" style="background:var(--border)"></span></td><td><span class="dot" style="background:var(--border)"></span></td></tr>
+            <tr><td class="t-strong">Manage team</td><td><span class="dot green"></span></td><td><span class="dot" style="background:var(--border)"></span></td><td><span class="dot" style="background:var(--border)"></span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <div class="card-header"><h3>Delegated Account Access</h3></div>
+        <p class="card-sub">Households grant your agency limited, consent‑based access to apply assistance to their Nicor Gas account.</p>
+        <div class="row"><div class="r-main"><span class="dot green"></span><div><div class="r-title">96 active consents</div><div class="r-sub">Apply benefits · view eligibility data</div></div></div><span class="chip chip-green">Active</span></div>
+        <div class="row"><div class="r-main"><span class="dot amber"></span><div><div class="r-title">5 consents expiring</div><div class="r-sub">Renew before cycle close</div></div></div><a class="link" href="#">Renew</a></div>
+        <div class="row"><div class="r-main"><span class="dot blue"></span><div><div class="r-title">Consent &amp; privacy log</div><div class="r-sub">Full audit of access granted/revoked</div></div></div><a class="link" href="#">View log</a></div>
+        <p class="req-note">Access is scoped, consent‑based, and revocable by the household at any time.</p>
+      </div>
+    </div>
+    <p class="req-note">Covers: Security &amp; Controls (SSO, MFA, step‑up, audit logging, session policy) · Account &amp; Portfolio (delegated/third‑party access, consent management, roles).</p>
+</section>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div>© 2026 Northern Illinois Gas Company d/b/a Nicor Gas, a Southern Company Gas company. Energy Assistance Agency portal — for RFP 004161 illustration only.</div>
+  <div>
+    <a href="#caseworkers" data-nav="caseworkers">Privacy</a> &nbsp;·&nbsp;
+    <a href="#caseworkers" data-nav="caseworkers">Terms</a> &nbsp;·&nbsp;
+    <a href="#caseworkers" data-nav="caseworkers">Accessibility</a>
+  </div>
+</footer>
+
+<button class="ai-fab" onclick="alert('Nicor Gas Agency Assistant\n\nSource-grounded AI help powered by Liferay AI Hub. Ask about eligibility rules, required documents, program deadlines, or case status — answers are grounded in program guides and your agency caseload.')">
+  <span class="spark">✦</span> Ask Agency Assistant
+</button>
+
+<script>
+(function () {
+  var views = document.querySelectorAll('.page-view');
+  var navItems = document.querySelectorAll('.nav-item');
+  function show(key) {
+    var found = false;
+    views.forEach(function (v) {
+      var on = v.getAttribute('data-view') === key;
+      v.classList.toggle('active', on);
+      if (on) found = true;
+    });
+    if (!found) { key = 'dashboard'; document.getElementById('view-dashboard').classList.add('active'); }
+    navItems.forEach(function (n) { n.classList.toggle('active', n.getAttribute('data-nav') === key); });
+    window.scrollTo({ top: 0 });
+  }
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-nav]');
+    if (el) { e.preventDefault(); var key = el.getAttribute('data-nav'); history.replaceState(null,'','#'+key); show(key); }
+  });
+  show((location.hash || '#dashboard').replace('#',''));
+})();
+</script>
+
+</body>
+</html>

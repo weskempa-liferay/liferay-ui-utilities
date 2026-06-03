@@ -1,0 +1,380 @@
+/* Scoped styles for Landlord Portal Fragment */
+
+.lfr-landlord-portal {
+  /* Brand variables */
+  --navy:        #16294D;   /* primary deep navy */
+  --navy-mid:    #24386A;
+  --navy-soft:   #34508C;
+  --blue:        #0A5EB0;   /* corporate accent blue */
+  --blue-soft:   #E8F1FB;
+  --red:         #C8102E;   /* Southern Company red */
+  --red-dark:    #9B0B22;
+  --red-light:   #FCEAED;
+
+  /* Neutrals */
+  --bg:          #F4F6FA;   /* app background */
+  --surface:     #FFFFFF;
+  --surface-2:   #FAFBFD;
+  --border:      #E3E8F0;
+  --border-soft: #EDF1F7;
+  --text:        #16294D;
+  --text-2:      #475571;   /* secondary */
+  --text-3:      #7A879E;   /* muted */
+
+  /* Status */
+  --green:       #157347;
+  --green-bg:    #E9F7EF;
+  --amber:       #B45309;
+  --amber-bg:    #FEF6E7;
+  --info:        #0A5EB0;
+  --info-bg:     #E8F1FB;
+
+  /* System */
+  --font:        Arial, Helvetica, sans-serif;
+  --sidebar-w:   248px;
+  --topbar-h:    62px;
+  --radius:      14px;
+  --radius-sm:   10px;
+  --shadow:      0 1px 2px rgba(22,41,77,.04), 0 4px 16px rgba(22,41,77,.05);
+  --shadow-lg:   0 8px 30px rgba(22,41,77,.10);
+  --maxw:        1180px;
+
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.55;
+  box-sizing: border-box;
+}
+
+.lfr-landlord-portal *, 
+.lfr-landlord-portal *::before, 
+.lfr-landlord-portal *::after { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+.lfr-landlord-portal a { 
+  color: inherit; 
+}
+
+/* ───────────────────────── Top bar ───────────────────────── */
+.lfr-landlord-portal .topbar {
+  position: fixed; top: 0; left: 0; right: 0; height: var(--topbar-h);
+  background: var(--navy);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 28px; z-index: 100;
+}
+.lfr-landlord-portal .topbar-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.lfr-landlord-portal .topbar-logo .mark {
+  width: 30px; height: 30px; position: relative; flex-shrink: 0;
+}
+.lfr-landlord-portal .topbar-logo .mark::before {
+  content: ''; position: absolute; inset: 0;
+  background: var(--red);
+  clip-path: polygon(50% 8%, 100% 92%, 0 92%);
+}
+.lfr-landlord-portal .topbar-logo .mark::after {
+  content: ''; position: absolute; left: 50%; top: 46%; transform: translateX(-50%);
+  width: 0; height: 0;
+  border-left: 7px solid transparent; border-right: 7px solid transparent;
+  border-bottom: 11px solid var(--blue);
+}
+.lfr-landlord-portal .topbar-logo .brand { color: #fff; font-size: 15px; font-weight: 700; letter-spacing: .2px; line-height: 1.1; }
+.lfr-landlord-portal .topbar-logo .brand .sub { display: block; color: #9DB0CC; font-size: 11px; font-weight: 400; letter-spacing: .3px; }
+
+.lfr-landlord-portal .topbar-right { display: flex; align-items: center; gap: 8px; }
+.lfr-landlord-portal .acct-switch {
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14);
+  color: #DCE6F2; font-size: 12.5px; padding: 7px 12px; border-radius: 8px;
+  cursor: pointer; text-decoration: none;
+}
+.lfr-landlord-portal .acct-switch:hover { background: rgba(255,255,255,.14); }
+.lfr-landlord-portal .acct-switch .dot { width: 7px; height: 7px; border-radius: 50%; background: #4ADE80; }
+.lfr-landlord-portal .icon-btn {
+  position: relative; background: none; border: none; cursor: pointer;
+  color: #9DB0CC; padding: 9px; border-radius: 8px; line-height: 0; font-size: 17px;
+  text-decoration: none;
+}
+.lfr-landlord-portal .icon-btn:hover { background: rgba(255,255,255,.1); color: #fff; }
+.lfr-landlord-portal .notif-badge {
+  position: absolute; top: 3px; right: 3px; min-width: 16px; height: 16px;
+  background: var(--red); border-radius: 8px; font-size: 9.5px; color: #fff;
+  display: flex; align-items: center; justify-content: center; font-weight: 700;
+  border: 2px solid var(--navy); padding: 0 3px;
+}
+.lfr-landlord-portal .user-chip { display: flex; align-items: center; gap: 9px; color: #fff; font-size: 13px; padding-left: 8px; }
+.lfr-landlord-portal .avatar {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--red), var(--red-dark));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12.5px; font-weight: 700; color: #fff; letter-spacing: .3px;
+}
+.lfr-landlord-portal .user-chip .uname { line-height: 1.15; }
+.lfr-landlord-portal .user-chip .uname small { display: block; color: #9DB0CC; font-size: 11px; }
+
+/* ───────────────────────── Sidebar ───────────────────────── */
+.lfr-landlord-portal .sidebar {
+  position: fixed; top: var(--topbar-h); left: 0; bottom: 0; width: var(--sidebar-w);
+  background: var(--surface); border-right: 1px solid var(--border);
+  overflow-y: auto; padding: 18px 14px 28px; z-index: 90;
+}
+.lfr-landlord-portal .sidebar-section { margin-bottom: 18px; }
+.lfr-landlord-portal .sidebar-label {
+  font-size: 10.5px; font-weight: 700; color: var(--text-3);
+  text-transform: uppercase; letter-spacing: 1.2px; padding: 6px 12px 8px;
+}
+.lfr-landlord-portal .nav-item {
+  display: flex; align-items: center; gap: 12px; padding: 10px 12px;
+  font-size: 13.5px; color: var(--text-2); cursor: pointer;
+  border-radius: 9px; text-decoration: none; transition: background .14s, color .14s;
+  margin-bottom: 2px; font-weight: 500;
+}
+.lfr-landlord-portal .nav-item:hover { background: var(--surface-2); color: var(--navy); }
+.lfr-landlord-portal .nav-item.active { background: var(--blue-soft); color: var(--blue); font-weight: 700; }
+.lfr-landlord-portal .nav-item .ico { width: 20px; text-align: center; font-size: 15px; flex-shrink: 0; opacity: .92; }
+.lfr-landlord-portal .nav-item .nav-badge {
+  margin-left: auto; background: var(--red); color: #fff; font-size: 10px;
+  font-weight: 700; padding: 1px 7px; border-radius: 9px;
+}
+.lfr-landlord-portal .nav-item.active .ico { opacity: 1; }
+
+/* ───────────────────────── Main ───────────────────────── */
+.lfr-landlord-portal .main { margin-left: var(--sidebar-w); margin-top: var(--topbar-h); padding: 34px 40px 110px; }
+.lfr-landlord-portal .wrap { max-width: var(--maxw); margin: 0 auto; }
+
+.lfr-landlord-portal .page-head { margin-bottom: 30px; }
+.lfr-landlord-portal .breadcrumb { font-size: 12px; color: var(--text-3); margin-bottom: 10px; }
+.lfr-landlord-portal .breadcrumb a { color: var(--text-3); text-decoration: none; }
+.lfr-landlord-portal .breadcrumb a:hover { color: var(--blue); }
+.lfr-landlord-portal .page-head h1 { font-size: 26px; font-weight: 700; letter-spacing: -.3px; }
+.lfr-landlord-portal .page-head p { font-size: 14px; color: var(--text-2); margin-top: 6px; max-width: 640px; }
+
+/* ───────────────────────── Hero (dashboard) ───────────────────────── */
+.lfr-landlord-portal .hero {
+  background: linear-gradient(115deg, var(--navy) 0%, var(--navy-mid) 60%, var(--navy-soft) 100%);
+  border-radius: var(--radius); padding: 34px 38px; margin-bottom: 28px;
+  display: flex; justify-content: space-between; align-items: center; gap: 28px;
+  position: relative; overflow: hidden;
+}
+.lfr-landlord-portal .hero::after { content:''; position:absolute; right:-60px; top:-60px; width:260px; height:260px; border-radius:50%; background:rgba(255,255,255,.045); }
+.lfr-landlord-portal .hero::before { content:''; position:absolute; right:90px; bottom:-90px; width:180px; height:180px; border-radius:50%; background:rgba(10,94,176,.18); }
+.lfr-landlord-portal .hero-text { position: relative; z-index: 1; }
+.lfr-landlord-portal .hero-badge { background: rgba(255,255,255,.12); border-radius: 20px; padding: 5px 13px; font-size: 11.5px; color: #BFE0FF; font-weight: 600; margin-bottom: 12px; display: inline-block; }
+.lfr-landlord-portal .hero-text h2 { font-size: 23px; font-weight: 700; color: #fff; margin-bottom: 8px; letter-spacing: -.2px; }
+.lfr-landlord-portal .hero-text p { font-size: 13.5px; color: #B8C6DD; max-width: 480px; }
+.lfr-landlord-portal .hero-cta { position: relative; z-index: 1; background: var(--red); color: #fff; border: none; padding: 13px 26px; border-radius: 9px; font-size: 13.5px; font-weight: 700; cursor: pointer; white-space: nowrap; font-family: var(--font); transition: background .15s, transform .15s; text-decoration: none; display: inline-block; }
+.lfr-landlord-portal .hero-cta:hover { background: var(--red-dark); transform: translateY(-1px); }
+
+/* ───────────────────────── Section title ───────────────────────── */
+.lfr-landlord-portal .section-title { font-size: 12px; font-weight: 700; color: var(--text-3); text-transform: uppercase; letter-spacing: 1px; margin: 0 0 16px; }
+.lfr-landlord-portal .section-gap { margin-top: 34px; }
+
+/* ───────────────────────── Cards & grid ───────────────────────── */
+.lfr-landlord-portal .grid { display: grid; gap: 20px; margin-bottom: 4px; align-items: start; }
+.lfr-landlord-portal .g-2 { grid-template-columns: 1fr 1fr; }
+.lfr-landlord-portal .g-3 { grid-template-columns: repeat(3, 1fr); }
+.lfr-landlord-portal .g-4 { grid-template-columns: repeat(4, 1fr); }
+.lfr-landlord-portal .g-5 { grid-template-columns: repeat(5, 1fr); }
+.lfr-landlord-portal .g-21 { grid-template-columns: 2fr 1fr; }
+.lfr-landlord-portal .g-12 { grid-template-columns: 1fr 2fr; }
+
+.lfr-landlord-portal .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
+.lfr-landlord-portal .card.tight { padding: 20px; }
+.lfr-landlord-portal .card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; gap: 12px; }
+.lfr-landlord-portal .card-header h3 { font-size: 15px; font-weight: 700; color: var(--text); }
+.lfr-landlord-portal .card-header .link { font-size: 12.5px; color: var(--blue); text-decoration: none; font-weight: 600; white-space: nowrap; }
+.lfr-landlord-portal .card-header .link:hover { text-decoration: underline; }
+.lfr-landlord-portal .card-sub { font-size: 12.5px; color: var(--text-3); margin-top: -10px; margin-bottom: 16px; }
+
+/* ───────────────────────── Stat cards ───────────────────────── */
+.lfr-landlord-portal .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 24px; box-shadow: var(--shadow); }
+.lfr-landlord-portal .stat-card .label { font-size: 11px; color: var(--text-3); font-weight: 700; text-transform: uppercase; letter-spacing: .6px; margin-bottom: 10px; }
+.lfr-landlord-portal .stat-card .value { font-size: 29px; font-weight: 700; color: var(--text); line-height: 1; letter-spacing: -.5px; }
+.lfr-landlord-portal .stat-card .value .unit { font-size: 15px; font-weight: 500; color: var(--text-2); }
+.lfr-landlord-portal .stat-card .sub { font-size: 12px; color: var(--text-3); margin-top: 8px; }
+.lfr-landlord-portal .stat-card .trend { font-size: 11.5px; font-weight: 600; margin-top: 6px; display: inline-flex; align-items: center; gap: 4px; }
+.lfr-landlord-portal .trend.up { color: var(--amber); }
+.lfr-landlord-portal .trend.down { color: var(--green); }
+.lfr-landlord-portal .trend.ok { color: var(--green); }
+.lfr-landlord-portal .stat-accent { border-top: 3px solid var(--red); }
+
+/* ───────────────────────── Buttons ───────────────────────── */
+.lfr-landlord-portal .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: none; cursor: pointer; font-family: var(--font); font-weight: 700; font-size: 13.5px; padding: 12px 22px; border-radius: 9px; text-decoration: none; transition: background .15s, transform .15s, box-shadow .15s; }
+.lfr-landlord-portal .btn-primary { background: var(--red); color: #fff; }
+.lfr-landlord-portal .btn-primary:hover { background: var(--red-dark); transform: translateY(-1px); }
+.lfr-landlord-portal .btn-navy { background: var(--navy); color: #fff; }
+.lfr-landlord-portal .btn-navy:hover { background: var(--navy-mid); transform: translateY(-1px); }
+.lfr-landlord-portal .btn-ghost { background: var(--surface); color: var(--navy); border: 1.5px solid var(--border); }
+.lfr-landlord-portal .btn-ghost:hover { border-color: var(--blue); color: var(--blue); }
+.lfr-landlord-portal .btn-block { width: 100%; }
+.lfr-landlord-portal .btn-sm { padding: 8px 15px; font-size: 12.5px; }
+
+/* ───────────────────────── Badges / chips ───────────────────────── */
+.lfr-landlord-portal .chip { font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 20px; display: inline-flex; align-items: center; gap: 5px; }
+.lfr-landlord-portal .chip-green { background: var(--green-bg); color: var(--green); }
+.lfr-landlord-portal .chip-amber { background: var(--amber-bg); color: var(--amber); }
+.lfr-landlord-portal .chip-info  { background: var(--info-bg); color: var(--info); }
+.lfr-landlord-portal .chip-red   { background: var(--red-light); color: var(--red); }
+.lfr-landlord-portal .chip-gray  { background: var(--surface-2); color: var(--text-2); border: 1px solid var(--border); }
+.lfr-landlord-portal .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.lfr-landlord-portal .dot.green { background: var(--green); } 
+.lfr-landlord-portal .dot.amber { background: var(--amber); } 
+.lfr-landlord-portal .dot.red { background: var(--red); } 
+.lfr-landlord-portal .dot.blue { background: var(--blue); }
+
+/* ───────────────────────── Lists / rows ───────────────────────── */
+.lfr-landlord-portal .row { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--border-soft); font-size: 13.5px; gap: 12px; }
+.lfr-landlord-portal .row:last-child { border-bottom: none; }
+.lfr-landlord-portal .row .r-main { display: flex; align-items: center; gap: 12px; min-width: 0; flex: 1; }
+.lfr-landlord-portal .row .r-title { font-weight: 600; color: var(--text); }
+.lfr-landlord-portal .row .r-sub { font-size: 12px; color: var(--text-3); margin-top: 2px; }
+.lfr-landlord-portal .row .val { font-weight: 700; }
+
+.lfr-landlord-portal .media { display: flex; gap: 14px; padding: 15px 0; border-bottom: 1px solid var(--border-soft); }
+.lfr-landlord-portal .media:last-child { border-bottom: none; }
+.lfr-landlord-portal .media-ico { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 17px; flex-shrink: 0; }
+.lfr-landlord-portal .mi-warn { background: var(--amber-bg); } 
+.lfr-landlord-portal .mi-info { background: var(--info-bg); } 
+.lfr-landlord-portal .mi-ok { background: var(--green-bg); } 
+.lfr-landlord-portal .mi-red { background: var(--red-light); }
+.lfr-landlord-portal .media-body p { font-size: 13.5px; color: var(--text); }
+.lfr-landlord-portal .media-body .time { font-size: 11.5px; color: var(--text-3); margin-top: 3px; }
+
+/* ───────────────────────── Quick actions ───────────────────────── */
+.lfr-landlord-portal .qa-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.lfr-landlord-portal .qa-btn { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 20px 14px; text-align: center; cursor: pointer; transition: border-color .15s, background .15s, transform .15s; text-decoration: none; display: block; }
+.lfr-landlord-portal .qa-btn:hover { border-color: var(--blue); background: var(--blue-soft); transform: translateY(-2px); }
+.lfr-landlord-portal .qa-btn .qa-ico { font-size: 24px; margin-bottom: 10px; }
+.lfr-landlord-portal .qa-btn .qa-label { font-size: 12.5px; font-weight: 700; color: var(--navy); }
+
+/* ───────────────────────── Steps / progress ───────────────────────── */
+.lfr-landlord-portal .steps { display: flex; gap: 0; margin: 8px 0 4px; }
+.lfr-landlord-portal .step { flex: 1; text-align: center; position: relative; }
+.lfr-landlord-portal .step:not(:last-child)::after { content: ''; position: absolute; top: 16px; left: 50%; width: 100%; height: 2px; background: var(--border); z-index: 0; }
+.lfr-landlord-portal .step.done:not(:last-child)::after { background: var(--green); }
+.lfr-landlord-portal .step .dot-n { width: 34px; height: 34px; border-radius: 50%; background: var(--surface); border: 2px solid var(--border); color: var(--text-3); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; margin: 0 auto 8px; position: relative; z-index: 1; }
+.lfr-landlord-portal .step.done .dot-n { background: var(--green); border-color: var(--green); color: #fff; }
+.lfr-landlord-portal .step.active .dot-n { background: var(--blue); border-color: var(--blue); color: #fff; }
+.lfr-landlord-portal .step .slab { font-size: 11.5px; color: var(--text-2); font-weight: 600; }
+.lfr-landlord-portal .step.active .slab { color: var(--blue); }
+
+/* ───────────────────────── Tables ───────────────────────── */
+.lfr-landlord-portal .tbl { width: 100%; border-collapse: collapse; font-size: 13px; }
+.lfr-landlord-portal .tbl th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: .6px; color: var(--text-3); font-weight: 700; padding: 10px 12px; border-bottom: 1px solid var(--border); }
+.lfr-landlord-portal .tbl td { padding: 14px 12px; border-bottom: 1px solid var(--border-soft); color: var(--text); }
+.lfr-landlord-portal .tbl tr:last-child td { border-bottom: none; }
+.lfr-landlord-portal .tbl tr:hover td { background: var(--surface-2); }
+.lfr-landlord-portal .tbl .t-strong { font-weight: 700; }
+
+/* ───────────────────────── Forms ───────────────────────── */
+.lfr-landlord-portal .field { margin-bottom: 18px; }
+.lfr-landlord-portal .field label { display: block; font-size: 12.5px; font-weight: 700; color: var(--text-2); margin-bottom: 7px; }
+.lfr-landlord-portal .field input, .lfr-landlord-portal .field select, .lfr-landlord-portal .field textarea { width: 100%; padding: 11px 13px; border: 1.5px solid var(--border); border-radius: 9px; font-family: var(--font); font-size: 13.5px; color: var(--text); background: var(--surface); }
+.lfr-landlord-portal .field input:focus, .lfr-landlord-portal .field select:focus, .lfr-landlord-portal .field textarea:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px var(--blue-soft); }
+.lfr-landlord-portal .field .hint { font-size: 11.5px; color: var(--text-3); margin-top: 6px; }
+.lfr-landlord-portal .toggle-row { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid var(--border-soft); }
+.lfr-landlord-portal .toggle-row:last-child { border-bottom: none; }
+.lfr-landlord-portal .toggle-row .t-label { font-size: 13.5px; font-weight: 600; }
+.lfr-landlord-portal .toggle-row .t-desc { font-size: 12px; color: var(--text-3); margin-top: 2px; max-width: 440px; }
+.lfr-landlord-portal .switch { width: 44px; height: 24px; border-radius: 14px; background: var(--border); position: relative; cursor: pointer; flex-shrink: 0; transition: background .15s; }
+.lfr-landlord-portal .switch.on { background: var(--green); }
+.lfr-landlord-portal .switch::after { content: ''; position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: #fff; transition: left .15s; box-shadow: 0 1px 3px rgba(0,0,0,.2); }
+.lfr-landlord-portal .switch.on::after { left: 23px; }
+
+/* ───────────────────────── Banners ───────────────────────── */
+.lfr-landlord-portal .banner { display: flex; align-items: flex-start; gap: 12px; padding: 16px 20px; border-radius: var(--radius-sm); margin-bottom: 24px; font-size: 13.5px; line-height: 1.5; }
+.lfr-landlord-portal .banner .b-ico { font-size: 18px; flex-shrink: 0; line-height: 1.3; }
+.lfr-landlord-portal .banner-amber { background: var(--amber-bg); color: #7C3A06; border: 1px solid #F3DDB5; }
+.lfr-landlord-portal .banner-info  { background: var(--info-bg); color: #0A3F77; border: 1px solid #C5DDF5; }
+.lfr-landlord-portal .banner-green { background: var(--green-bg); color: #0E4F31; border: 1px solid #BCE6CF; }
+.lfr-landlord-portal .banner a { font-weight: 700; text-decoration: underline; }
+.lfr-landlord-portal .banner .b-close { margin-left: auto; cursor: pointer; opacity: .6; background: none; border: none; font-size: 16px; }
+
+/* ───────────────────────── AI assistant widget ───────────────────────── */
+.lfr-landlord-portal .ai-fab { position: fixed; right: 28px; bottom: 28px; z-index: 95; display: flex; align-items: center; gap: 10px; background: var(--navy); color: #fff; border: none; padding: 13px 20px; border-radius: 30px; font-family: var(--font); font-size: 13.5px; font-weight: 700; cursor: pointer; box-shadow: var(--shadow-lg); transition: transform .15s, background .15s; }
+.lfr-landlord-portal .ai-fab:hover { transform: translateY(-2px); background: var(--navy-mid); }
+.lfr-landlord-portal .ai-fab .spark { font-size: 16px; }
+
+/* ───────────────────────── Misc ───────────────────────── */
+.lfr-landlord-portal .muted { color: var(--text-3); }
+.lfr-landlord-portal .divider { height: 1px; background: var(--border-soft); margin: 22px 0; }
+.lfr-landlord-portal .tag-list { display: flex; flex-wrap: wrap; gap: 8px; }
+.lfr-landlord-portal .flag-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-2); background: var(--surface-2); border: 1px solid var(--border); padding: 6px 11px; border-radius: 20px; }
+.lfr-landlord-portal .req-note { font-size: 11px; color: var(--text-3); margin-top: 14px; font-style: italic; }
+
+/* ───────────────────────── Footer ───────────────────────── */
+.lfr-landlord-portal .foot { margin-left: var(--sidebar-w); padding: 22px 40px; border-top: 1px solid var(--border); color: var(--text-3); font-size: 11.5px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; background: var(--surface); }
+.lfr-landlord-portal .foot a { color: var(--text-3); text-decoration: none; }
+.lfr-landlord-portal .foot a:hover { color: var(--blue); }
+
+/* ───────── C&I / Landlord additions ───────── */
+.lfr-landlord-portal .acct-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 18px 20px; box-shadow: var(--shadow); }
+.lfr-landlord-portal .acct-card .ac-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+.lfr-landlord-portal .acct-card .ac-name { font-size: 14.5px; font-weight: 700; }
+.lfr-landlord-portal .acct-card .ac-sub { font-size: 12px; color: var(--text-3); margin-top: 2px; }
+.lfr-landlord-portal .acct-card .ac-figs { display: flex; gap: 24px; }
+.lfr-landlord-portal .acct-card .ac-fig .n { font-size: 19px; font-weight: 700; }
+.lfr-landlord-portal .acct-card .ac-fig .l { font-size: 11px; color: var(--text-3); text-transform: uppercase; letter-spacing: .4px; }
+.lfr-landlord-portal .facility-ico { width: 40px; height: 40px; border-radius: 10px; background: var(--blue-soft); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+.lfr-landlord-portal .checkbox { width: 18px; height: 18px; border: 1.5px solid var(--border); border-radius: 5px; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; }
+.lfr-landlord-portal .checkbox.on { background: var(--blue); border-color: var(--blue); color: #fff; font-size: 12px; }
+
+/* ───────── Bar Chart additions ───────── */
+.lfr-landlord-portal .bar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; font-size: 13px; }
+.lfr-landlord-portal .bar-row .mo { width: 110px; font-weight: 600; }
+.lfr-landlord-portal .bar-row .bar-track { flex: 1; height: 14px; background: var(--surface-2); border-radius: 7px; overflow: hidden; }
+.lfr-landlord-portal .bar-row .bar-fill { height: 100%; border-radius: 7px; }
+.lfr-landlord-portal .bar-row .val { width: 65px; text-align: right; font-weight: 700; }
+
+/* ───────── Column Chart additions ───────── */
+.lfr-landlord-portal .colchart { display: flex; justify-content: space-between; align-items: flex-end; height: 150px; padding: 10px 0; gap: 8px; }
+.lfr-landlord-portal .colchart .col { flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: flex-end; }
+.lfr-landlord-portal .colchart .bar { width: 100%; background: var(--blue-soft); border-radius: 4px 4px 0 0; transition: height 0.3s; }
+.lfr-landlord-portal .colchart .bar.hi { background: var(--blue); }
+.lfr-landlord-portal .colchart .clab { font-size: 11px; color: var(--text-3); margin-top: 8px; }
+
+/* ───────── Donut Chart additions ───────── */
+.lfr-landlord-portal .donut { width: 100px; height: 100px; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; }
+.lfr-landlord-portal .donut .hole { width: 70px; height: 70px; border-radius: 50%; background: var(--surface); display: flex; align-items: center; justify-content: center; text-align: center; }
+.lfr-landlord-portal .donut .dn { font-size: 18px; font-weight: 700; }
+.lfr-landlord-portal .donut .dl { font-size: 10px; color: var(--text-3); text-transform: uppercase; }
+.lfr-landlord-portal .legend { display: flex; flex-direction: column; gap: 8px; }
+.lfr-landlord-portal .legend .lg { display: flex; align-items: center; gap: 8px; font-size: 12.5px; }
+.lfr-landlord-portal .legend .sw { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+
+/* ───────── Role Pill additions ───────── */
+.lfr-landlord-portal .role-pill { font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 12px; background: var(--navy-soft); color: #fff; }
+
+/* ───────── Page Active/Transition ───────── */
+.lfr-landlord-portal .page-view { display: none; }
+.lfr-landlord-portal .page-view.active { display: block; animation: fadeIn .18s ease; }
+
+@keyframes fadeIn { 
+  from { opacity: 0; transform: translateY(4px); } 
+  to { opacity: 1; transform: none; } 
+}
+
+/* ───────────────────────── Responsive ───────────────────────── */
+@media (max-width: 1100px) {
+  .lfr-landlord-portal .g-4 { grid-template-columns: repeat(2, 1fr); }
+  .lfr-landlord-portal .g-3 { grid-template-columns: 1fr 1fr; }
+  .lfr-landlord-portal .qa-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 860px) {
+  .lfr-landlord-portal .sidebar { display: none; }
+  .lfr-landlord-portal .main, .lfr-landlord-portal .foot { margin-left: 0; }
+  .lfr-landlord-portal .g-2, 
+  .lfr-landlord-portal .g-3, 
+  .lfr-landlord-portal .g-4, 
+  .lfr-landlord-portal .g-5,
+  .lfr-landlord-portal .g-21, 
+  .lfr-landlord-portal .g-12 { grid-template-columns: 1fr; }
+  .lfr-landlord-portal .main { padding: 24px 18px 56px; }
+  .lfr-landlord-portal .user-chip .uname { display: none; }
+  .lfr-landlord-portal .acct-switch span { display: none; }
+}

@@ -1,0 +1,10 @@
+{
+  "configurationPath": "configuration.json",
+  "cssPath": "index.css",
+  "htmlPath": "index.html",
+  "jsPath": "index.js",
+  "thumbnailPath": "thumbnail.svg",
+  "icon": "select-from-list",
+  "name": "Energy Assistance Portal Header",
+  "type": "component"
+}

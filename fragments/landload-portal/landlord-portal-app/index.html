@@ -1,0 +1,890 @@
+<div class="lfr-landlord-portal">
+
+<main class="main">
+  <div class="wrap">
+
+    <!-- VIEW: Dashboard -->
+    <section class="page-view" id="view-dashboard" data-view="dashboard">
+      <div class="hero">
+        <div class="hero-text">
+          <div class="hero-badge" data-lfr-editable-id="hero-badge-dashboard" data-lfr-editable-type="text">🚪 Tenant Turnover</div>
+          <h2 data-lfr-editable-id="hero-title-dashboard" data-lfr-editable-type="text">Simplify tenant move‑ins and move‑outs with digital service requests</h2>
+          <p data-lfr-editable-id="hero-desc-dashboard" data-lfr-editable-type="text">Submit start, stop, or transfer service for any unit directly from your portfolio. Track status in real time — no phone calls, no gaps in owner‑of‑record coverage.</p>
+        </div>
+        <a class="hero-cta" href="#service" data-nav="service" data-lfr-editable-id="hero-cta-dashboard" data-lfr-editable-type="link">Start a Request</a>
+      </div>
+
+      <div class="banner banner-amber">
+        <span class="b-ico">⚠️</span>
+        <div data-lfr-editable-id="banner-warn-dashboard" data-lfr-editable-type="text"><strong>2 units have unpaid balances</strong> totaling $1,240 that may revert to owner‑of‑record. <a href="#billing" data-nav="billing">Review unpaid balances →</a></div>
+        <button class="b-close">✕</button>
+      </div>
+
+      <div class="section-title" data-lfr-editable-id="sectitle-overview-dashboard" data-lfr-editable-type="text">Portfolio Overview</div>
+      <div class="grid g-4">
+        <div class="stat-card stat-accent">
+          <div class="label" data-lfr-editable-id="stat-label-balance" data-lfr-editable-type="text">Total Balance Due</div>
+          <div class="value">$3,820</div>
+          <div class="sub" data-lfr-editable-id="stat-sub-balance" data-lfr-editable-type="text">Across 4 properties · Due May 15</div>
+          <div class="trend up" data-lfr-editable-id="stat-trend-balance" data-lfr-editable-type="text">▲ $410 vs last month</div>
+        </div>
+        <div class="stat-card">
+          <div class="label" data-lfr-editable-id="stat-label-properties" data-lfr-editable-type="text">Properties</div>
+          <div class="value">4 <span class="unit">·</span> 38 <span class="unit">units</span></div>
+          <div class="sub" data-lfr-editable-id="stat-sub-properties" data-lfr-editable-type="text">33 occupied · 5 vacant</div>
+          <div class="trend ok" data-lfr-editable-id="stat-trend-properties" data-lfr-editable-type="text">87% occupancy</div>
+        </div>
+        <div class="stat-card">
+          <div class="label" data-lfr-editable-id="stat-label-actions" data-lfr-editable-type="text">Pending Tenant Actions</div>
+          <div class="value">3</div>
+          <div class="sub" data-lfr-editable-id="stat-sub-actions" data-lfr-editable-type="text">move‑in / move‑out</div>
+          <div class="trend up" data-lfr-editable-id="stat-trend-actions" data-lfr-editable-type="text">2 need scheduling</div>
+        </div>
+        <div class="stat-card">
+          <div class="label" data-lfr-editable-id="stat-label-inspections" data-lfr-editable-type="text">Upcoming Inspections</div>
+          <div class="value">5</div>
+          <div class="sub" data-lfr-editable-id="stat-sub-inspections" data-lfr-editable-type="text">next 30 days</div>
+          <div class="trend ok" data-lfr-editable-id="stat-trend-inspections" data-lfr-editable-type="text">All confirmed</div>
+        </div>
+      </div>
+
+      <div class="grid g-21 section-gap">
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-properties-dashboard" data-lfr-editable-type="text">Properties — Occupancy &amp; Balances</h3>
+            <a class="link" href="#properties" data-nav="properties" data-lfr-editable-id="link-allproperties" data-lfr-editable-type="link">Full portfolio →</a>
+          </div>
+          <table class="tbl">
+            <thead>
+              <tr><th>Property</th><th>Units</th><th>Occupied</th><th>Vacant (owner)</th><th>Balance</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="t-strong">Maple Court Apartments</td><td>16</td><td>15</td><td><span class="chip chip-amber">1</span></td><td class="t-strong">$1,640</td></tr>
+              <tr><td class="t-strong">Riverside Flats</td><td>10</td><td>9</td><td><span class="chip chip-amber">1</span></td><td class="t-strong">$980</td></tr>
+              <tr><td class="t-strong">Oak Street Duplexes</td><td>8</td><td>6</td><td><span class="chip chip-amber">2</span></td><td class="t-strong">$820</td></tr>
+              <tr><td class="t-strong">Lincoln Townhomes</td><td>4</td><td>3</td><td><span class="chip chip-amber">1</span></td><td class="t-strong">$380</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-actions-dashboard" data-lfr-editable-type="text">Pending Tenant Actions</h3>
+            <a class="link" href="#service" data-nav="service" data-lfr-editable-id="link-manageactions" data-lfr-editable-type="link">Manage</a>
+          </div>
+          <div class="row">
+            <div class="r-main">
+              <span class="dot amber"></span>
+              <div>
+                <div class="r-title">Move‑out — Maple Ct #4B</div>
+                <div class="r-sub">Tenant ends May 31 · schedule stop</div>
+              </div>
+            </div>
+            <span class="chip chip-amber">Action</span>
+          </div>
+          <div class="row">
+            <div class="r-main">
+              <span class="dot blue"></span>
+              <div>
+                <div class="r-title">Move‑in — Riverside #2A</div>
+                <div class="r-sub">New tenant June 1 · transfer set</div>
+              </div>
+            </div>
+            <span class="chip chip-info">Scheduled</span>
+          </div>
+          <div class="row">
+            <div class="r-main">
+              <span class="dot amber"></span>
+              <div>
+                <div class="r-title">Move‑out — Oak St #1</div>
+                <div class="r-sub">Reverts to owner June 5</div>
+              </div>
+            </div>
+            <span class="chip chip-amber">Action</span>
+          </div>
+          <a class="btn btn-ghost btn-sm btn-block" href="#service" data-nav="service" data-lfr-editable-id="btn-newreq-dashboard" data-lfr-editable-type="link">+ New Service Request</a>
+        </div>
+      </div>
+
+      <div class="section-title section-gap" data-lfr-editable-id="sectitle-quick-dashboard" data-lfr-editable-type="text">Quick Actions</div>
+      <div class="qa-grid">
+        <a class="qa-btn" href="#service" data-nav="service">
+          <div class="qa-ico">🚪</div>
+          <div class="qa-label" data-lfr-editable-id="qa-lbl-moveinout" data-lfr-editable-type="text">Move‑In / Move‑Out</div>
+        </a>
+        <a class="qa-btn" href="#service" data-nav="service">
+          <div class="qa-ico">🔄</div>
+          <div class="qa-label" data-lfr-editable-id="qa-lbl-transfer" data-lfr-editable-type="text">Transfer Service</div>
+        </a>
+        <a class="qa-btn" href="#billing" data-nav="billing">
+          <div class="qa-ico">💳</div>
+          <div class="qa-label" data-lfr-editable-id="qa-lbl-pay" data-lfr-editable-type="text">Pay Balances</div>
+        </a>
+        <a class="qa-btn" href="#properties" data-nav="properties">
+          <div class="qa-ico">🏢</div>
+          <div class="qa-label" data-lfr-editable-id="qa-lbl-properties" data-lfr-editable-type="text">Properties &amp; Units</div>
+        </a>
+        <a class="qa-btn" href="#billing" data-nav="billing">
+          <div class="qa-ico">📄</div>
+          <div class="qa-label" data-lfr-editable-id="qa-lbl-statements" data-lfr-editable-type="text">Statements</div>
+        </a>
+        <a class="qa-btn" href="#service" data-nav="service">
+          <div class="qa-ico">📋</div>
+          <div class="qa-label" data-lfr-editable-id="qa-lbl-inspections" data-lfr-editable-type="text">Inspections</div>
+        </a>
+        <a class="qa-btn" href="#documents" data-nav="documents">
+          <div class="qa-ico">📁</div>
+          <div class="qa-label" data-lfr-editable-id="qa-lbl-docs" data-lfr-editable-type="text">Documents</div>
+        </a>
+        <a class="qa-btn" href="#users" data-nav="users">
+          <div class="qa-ico">👥</div>
+          <div class="qa-label" data-lfr-editable-id="qa-lbl-authusers" data-lfr-editable-type="text">Authorized Users</div>
+        </a>
+      </div>
+
+      <div class="grid g-21 section-gap">
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-alerts-dashboard" data-lfr-editable-type="text">Billing Alerts</h3>
+            <a class="link" href="#notifications" data-nav="notifications" data-lfr-editable-id="link-allalerts" data-lfr-editable-type="link">See all</a>
+          </div>
+          <div class="media">
+            <div class="media-ico mi-warn">⚠️</div>
+            <div class="media-body">
+              <p><strong>Owner‑of‑record:</strong> Maple Ct #4B reverted to your account after tenant move‑out.</p>
+              <div class="time">Today, 8:30 AM</div>
+            </div>
+          </div>
+          <div class="media">
+            <div class="media-ico mi-info">📄</div>
+            <div class="media-body">
+              <p><strong>Consolidated statement ready:</strong> 4 properties, $3,820 due May 15.</p>
+              <div class="time">Apr 28, 2026</div>
+            </div>
+          </div>
+          <div class="media">
+            <div class="media-ico mi-ok">✓</div>
+            <div class="media-body">
+              <p>April payment of $3,410 processed across all properties.</p>
+              <div class="time">Apr 1, 2026</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-revert-dashboard" data-lfr-editable-type="text">Owner‑of‑Record (Vacant Units)</h3>
+            <a class="link" href="#billing" data-nav="billing" data-lfr-editable-id="link-revert-details" data-lfr-editable-type="link">Details</a>
+          </div>
+          <p class="card-sub" data-lfr-editable-id="revert-sub" data-lfr-editable-type="text">Service automatically reverts to you when a tenant moves out, so units never lose gas service.</p>
+          <div class="row">
+            <div class="r-main">
+              <span class="dot amber"></span>
+              <div>
+                <div class="r-title">Maple Ct #4B</div>
+                <div class="r-sub">Owner billing since May 1</div>
+              </div>
+            </div>
+            <span class="val">$120</span>
+          </div>
+          <div class="row">
+            <div class="r-main">
+              <span class="dot amber"></span>
+              <div>
+                <div class="r-title">Oak St #1 &amp; #5</div>
+                <div class="r-sub">Owner billing · 2 units</div>
+              </div>
+            </div>
+            <span class="val">$210</span>
+          </div>
+          <div class="row">
+            <div class="r-main">
+              <span class="dot amber"></span>
+              <div>
+                <div class="r-title">Lincoln #3</div>
+                <div class="r-sub">Owner billing since Apr 12</div>
+              </div>
+            </div>
+            <span class="val">$95</span>
+          </div>
+        </div>
+      </div>
+      <p class="req-note" data-lfr-editable-id="reqnote-dashboard" data-lfr-editable-type="text">Covers: Core Platform &amp; Experience · Account &amp; Portfolio (multi‑property/unit portfolio, owner‑of‑record) · Billing &amp; Payments · Service Requests · Communications &amp; Notifications.</p>
+    </section>
+
+    <!-- VIEW: Properties & Units -->
+    <section class="page-view" id="view-properties" data-view="properties">
+      <div class="page-head">
+        <div class="breadcrumb"><a href="#dashboard" data-nav="dashboard">Dashboard</a> › Properties &amp; Units</div>
+        <h1 data-lfr-editable-id="title-properties-view" data-lfr-editable-type="text">Properties &amp; Units</h1>
+        <p data-lfr-editable-id="desc-properties-view" data-lfr-editable-type="text">Manage your property portfolio and individual units — view occupancy, owner‑of‑record status, balances, and service details for every address.</p>
+      </div>
+
+      <div class="grid g-4">
+        <div class="stat-card">
+          <div class="label" data-lfr-editable-id="stat-prop-count" data-lfr-editable-type="text">Properties</div>
+          <div class="value">4</div>
+          <div class="sub" data-lfr-editable-id="stat-prop-countsub" data-lfr-editable-type="text">3 multi‑family · 1 duplex set</div>
+        </div>
+        <div class="stat-card">
+          <div class="label" data-lfr-editable-id="stat-unit-count" data-lfr-editable-type="text">Total Units</div>
+          <div class="value">38</div>
+          <div class="sub" data-lfr-editable-id="stat-unit-countsub" data-lfr-editable-type="text">across all properties</div>
+        </div>
+        <div class="stat-card stat-accent">
+          <div class="label" data-lfr-editable-id="stat-occupancy" data-lfr-editable-type="text">Occupancy</div>
+          <div class="value">87%</div>
+          <div class="sub" data-lfr-editable-id="stat-occupancysub" data-lfr-editable-type="text">33 occupied · 5 owner</div>
+        </div>
+        <div class="stat-card">
+          <div class="label" data-lfr-editable-id="stat-port-balance" data-lfr-editable-type="text">Portfolio Balance</div>
+          <div class="value">$3,820</div>
+          <div class="sub" data-lfr-editable-id="stat-port-balancesub" data-lfr-editable-type="text">Due May 15</div>
+        </div>
+      </div>
+
+      <div class="card section-gap">
+        <div class="card-header">
+          <h3 data-lfr-editable-id="header-properties-list" data-lfr-editable-type="text">Properties</h3>
+          <div style="display:flex;gap:8px">
+            <span class="chip chip-gray">All cities</span>
+            <a class="link" href="#users" data-nav="users" data-lfr-editable-id="link-addproperty" data-lfr-editable-type="link">+ Add property access</a>
+          </div>
+        </div>
+        <div class="grid g-2" style="gap:16px">
+          <div class="acct-card">
+            <div class="ac-head">
+              <div style="display:flex;gap:12px">
+                <span class="facility-ico">🏢</span>
+                <div>
+                  <div class="ac-name" data-lfr-editable-id="prop-name-maple" data-lfr-editable-type="text">Maple Court Apartments</div>
+                  <div class="ac-sub" data-lfr-editable-id="prop-sub-maple" data-lfr-editable-type="text">120 Maple Ct, Naperville IL · 16 units</div>
+                </div>
+              </div>
+              <span class="chip chip-green">15/16 occupied</span>
+            </div>
+            <div class="ac-figs">
+              <div class="ac-fig"><div class="n">1</div><div class="l">Owner unit</div></div>
+              <div class="ac-fig"><div class="n">$1,640</div><div class="l">Balance</div></div>
+              <div class="ac-fig"><div class="n">2</div><div class="l">Inspections</div></div>
+            </div>
+          </div>
+          <div class="acct-card">
+            <div class="ac-head">
+              <div style="display:flex;gap:12px">
+                <span class="facility-ico">🏢</span>
+                <div>
+                  <div class="ac-name" data-lfr-editable-id="prop-name-riverside" data-lfr-editable-type="text">Riverside Flats</div>
+                  <div class="ac-sub" data-lfr-editable-id="prop-sub-riverside" data-lfr-editable-type="text">48 River Rd, Aurora IL · 10 units</div>
+                </div>
+              </div>
+              <span class="chip chip-green">9/10 occupied</span>
+            </div>
+            <div class="ac-figs">
+              <div class="ac-fig"><div class="n">1</div><div class="l">Owner unit</div></div>
+              <div class="ac-fig"><div class="n">$980</div><div class="l">Balance</div></div>
+              <div class="ac-fig"><div class="n">1</div><div class="l">Inspections</div></div>
+            </div>
+          </div>
+          <div class="acct-card">
+            <div class="ac-head">
+              <div style="display:flex;gap:12px">
+                <span class="facility-ico">🏠</span>
+                <div>
+                  <div class="ac-name" data-lfr-editable-id="prop-name-oak" data-lfr-editable-type="text">Oak Street Duplexes</div>
+                  <div class="ac-sub" data-lfr-editable-id="prop-sub-oak" data-lfr-editable-type="text">200‑214 Oak St, Joliet IL · 8 units</div>
+                </div>
+              </div>
+              <span class="chip chip-amber">6/8 occupied</span>
+            </div>
+            <div class="ac-figs">
+              <div class="ac-fig"><div class="n">2</div><div class="l">Owner units</div></div>
+              <div class="ac-fig"><div class="n">$820</div><div class="l">Balance</div></div>
+              <div class="ac-fig"><div class="n">1</div><div class="l">Inspections</div></div>
+            </div>
+          </div>
+          <div class="acct-card">
+            <div class="ac-head">
+              <div style="display:flex;gap:12px">
+                <span class="facility-ico">🏠</span>
+                <div>
+                  <div class="ac-name" data-lfr-editable-id="prop-name-lincoln" data-lfr-editable-type="text">Lincoln Townhomes</div>
+                  <div class="ac-sub" data-lfr-editable-id="prop-sub-lincoln" data-lfr-editable-type="text">5 Lincoln Way, Elgin IL · 4 units</div>
+                </div>
+              </div>
+              <span class="chip chip-amber">3/4 occupied</span>
+            </div>
+            <div class="ac-figs">
+              <div class="ac-fig"><div class="n">1</div><div class="l">Owner unit</div></div>
+              <div class="ac-fig"><div class="n">$380</div><div class="l">Balance</div></div>
+              <div class="ac-fig"><div class="n">1</div><div class="l">Inspections</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card section-gap">
+        <div class="card-header">
+          <h3 data-lfr-editable-id="header-units-view" data-lfr-editable-type="text">Units — Maple Court Apartments</h3>
+          <div class="field" style="margin:0;width:220px"><input type="text" placeholder="🔍 Search units…"></div>
+        </div>
+        <table class="tbl">
+          <thead>
+            <tr><th>Unit</th><th>Account #</th><th>Status</th><th>Tenant</th><th>Balance</th><th></th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="t-strong">#1A–#3C</td><td>multiple</td><td><span class="chip chip-green">● Occupied</span></td><td>Tenant of record</td><td>$0 (tenant)</td><td><a class="link" href="#">View</a></td></tr>
+            <tr><td class="t-strong">#4B</td><td>7740‑0048</td><td><span class="chip chip-amber">● Owner (vacant)</span></td><td>—</td><td class="t-strong">$120</td><td><a class="link" href="#service" data-nav="service">Move‑in</a></td></tr>
+            <tr><td class="t-strong">#5A</td><td>7740‑0051</td><td><span class="chip chip-green">● Occupied</span></td><td>Tenant of record</td><td>$0 (tenant)</td><td><a class="link" href="#">View</a></td></tr>
+            <tr><td class="t-strong">#6C</td><td>7740‑0063</td><td><span class="chip chip-green">● Occupied</span></td><td>Tenant of record</td><td>$0 (tenant)</td><td><a class="link" href="#">View</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="req-note" data-lfr-editable-id="reqnote-properties" data-lfr-editable-type="text">Covers: Account &amp; Portfolio Management (multi‑property/unit portfolio views, occupancy &amp; owner‑of‑record status, per‑unit accounts) · Core Platform.</p>
+    </section>
+
+    <!-- VIEW: Billing & Statements -->
+    <section class="page-view" id="view-billing" data-view="billing">
+      <div class="page-head">
+        <div class="breadcrumb"><a href="#dashboard" data-nav="dashboard">Dashboard</a> › Billing Overview</div>
+        <h1 data-lfr-editable-id="title-billing-view" data-lfr-editable-type="text">Billing &amp; Statements</h1>
+        <p data-lfr-editable-id="desc-billing-view" data-lfr-editable-type="text">Pay balances across properties, track owner‑of‑record charges for vacant units, and access consolidated statements and payment history.</p>
+      </div>
+
+      <div class="grid g-2">
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-pay-billing" data-lfr-editable-type="text">Pay Across Properties</h3>
+            <span class="chip chip-amber">Due in 13 days</span>
+          </div>
+          <div class="bill-amount">$3,820.00</div>
+          <div class="bill-due" data-lfr-editable-id="txt-billing-due" data-lfr-editable-type="text">4 properties · owner‑of‑record charges included · Due May 15, 2026</div>
+          <div class="grid g-2" style="gap:12px;margin-bottom:6px">
+            <a class="btn btn-primary" href="#" data-lfr-editable-id="btn-payall" data-lfr-editable-type="link">Pay All ($3,820)</a>
+            <a class="btn btn-ghost" href="#" data-lfr-editable-id="btn-paybyprop" data-lfr-editable-type="link">Pay by Property</a>
+          </div>
+          <div class="inline-links">
+            <a href="#" data-lfr-editable-id="link-pdfbill" data-lfr-editable-type="link">Consolidated statement (PDF)</a>
+            <a href="#" data-lfr-editable-id="link-schedulebill" data-lfr-editable-type="link">Schedule payment</a>
+            <a href="#documents" data-nav="documents" data-lfr-editable-id="link-archivebill" data-lfr-editable-type="link">Statement archive</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-setup-billing" data-lfr-editable-type="text">Billing Setup</h3>
+          </div>
+          <div class="toggle-row">
+            <div>
+              <div class="t-label">Consolidated billing</div>
+              <div class="t-desc">One statement across all properties &amp; owner units.</div>
+            </div>
+            <div class="switch on"></div>
+          </div>
+          <div class="toggle-row">
+            <div>
+              <div class="t-label">AutoPay</div>
+              <div class="t-desc">Auto‑pay owner‑of‑record balances on the due date.</div>
+            </div>
+            <div class="switch on"></div>
+          </div>
+          <div class="toggle-row">
+            <div>
+              <div class="t-label">Owner‑of‑record auto‑revert</div>
+              <div class="t-desc">Keep service on in your name when a unit goes vacant.</div>
+            </div>
+            <div class="switch on"></div>
+          </div>
+          <div class="toggle-row">
+            <div>
+              <div class="t-label">Vacancy alerts</div>
+              <div class="t-desc">Notify me when a unit reverts to owner billing.</div>
+            </div>
+            <div class="switch on"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card section-gap">
+        <div class="card-header">
+          <h3 data-lfr-editable-id="header-unpaid-billing" data-lfr-editable-type="text">Unpaid Balances &amp; Owner‑of‑Record Charges</h3>
+          <a class="link" href="#" data-lfr-editable-id="link-filterprop" data-lfr-editable-type="link">Filter by property</a>
+        </div>
+        <table class="tbl">
+          <thead>
+            <tr><th>Property / Unit</th><th>Account #</th><th>Type</th><th>Since</th><th>Amount</th><th></th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="t-strong">Maple Ct · whole property</td><td>7740‑0001</td><td>Consolidated</td><td>Apr 2026</td><td class="t-strong">$1,640.00</td><td><a class="link" href="#">PDF</a></td></tr>
+            <tr><td class="t-strong">Maple Ct #4B</td><td>7740‑0048</td><td><span class="chip chip-amber">Owner‑of‑record</span></td><td>May 1</td><td class="t-strong">$120.00</td><td><a class="link" href="#">PDF</a></td></tr>
+            <tr><td class="t-strong">Riverside Flats</td><td>7740‑0100</td><td>Consolidated</td><td>Apr 2026</td><td class="t-strong">$980.00</td><td><a class="link" href="#">PDF</a></td></tr>
+            <tr><td class="t-strong">Oak St #1 &amp; #5</td><td>7740‑0210</td><td><span class="chip chip-amber">Owner‑of‑record</span></td><td>Apr 2026</td><td class="t-strong">$210.00</td><td><a class="link" href="#">PDF</a></td></tr>
+            <tr><td class="t-strong">Lincoln Townhomes #3</td><td>7740‑0303</td><td><span class="chip chip-amber">Owner‑of‑record</span></td><td>Apr 12</td><td class="t-strong">$95.00</td><td><a class="link" href="#">PDF</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card section-gap">
+        <div class="card-header">
+          <h3 data-lfr-editable-id="header-history-billing" data-lfr-editable-type="text">Payment History</h3>
+          <a class="link" href="#documents" data-nav="documents" data-lfr-editable-id="link-allstatements" data-lfr-editable-type="link">All statements</a>
+        </div>
+        <div class="row">
+          <div class="r-main">
+            <span class="dot green"></span>
+            <div>
+              <div class="r-title">$3,410 — all properties</div>
+              <div class="r-sub">ACH · Apr 1, 2026</div>
+            </div>
+          </div>
+          <span class="chip chip-green">Paid</span>
+        </div>
+        <div class="row">
+          <div class="r-main">
+            <span class="dot green"></span>
+            <div>
+              <div class="r-title">$3,690 — all properties</div>
+              <div class="r-sub">ACH · Mar 1, 2026</div>
+            </div>
+          </div>
+          <span class="chip chip-green">Paid</span>
+        </div>
+        <div class="row">
+          <div class="r-main">
+            <span class="dot green"></span>
+            <div>
+              <div class="r-title">$4,120 — all properties</div>
+              <div class="r-sub">ACH · Feb 1, 2026</div>
+            </div>
+          </div>
+          <span class="chip chip-green">Paid</span>
+        </div>
+      </div>
+      <p class="req-note" data-lfr-editable-id="reqnote-billing" data-lfr-editable-type="text">Covers: Billing &amp; Presentment · Payments (consolidated/by‑property payment, AutoPay, owner‑of‑record billing) · Document Management (statement archive).</p>
+    </section>
+
+    <!-- VIEW: Notifications & Messages -->
+    <section class="page-view" id="view-notifications" data-view="notifications">
+      <div class="page-head">
+        <div class="breadcrumb"><a href="#dashboard" data-nav="dashboard">Dashboard</a> › Notifications</div>
+        <h1 data-lfr-editable-id="title-notifications-view" data-lfr-editable-type="text">Notifications &amp; Messages</h1>
+        <p data-lfr-editable-id="desc-notifications-view" data-lfr-editable-type="text">Stay on top of vacancies, billing, and service requests across your portfolio, and control how your team is notified.</p>
+      </div>
+
+      <div class="grid g-21">
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-inbox-notif" data-lfr-editable-type="text">Inbox</h3>
+            <div style="display:flex;gap:8px"><span class="chip chip-red">3 unread</span><a class="link" href="#">Mark all read</a></div>
+          </div>
+          <div class="media" style="background:var(--blue-soft);margin:0 -24px;padding:16px 24px">
+            <div class="media-ico mi-warn">⚠️</div>
+            <div class="media-body">
+              <p><strong>Owner‑of‑record:</strong> Maple Ct #4B reverted to your account after move‑out. <a href="#billing" data-nav="billing" style="color:var(--blue);font-weight:700;text-decoration:none">Review billing →</a></p>
+              <div class="time">Today, 8:30 AM · Vacancy</div>
+            </div>
+          </div>
+          <div class="media" style="background:var(--blue-soft);margin:0 -24px;padding:16px 24px">
+            <div class="media-ico mi-info">📄</div>
+            <div class="media-body">
+              <p><strong>Statement ready:</strong> 4 properties, $3,820 due May 15. <a href="#billing" data-nav="billing" style="color:var(--blue);font-weight:700;text-decoration:none">Pay now →</a></p>
+              <div class="time">Apr 28, 2026 · Billing</div>
+            </div>
+          </div>
+          <div class="media" style="background:var(--blue-soft);margin:0 -24px;padding:16px 24px">
+            <div class="media-ico mi-ok">✓</div>
+            <div class="media-body">
+              <p><strong>Move‑out scheduled:</strong> Maple Ct #4B stop confirmed for May 31. <a href="#service" data-nav="service" style="color:var(--blue);font-weight:700;text-decoration:none">View request →</a></p>
+              <div class="time">Apr 27, 2026 · Service</div>
+            </div>
+          </div>
+          <div class="media">
+            <div class="media-ico mi-info">📋</div>
+            <div class="media-body">
+              <p>Annual safety inspection at Maple Ct confirmed for May 6, 9–11 AM.</p>
+              <div class="time">Apr 25, 2026 · Inspection</div>
+            </div>
+          </div>
+          <div class="media">
+            <div class="media-ico mi-ok">✓</div>
+            <div class="media-body">
+              <p>April payment of $3,410 processed across all properties.</p>
+              <div class="time">Apr 1, 2026 · Payment</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-delivery-notif" data-lfr-editable-type="text">Delivery Preferences</h3>
+          </div>
+          <p class="card-sub" data-lfr-editable-id="delivery-sub" data-lfr-editable-type="text">How you and your team are notified.</p>
+          <table class="tbl">
+            <thead>
+              <tr><th>Type</th><th>Email</th><th>SMS</th><th>Push</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="t-strong">Vacancy / owner</td><td><span class="dot green"></span></td><td><span class="dot green"></span></td><td><span class="dot blue"></span></td></tr>
+              <tr><td class="t-strong">Billing</td><td><span class="dot green"></span></td><td><span class="dot green"></span></td><td><span class="dot" style="background:var(--border)"></span></td></tr>
+              <tr><td class="t-strong">Service requests</td><td><span class="dot green"></span></td><td><span class="dot green"></span></td><td><span class="dot blue"></span></td></tr>
+              <tr><td class="t-strong">Inspections</td><td><span class="dot green"></span></td><td><span class="dot" style="background:var(--border)"></span></td><td><span class="dot blue"></span></td></tr>
+            </tbody>
+          </table>
+          <div class="divider"></div>
+          <div class="field">
+            <label>Route service alerts to</label>
+            <select>
+              <option>Assigned property manager</option>
+              <option>Owner only</option>
+              <option>Owner + manager</option>
+            </select>
+          </div>
+          <a class="btn btn-navy btn-block" href="#" data-lfr-editable-id="btn-saveprefs" data-lfr-editable-type="link">Save Preferences</a>
+        </div>
+      </div>
+      <p class="req-note" data-lfr-editable-id="reqnote-notifications" data-lfr-editable-type="text">Covers: Communications &amp; Notifications (omnichannel alerts, vacancy/owner‑of‑record notices, billing &amp; service updates, per‑role routing, two‑way messaging).</p>
+    </section>
+
+    <!-- VIEW: Service Requests -->
+    <section class="page-view" id="view-service" data-view="service">
+      <div class="page-head">
+        <div class="breadcrumb"><a href="#dashboard" data-nav="dashboard">Dashboard</a> › Service Requests</div>
+        <h1 data-lfr-editable-id="title-service-view" data-lfr-editable-type="text">Service Requests</h1>
+        <p data-lfr-editable-id="desc-service-view" data-lfr-editable-type="text">Handle tenant turnover end‑to‑end — start, stop, and transfer service for any unit, schedule inspections, and track every request in real time.</p>
+      </div>
+
+      <div class="section-title" data-lfr-editable-id="sectitle-turnover-service" data-lfr-editable-type="text">Tenant Turnover &amp; Service</div>
+      <div class="grid g-4">
+        <div class="card">
+          <div class="media-ico mi-ok" style="margin-bottom:12px">🚪</div>
+          <h3 style="font-size:15px;margin-bottom:6px" data-lfr-editable-id="card-movein-title" data-lfr-editable-type="text">Move‑In</h3>
+          <p class="muted" style="font-size:12.5px;margin-bottom:14px" data-lfr-editable-id="card-movein-desc" data-lfr-editable-type="text">New tenant — start service.</p>
+          <a class="btn btn-primary btn-sm btn-block" href="#" data-lfr-editable-id="btn-movein-start" data-lfr-editable-type="link">Start</a>
+        </div>
+        <div class="card">
+          <div class="media-ico mi-red" style="margin-bottom:12px">📦</div>
+          <h3 style="font-size:15px;margin-bottom:6px" data-lfr-editable-id="card-moveout-title" data-lfr-editable-type="text">Move‑Out</h3>
+          <p class="muted" style="font-size:12.5px;margin-bottom:14px" data-lfr-editable-id="card-moveout-desc" data-lfr-editable-type="text">Tenant leaving — revert to owner.</p>
+          <a class="btn btn-ghost btn-sm btn-block" href="#" data-lfr-editable-id="btn-moveout-sched" data-lfr-editable-type="link">Schedule</a>
+        </div>
+        <div class="card">
+          <div class="media-ico mi-info" style="margin-bottom:12px">🔄</div>
+          <h3 style="font-size:15px;margin-bottom:6px" data-lfr-editable-id="card-transfer-title" data-lfr-editable-type="text">Transfer</h3>
+          <p class="muted" style="font-size:12.5px;margin-bottom:14px" data-lfr-editable-id="card-transfer-desc" data-lfr-editable-type="text">Owner ↔ tenant handoff.</p>
+          <a class="btn btn-ghost btn-sm btn-block" href="#" data-lfr-editable-id="btn-transfer-start" data-lfr-editable-type="link">Transfer</a>
+        </div>
+        <div class="card">
+          <div class="media-ico mi-warn" style="margin-bottom:12px">📋</div>
+          <h3 style="font-size:15px;margin-bottom:6px" data-lfr-editable-id="card-inspect-title" data-lfr-editable-type="text">Inspection</h3>
+          <p class="muted" style="font-size:12.5px;margin-bottom:14px" data-lfr-editable-id="card-inspect-desc" data-lfr-editable-type="text">Schedule a safety check.</p>
+          <a class="btn btn-ghost btn-sm btn-block" href="#" data-lfr-editable-id="btn-inspect-book" data-lfr-editable-type="link">Book</a>
+        </div>
+      </div>
+
+      <div class="card section-gap">
+        <div class="card-header">
+          <h3 data-lfr-editable-id="header-moveout-service" data-lfr-editable-type="text">Move‑Out Request — Maple Ct #4B</h3>
+          <span class="chip chip-info">Case #LSR‑2210</span>
+        </div>
+        <div class="steps">
+          <div class="step done"><div class="dot-n">✓</div><div class="slab">Select unit</div></div>
+          <div class="step done"><div class="dot-n">✓</div><div class="slab">Tenant details</div></div>
+          <div class="step active"><div class="dot-n">3</div><div class="slab">Stop date</div></div>
+          <div class="step"><div class="dot-n">4</div><div class="slab">Revert to owner</div></div>
+          <div class="step"><div class="dot-n">5</div><div class="slab">Confirm</div></div>
+        </div>
+        <div class="divider"></div>
+        <div class="grid g-2">
+          <div class="field"><label>Unit</label><input type="text" value="Maple Court Apartments — #4B" readonly></div>
+          <div class="field"><label>Tenant move‑out date</label><input type="text" value="May 31, 2026" readonly></div>
+          <div class="field">
+            <label>Service after move‑out</label>
+            <select>
+              <option>Revert to owner‑of‑record (no interruption)</option>
+              <option>Stop service entirely</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Final reading needed?</label>
+            <select>
+              <option>Yes — schedule final read</option>
+              <option>No — estimated</option>
+            </select>
+          </div>
+        </div>
+        <div class="banner banner-green" style="margin:6px 0 18px">
+          <span class="b-ico">✓</span>
+          <div data-lfr-editable-id="banner-moveout-protection" data-lfr-editable-type="text"><strong>Owner‑of‑record protection on.</strong> Service for #4B will continue in your name after May 31 so the unit stays heated and ready to show.</div>
+        </div>
+        <div style="display:flex;gap:12px">
+          <a class="btn btn-ghost btn-sm" href="#" data-lfr-editable-id="btn-moveout-back" data-lfr-editable-type="link">Back</a>
+          <a class="btn btn-primary btn-sm" href="#" data-lfr-editable-id="btn-moveout-cont" data-lfr-editable-type="link">Continue</a>
+        </div>
+      </div>
+
+      <div class="grid g-21 section-gap">
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-requests-list" data-lfr-editable-type="text">All Requests</h3>
+            <div style="display:flex;gap:8px"><span class="chip chip-gray">All</span><span class="chip chip-amber">Open</span><span class="chip chip-green">Done</span></div>
+          </div>
+          <table class="tbl">
+            <thead>
+              <tr><th>Case</th><th>Unit</th><th>Type</th><th>Status</th><th></th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="t-strong">LSR‑2210</td><td>Maple Ct #4B</td><td>Move‑out</td><td><span class="chip chip-info">In progress</span></td><td><a class="link" href="#">View</a></td></tr>
+              <tr><td class="t-strong">LSR‑2208</td><td>Riverside #2A</td><td>Move‑in</td><td><span class="chip chip-amber">Scheduled</span></td><td><a class="link" href="#">View</a></td></tr>
+              <tr><td class="t-strong">LSR‑2201</td><td>Oak St #1</td><td>Transfer</td><td><span class="chip chip-green">Completed</span></td><td><a class="link" href="#">View</a></td></tr>
+              <tr><td class="t-strong">LSR‑2188</td><td>Lincoln #3</td><td>Move‑out</td><td><span class="chip chip-green">Completed</span></td><td><a class="link" href="#">View</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-inspection-sched" data-lfr-editable-type="text">Inspection Schedule</h3>
+            <a class="link" href="#" data-lfr-editable-id="link-inspect-cal" data-lfr-editable-type="link">Calendar</a>
+          </div>
+          <div class="row">
+            <div class="r-main">
+              <span class="dot blue"></span>
+              <div>
+                <div class="r-title">Maple Ct — annual safety</div>
+                <div class="r-sub">May 6, 9–11 AM</div>
+              </div>
+            </div>
+            <span class="chip chip-info">Confirmed</span>
+          </div>
+          <div class="row">
+            <div class="r-main">
+              <span class="dot blue"></span>
+              <div>
+                <div class="r-title">Riverside — meter check</div>
+                <div class="r-sub">May 9, 1–3 PM</div>
+              </div>
+            </div>
+            <span class="chip chip-info">Confirmed</span>
+          </div>
+          <div class="row">
+            <div class="r-main">
+              <span class="dot amber"></span>
+              <div>
+                <div class="r-title">Oak St #4B — move‑in</div>
+                <div class="r-sub">May 14, AM window</div>
+              </div>
+            </div>
+            <span class="chip chip-amber">Pending</span>
+          </div>
+          <a class="btn btn-ghost btn-sm btn-block" href="#" data-lfr-editable-id="btn-inspect-add" data-lfr-editable-type="link">+ Schedule inspection</a>
+        </div>
+      </div>
+      <p class="req-note" data-lfr-editable-id="reqnote-service" data-lfr-editable-type="text">Covers: Service Requests &amp; Applications (start/stop/transfer, move‑in/out, owner‑of‑record handling, inspection scheduling, case &amp; status tracking).</p>
+    </section>
+
+    <!-- VIEW: Documents -->
+    <section class="page-view" id="view-documents" data-view="documents">
+      <div class="page-head">
+        <div class="breadcrumb"><a href="#dashboard" data-nav="dashboard">Dashboard</a> › Documents</div>
+        <h1 data-lfr-editable-id="title-documents-archive" data-lfr-editable-type="text">Documents &amp; Statements</h1>
+        <p data-lfr-editable-id="desc-documents-archive" data-lfr-editable-type="text">One repository for statements, service confirmations, inspection reports, and property paperwork — searchable across every property and unit.</p>
+      </div>
+
+      <div class="grid g-12">
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-doc-categories" data-lfr-editable-type="text">Categories</h3>
+          </div>
+          <a class="nav-item active" href="#">
+            <span class="ico">📄</span> 
+            <span data-lfr-editable-id="doc-lbl-statements" data-lfr-editable-type="text">Statements</span> 
+            <span class="nav-badge" style="background:var(--text-3)">28</span>
+          </a>
+          <a class="nav-item" href="#"><span class="ico">🚪</span> <span data-lfr-editable-id="doc-lbl-confirmations" data-lfr-editable-type="text">Service confirmations</span></a>
+          <a class="nav-item" href="#"><span class="ico">📋</span> <span data-lfr-editable-id="doc-lbl-inspections" data-lfr-editable-type="text">Inspection reports</span></a>
+          <a class="nav-item" href="#"><span class="ico">🧾</span> <span data-lfr-editable-id="doc-lbl-receipts" data-lfr-editable-type="text">Payment receipts</span></a>
+          <a class="nav-item" href="#"><span class="ico">📑</span> <span data-lfr-editable-id="doc-lbl-agreements" data-lfr-editable-type="text">Property agreements</span></a>
+          <div class="divider"></div>
+          <a class="btn btn-ghost btn-sm btn-block" href="#" data-lfr-editable-id="btn-upload-doc-archive" data-lfr-editable-type="link">Upload a document</a>
+          <p class="req-note" style="margin-top:14px" data-lfr-editable-id="txt-doc-filter-rules" data-lfr-editable-type="text">Filter by property, unit, date, or type. PDF, JPG, PNG up to 10 MB.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-doc-list" data-lfr-editable-type="text">Statements</h3>
+            <div class="field" style="margin:0;width:240px"><input type="text" placeholder="🔍 Search documents…"></div>
+          </div>
+          <table class="tbl">
+            <thead>
+              <tr><th>Document</th><th>Property</th><th>Type</th><th>Date</th><th></th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="t-strong">April 2026 Consolidated</td><td>All properties</td><td>Statement</td><td>Apr 30, 2026</td><td><a class="link" href="#">Download</a></td></tr>
+              <tr><td class="t-strong">Move‑out confirmation</td><td>Lincoln #3</td><td>Service</td><td>Apr 12, 2026</td><td><a class="link" href="#">Download</a></td></tr>
+              <tr><td class="t-strong">Annual safety inspection</td><td>Riverside Flats</td><td>Inspection</td><td>Apr 4, 2026</td><td><a class="link" href="#">Download</a></td></tr>
+              <tr><td class="t-strong">March 2026 Consolidated</td><td>All properties</td><td>Statement</td><td>Mar 31, 2026</td><td><a class="link" href="#">Download</a></td></tr>
+              <tr><td class="t-strong">Transfer confirmation</td><td>Oak St #1</td><td>Service</td><td>Mar 18, 2026</td><td><a class="link" href="#">Download</a></td></tr>
+              <tr><td class="t-strong">2025 Year‑End Summary</td><td>All properties</td><td>Tax</td><td>Jan 15, 2026</td><td><a class="link" href="#">Download</a></td></tr>
+            </tbody>
+          </table>
+          <div class="divider"></div>
+          <div class="row">
+            <span class="muted" style="font-size:12.5px" data-lfr-editable-id="doc-retention-note" data-lfr-editable-type="text">Documents retained for 7 years and available anytime.</span>
+            <a class="link" href="#" data-lfr-editable-id="link-downloadall" data-lfr-editable-type="link">Download all (ZIP)</a>
+          </div>
+        </div>
+      </div>
+      <p class="req-note" data-lfr-editable-id="reqnote-documents" data-lfr-editable-type="text">Covers: Document Management (repository &amp; retention, upload, statement &amp; service‑confirmation archive) · Knowledge &amp; Help (search).</p>
+    </section>
+
+    <!-- VIEW: Users & Settings -->
+    <section class="page-view" id="view-users" data-view="users">
+      <div class="page-head">
+        <div class="breadcrumb"><a href="#dashboard" data-nav="dashboard">Dashboard</a> › Authorized Users &amp; Settings</div>
+        <h1 data-lfr-editable-id="title-users-view" data-lfr-editable-type="text">Authorized Users &amp; Settings</h1>
+        <p data-lfr-editable-id="desc-users-view" data-lfr-editable-type="text">Give property managers and staff scoped access to the properties they handle, and manage security and notification preferences for your account.</p>
+      </div>
+
+      <div class="grid g-2">
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-auth-users" data-lfr-editable-type="text">Authorized Users</h3>
+            <a class="link" href="#" data-lfr-editable-id="link-inviteuser" data-lfr-editable-type="link">+ Invite user</a>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--border-soft)">
+            <span class="avatar" style="background:linear-gradient(135deg,var(--navy),var(--navy-mid))">RM</span>
+            <div style="flex:1;min-width:0">
+              <div class="r-title">Robert Mason</div>
+              <div class="r-sub">Owner · all properties &amp; billing</div>
+            </div>
+            <span class="role-pill">Owner</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--border-soft)">
+            <span class="avatar" style="background:linear-gradient(135deg,var(--blue),var(--navy-soft))">LC</span>
+            <div style="flex:1;min-width:0">
+              <div class="r-title">Lena Cho</div>
+              <div class="r-sub">Maple Ct, Riverside · service &amp; inspections</div>
+            </div>
+            <span class="chip chip-info">Property Mgr</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--border-soft)">
+            <span class="avatar" style="background:linear-gradient(135deg,var(--blue),var(--navy-soft))">DG</span>
+            <div style="flex:1;min-width:0">
+              <div class="r-title">Diego Guerra</div>
+              <div class="r-sub">Oak St, Lincoln · service only</div>
+            </div>
+            <span class="chip chip-info">Property Mgr</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:14px 0">
+            <span class="avatar" style="background:linear-gradient(135deg,var(--text-3),var(--steel))">BK</span>
+            <div style="flex:1;min-width:0">
+              <div class="r-title">Brightline Bookkeeping</div>
+              <div class="r-sub">Billing &amp; statements (read‑only)</div>
+            </div>
+            <span class="chip chip-gray">3rd party</span>
+          </div>
+          <p class="req-note" data-lfr-editable-id="txt-bk-note" data-lfr-editable-type="text">Third‑party access (e.g. bookkeeping) is scoped and revocable at any time.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-security-users" data-lfr-editable-type="text">Security &amp; Sign‑in</h3>
+          </div>
+          <div class="toggle-row">
+            <div>
+              <div class="t-label">Multi‑factor authentication</div>
+              <div class="t-desc">Required for owner and managers.</div>
+            </div>
+            <div class="switch on"></div>
+          </div>
+          <div class="toggle-row">
+            <div>
+              <div class="t-label">Step‑up verification</div>
+              <div class="t-desc">Re‑verify before payments or transfers.</div>
+            </div>
+            <div class="switch on"></div>
+          </div>
+          <div class="toggle-row">
+            <div>
+              <div class="t-label">Trusted device</div>
+              <div class="t-desc">This device · last sign‑in today</div>
+            </div>
+            <span class="chip chip-green">Trusted</span>
+          </div>
+          <a class="btn btn-ghost btn-sm" href="#" data-lfr-editable-id="btn-accesslog" data-lfr-editable-type="link">View access log</a>
+        </div>
+      </div>
+
+      <div class="grid g-2 section-gap">
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-roles-users" data-lfr-editable-type="text">Roles &amp; Permissions</h3>
+          </div>
+          <table class="tbl">
+            <thead>
+              <tr><th>Capability</th><th>Owner</th><th>Property Mgr</th><th>3rd party</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="t-strong">View statements</td><td><span class="dot green"></span></td><td><span class="dot green"></span></td><td><span class="dot green"></span></td></tr>
+              <tr><td class="t-strong">Make payments</td><td><span class="dot green"></span></td><td><span class="dot" style="background:var(--border)"></span></td><td><span class="dot" style="background:var(--border)"></span></td></tr>
+              <tr><td class="t-strong">Submit service requests</td><td><span class="dot green"></span></td><td><span class="dot green"></span></td><td><span class="dot" style="background:var(--border)"></span></td></tr>
+              <tr><td class="t-strong">Manage users</td><td><span class="dot green"></span></td><td><span class="dot" style="background:var(--border)"></span></td><td><span class="dot" style="background:var(--border)"></span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-prefs-users" data-lfr-editable-type="text">Notification Preferences</h3>
+          </div>
+          <div class="toggle-row">
+            <div>
+              <div class="t-label">Vacancy / owner‑of‑record alerts</div>
+              <div class="t-desc">When a unit reverts to your billing.</div>
+            </div>
+            <div class="switch on"></div>
+          </div>
+          <div class="toggle-row">
+            <div>
+              <div class="t-label">Billing &amp; statement alerts</div>
+              <div class="t-desc">Consolidated statement ready, payment due.</div>
+            </div>
+            <div class="switch on"></div>
+          </div>
+          <div class="toggle-row">
+            <div>
+              <div class="t-label">Service request updates</div>
+              <div class="t-desc">Move‑in/out status, inspection confirmations.</div>
+            </div>
+            <div class="switch on"></div>
+          </div>
+          <div class="field" style="margin:14px 0 0">
+            <label>Default channel</label>
+            <select>
+              <option>Email + SMS</option>
+              <option>Email only</option>
+              <option>SMS only</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <p class="req-note" data-lfr-editable-id="reqnote-users" data-lfr-editable-type="text">Covers: Security &amp; Controls (MFA, step‑up, audit) · Account &amp; Portfolio (multi‑user roles, property‑scoped &amp; third‑party access) · Communications &amp; Notifications policy.</p>
+    </section>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div data-lfr-editable-id="footer-copyright" data-lfr-editable-type="text">© 2026 Northern Illinois Gas Company d/b/a Nicor Gas, a Southern Company Gas company. Landlord portal — for RFP 004161 illustration only.</div>
+  <div>
+    <a href="#users" data-nav="users" data-lfr-editable-id="footer-link-privacy" data-lfr-editable-type="link">Privacy</a> &nbsp;·&nbsp;
+    <a href="#users" data-nav="users" data-lfr-editable-id="footer-link-terms" data-lfr-editable-type="link">Terms</a> &nbsp;·&nbsp;
+    <a href="#users" data-nav="users" data-lfr-editable-id="footer-link-access" data-lfr-editable-type="link">Accessibility</a>
+  </div>
+</footer>
+
+[#if configuration.showAiAssistant]
+<button class="ai-fab" onclick="alert('Nicor Gas Property Assistant\n\nSource-grounded AI help powered by Liferay AI Hub. Ask about tenant move-ins/outs, owner-of-record billing, statements, or inspections — answers are grounded in your property portfolio and Nicor knowledge base.')">
+  <span class="spark">✦</span> <span data-lfr-editable-id="ai-fab-text" data-lfr-editable-type="text">Ask Property Assistant</span>
+</button>
+[/#if]
+
+</div>

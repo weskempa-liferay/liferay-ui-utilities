@@ -1,0 +1,84 @@
+.lfr-residential-portal {
+  /* Brand variables */
+  --navy:        #16294D;   /* primary deep navy */
+  --navy-mid:    #24386A;
+  --navy-soft:   #34508C;
+  --blue:        #0A5EB0;   /* corporate accent blue */
+  --blue-soft:   #E8F1FB;
+  --red:         #C8102E;   /* Southern Company red */
+  --red-dark:    #9B0B22;
+  --red-light:   #FCEAED;
+
+  /* Neutrals */
+  --bg:          #F4F6FA;   /* app background */
+  --surface:     #FFFFFF;
+  --surface-2:   #FAFBFD;
+  --border:      #E3E8F0;
+  --border-soft: #EDF1F7;
+  --text:        #16294D;
+  --text-2:      #475571;   /* secondary */
+  --text-3:      #7A879E;   /* muted */
+
+  /* Status */
+  --green:       #157347;
+  --green-bg:    #E9F7EF;
+  --amber:       #B45309;
+  --amber-bg:    #FEF6E7;
+  --info:        #0A5EB0;
+  --info-bg:     #E8F1FB;
+
+  /* System */
+  --font:        Arial, Helvetica, sans-serif;
+  --sidebar-w:   248px;
+  --topbar-h:    62px;
+  --radius:      14px;
+  --radius-sm:   10px;
+  --shadow:      0 1px 2px rgba(22,41,77,.04), 0 4px 16px rgba(22,41,77,.05);
+  --shadow-lg:   0 8px 30px rgba(22,41,77,.10);
+  --maxw:        1180px;
+
+  font-family: var(--font);
+  box-sizing: border-box;
+}
+
+.lfr-residential-portal *, 
+.lfr-residential-portal *::before, 
+.lfr-residential-portal *::after { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+.lfr-residential-portal a { 
+  color: inherit; 
+}
+
+/* ───────────────────────── Sidebar ───────────────────────── */
+.lfr-residential-portal .sidebar {
+  position: fixed; top: var(--topbar-h); left: 0; bottom: 0; width: var(--sidebar-w);
+  background: var(--surface); border-right: 1px solid var(--border);
+  overflow-y: auto; padding: 18px 14px 28px; z-index: 90;
+}
+.lfr-residential-portal .sidebar-section { margin-bottom: 18px; }
+.lfr-residential-portal .sidebar-label {
+  font-size: 10.5px; font-weight: 700; color: var(--text-3);
+  text-transform: uppercase; letter-spacing: 1.2px; padding: 6px 12px 8px;
+}
+.lfr-residential-portal .nav-item {
+  display: flex; align-items: center; gap: 12px; padding: 10px 12px;
+  font-size: 13.5px; color: var(--text-2); cursor: pointer;
+  border-radius: 9px; text-decoration: none; transition: background .14s, color .14s;
+  margin-bottom: 2px; font-weight: 500;
+}
+.lfr-residential-portal .nav-item:hover { background: var(--surface-2); color: var(--navy); }
+.lfr-residential-portal .nav-item.active { background: var(--blue-soft); color: var(--blue); font-weight: 700; }
+.lfr-residential-portal .nav-item .ico { width: 20px; text-align: center; font-size: 15px; flex-shrink: 0; opacity: .92; }
+.lfr-residential-portal .nav-item .nav-badge {
+  margin-left: auto; background: var(--red); color: #fff; font-size: 10px;
+  font-weight: 700; padding: 1px 7px; border-radius: 9px;
+}
+.lfr-residential-portal .nav-item.active .ico { opacity: 1; }
+
+@media (max-width: 860px) {
+  .lfr-residential-portal .sidebar { display: none; }
+}
