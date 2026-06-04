@@ -55,7 +55,7 @@
 
 /* ───────────────────────── Top bar ───────────────────────── */
 .lfr-residential-portal .topbar {
-  position: fixed; top: 0; left: 0; right: 0; height: var(--topbar-h);
+  position: relative; height: var(--topbar-h);
   background: var(--navy);
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 28px; z-index: 100;

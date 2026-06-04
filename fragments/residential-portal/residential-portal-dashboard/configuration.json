@@ -1,0 +1,14 @@
+{
+  "fieldSets": [
+    {
+      "fields": [
+        {
+          "name": "showAiAssistant",
+          "type": "checkbox",
+          "label": "Show AI Assistant Widget",
+          "defaultValue": true
+        }
+      ]
+    }
+  ]
+}

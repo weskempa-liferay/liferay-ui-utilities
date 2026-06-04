@@ -1,0 +1,121 @@
+<div class="lfr-residential-portal">
+<main class="main">
+  <div class="wrap">
+
+    <!-- VIEW: Notifications & Messages -->
+    <section class="page-view active" id="view-notifications" data-view="notifications">
+      <div class="page-head">
+        <div class="breadcrumb"><a href="#dashboard" data-nav="dashboard">Dashboard</a> › Notifications</div>
+        <h1 data-lfr-editable-id="title-notifications-view" data-lfr-editable-type="text">Notifications &amp; Messages</h1>
+        <p data-lfr-editable-id="desc-notifications-view" data-lfr-editable-type="text">Review your alerts, manage how and when Nicor Gas reaches you, and reply to two‑way messages from your account team.</p>
+      </div>
+
+      <div class="grid g-21">
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-inbox-notif" data-lfr-editable-type="text">Inbox</h3>
+            <div style="display:flex;gap:8px"><span class="chip chip-red">3 unread</span><a class="link" href="#">Mark all read</a></div>
+          </div>
+          <div class="media" style="background:var(--blue-soft);margin:0 -24px;padding:16px 24px;border-radius:0">
+            <div class="media-ico mi-warn">📈</div>
+            <div class="media-body">
+              <p><strong>High usage alert:</strong> Your gas usage this month is 22% above your 3‑month average. <a href="#usage" data-nav="usage" style="color:var(--blue);font-weight:700;text-decoration:none">View insights →</a></p>
+              <div class="time">Today, 9:14 AM · Usage</div>
+            </div>
+          </div>
+          <div class="media" style="background:var(--blue-soft);margin:0 -24px;padding:16px 24px;border-radius:0">
+            <div class="media-ico mi-info">📄</div>
+            <div class="media-body">
+              <p><strong>Bill ready:</strong> Your April statement of $94.20 is available. <a href="#billing" data-nav="billing" style="color:var(--blue);font-weight:700;text-decoration:none">Pay now →</a></p>
+              <div class="time">Apr 28, 2026 · Billing</div>
+            </div>
+          </div>
+          <div class="media" style="background:var(--blue-soft);margin:0 -24px;padding:16px 24px;border-radius:0">
+            <div class="media-ico mi-warn">🔧</div>
+            <div class="media-body">
+              <p><strong>Maintenance notice:</strong> Scheduled work on your street May 2. Brief interruption expected. <a href="#outage" data-nav="outage" style="color:var(--blue);font-weight:700;text-decoration:none">Details →</a></p>
+              <div class="time">Apr 27, 2026 · Service</div>
+            </div>
+          </div>
+          <div class="media">
+            <div class="media-ico mi-ok">✓</div>
+            <div class="media-body">
+              <p>Your payment of $87.50 was processed successfully.</p>
+              <div class="time">Mar 31, 2026 · Payment</div>
+            </div>
+          </div>
+          <div class="media">
+            <div class="media-ico mi-ok">🌿</div>
+            <div class="media-body">
+              <p>Energy tip: Lowering your thermostat 2°F could save up to $12 this month.</p>
+              <div class="time">Mar 20, 2026 · Programs</div>
+            </div>
+          </div>
+          <div class="media">
+            <div class="media-ico mi-info">📣</div>
+            <div class="media-body">
+              <p>Welcome to your new Nicor Gas account portal. Take a quick tour.</p>
+              <div class="time">Mar 2, 2026 · Account</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-delivery-notif" data-lfr-editable-type="text">Delivery Preferences</h3>
+          </div>
+          <p class="card-sub" data-lfr-editable-id="delivery-sub" data-lfr-editable-type="text">Choose how you want to receive each type of message.</p>
+          <table class="tbl">
+            <thead>
+              <tr><th>Type</th><th>Email</th><th>SMS</th><th>Push</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="t-strong">Billing</td><td><span class="dot green"></span></td><td><span class="dot green"></span></td><td><span class="dot blue"></span></td></tr>
+              <tr><td class="t-strong">Payments</td><td><span class="dot green"></span></td><td><span class="dot green"></span></td><td><span class="dot" style="background:var(--border)"></span></td></tr>
+              <tr><td class="t-strong">Usage alerts</td><td><span class="dot green"></span></td><td><span class="dot" style="background:var(--border)"></span></td><td><span class="dot blue"></span></td></tr>
+              <tr><td class="t-strong">Outages</td><td><span class="dot green"></span></td><td><span class="dot green"></span></td><td><span class="dot blue"></span></td></tr>
+              <tr><td class="t-strong">Programs</td><td><span class="dot green"></span></td><td><span class="dot" style="background:var(--border)"></span></td><td><span class="dot" style="background:var(--border)"></span></td></tr>
+            </tbody>
+          </table>
+          <div class="divider"></div>
+          <div class="field">
+            <label>Usage alert threshold</label>
+            <select>
+              <option>Alert me when 20% above average</option>
+              <option>Alert me when 30% above average</option>
+              <option>Alert me at a $ amount</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Preferred language</label>
+            <select>
+              <option>English</option>
+              <option>Español</option>
+              <option>Polski</option>
+            </select>
+          </div>
+          <a class="btn btn-navy btn-block" href="#" data-lfr-editable-id="btn-saveprefs-notif" data-lfr-editable-type="link">Save Preferences</a>
+        </div>
+      </div>
+      <p class="req-note" data-lfr-editable-id="reqnote-notif" data-lfr-editable-type="text">Covers: Communications &amp; Notifications (omnichannel email/SMS/push, billing/payment/usage/outage notices, threshold alerts, two‑way messaging, language preference).</p>
+    </section>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div data-lfr-editable-id="footer-copyright" data-lfr-editable-type="text">© 2026 Northern Illinois Gas Company d/b/a Nicor Gas, a Southern Company Gas company. My Account — for illustration only.</div>
+  <div>
+    <a href="#profile" data-nav="profile" data-lfr-editable-id="footer-link-privacy" data-lfr-editable-type="link">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="#profile" data-nav="profile" data-lfr-editable-id="footer-link-terms" data-lfr-editable-type="link">Terms of Service</a> &nbsp;·&nbsp;
+    <a href="#profile" data-nav="profile" data-lfr-editable-id="footer-link-access" data-lfr-editable-type="link">Accessibility</a>
+  </div>
+</footer>
+
+[#if configuration.showAiAssistant]
+<button class="ai-fab" onclick="alert('Nicor Gas Account Assistant\n\nSource-grounded AI help powered by Liferay AI Hub. Ask about your bill, recent usage, payment preferences, or outages — answers are grounded in your account data and Nicor knowledge base.')">
+  <span class="spark">✦</span> <span data-lfr-editable-id="ai-fab-text" data-lfr-editable-type="text">Ask Account Assistant</span>
+</button>
+[/#if]
+
+</div>

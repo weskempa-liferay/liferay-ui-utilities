@@ -1,0 +1,70 @@
+<div class="lfr-residential-portal">
+<main class="main">
+  <div class="wrap">
+
+    <!-- VIEW: Profile & Settings -->
+    <section class="page-view active" id="view-profile" data-view="profile">
+      <div class="page-head">
+        <div class="breadcrumb"><a href="#dashboard" data-nav="dashboard">Dashboard</a> › Profile &amp; Settings</div>
+        <h1 data-lfr-editable-id="title-profile-view" data-lfr-editable-type="text">Profile &amp; Settings</h1>
+        <p data-lfr-editable-id="desc-profile-view" data-lfr-editable-type="text">Manage your contact details, security credentials, and authorized users on your account.</p>
+      </div>
+
+      <div class="grid g-2">
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-contact-profile" data-lfr-editable-type="text">Contact Details</h3>
+          </div>
+          <div class="field"><label>Full Name</label><input type="text" value="James Miller" readonly></div>
+          <div class="field"><label>Email Address</label><input type="text" value="james.m@email.com"></div>
+          <div class="field"><label>Primary Phone</label><input type="text" value="(630) 555‑0148"></div>
+          <a class="btn btn-primary" href="#" data-lfr-editable-id="btn-savecontact" data-lfr-editable-type="link">Save Changes</a>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-security-profile" data-lfr-editable-type="text">Security Settings</h3>
+          </div>
+          <div class="toggle-row">
+            <div>
+              <div class="t-label">Two-factor authentication</div>
+              <div class="t-desc">Require a code sent to your phone when signing in.</div>
+            </div>
+            <div class="switch on"></div>
+          </div>
+          <div class="toggle-row">
+            <div>
+              <div class="t-label">Biometric login</div>
+              <div class="t-desc">Use FaceID or fingerprint on trusted mobile devices.</div>
+            </div>
+            <div class="switch"></div>
+          </div>
+          <div class="divider"></div>
+          <div style="display:flex;gap:12px">
+            <a class="btn btn-ghost btn-sm" href="#">Change Password</a>
+            <a class="btn btn-ghost btn-sm" href="#">Reset PIN</a>
+          </div>
+        </div>
+      </div>
+      <p class="req-note" data-lfr-editable-id="reqnote-profile" data-lfr-editable-type="text">Covers: Security &amp; Controls (MFA, step‑up authentication, credential management) · Core Platform.</p>
+    </section>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div data-lfr-editable-id="footer-copyright" data-lfr-editable-type="text">© 2026 Northern Illinois Gas Company d/b/a Nicor Gas, a Southern Company Gas company. My Account — for illustration only.</div>
+  <div>
+    <a href="#profile" data-nav="profile" data-lfr-editable-id="footer-link-privacy" data-lfr-editable-type="link">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="#profile" data-nav="profile" data-lfr-editable-id="footer-link-terms" data-lfr-editable-type="link">Terms of Service</a> &nbsp;·&nbsp;
+    <a href="#profile" data-nav="profile" data-lfr-editable-id="footer-link-access" data-lfr-editable-type="link">Accessibility</a>
+  </div>
+</footer>
+
+[#if configuration.showAiAssistant]
+<button class="ai-fab" onclick="alert('Nicor Gas Account Assistant\n\nSource-grounded AI help powered by Liferay AI Hub. Ask about your bill, recent usage, payment preferences, or outages — answers are grounded in your account data and Nicor knowledge base.')">
+  <span class="spark">✦</span> <span data-lfr-editable-id="ai-fab-text" data-lfr-editable-type="text">Ask Account Assistant</span>
+</button>
+[/#if]
+
+</div>

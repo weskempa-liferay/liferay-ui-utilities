@@ -1,0 +1,76 @@
+<div class="lfr-residential-portal">
+<main class="main">
+  <div class="wrap">
+
+    <!-- VIEW: Documents -->
+    <section class="page-view active" id="view-documents" data-view="documents">
+      <div class="page-head">
+        <div class="breadcrumb"><a href="#dashboard" data-nav="dashboard">Dashboard</a> › Documents</div>
+        <h1 data-lfr-editable-id="title-documents-view" data-lfr-editable-type="text">Documents</h1>
+        <p data-lfr-editable-id="desc-documents-view" data-lfr-editable-type="text">Find your statements, payment receipts, service letters, and program paperwork. Upload documents we request and search everything in one place.</p>
+      </div>
+
+      <div class="grid g-12">
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-categories-docs" data-lfr-editable-type="text">Categories</h3>
+          </div>
+          <a class="nav-item active" href="#">
+            <span class="ico">📄</span> 
+            <span data-lfr-editable-id="doc-lbl-statements" data-lfr-editable-type="text">Statements</span> 
+            <span class="nav-badge" style="background:var(--text-3)">14</span>
+          </a>
+          <a class="nav-item" href="#"><span class="ico">🧾</span> <span data-lfr-editable-id="doc-lbl-receipts" data-lfr-editable-type="text">Payment receipts</span></a>
+          <a class="nav-item" href="#"><span class="ico">✉️</span> <span data-lfr-editable-id="doc-lbl-letters" data-lfr-editable-type="text">Service letters</span></a>
+          <a class="nav-item" href="#"><span class="ico">🤝</span> <span data-lfr-editable-id="doc-lbl-programs" data-lfr-editable-type="text">Program &amp; assistance</span></a>
+          <a class="nav-item" href="#"><span class="ico">📋</span> <span data-lfr-editable-id="doc-lbl-tax" data-lfr-editable-type="text">Tax &amp; year‑end</span></a>
+          <div class="divider"></div>
+          <a class="btn btn-ghost btn-sm btn-block" href="#" data-lfr-editable-id="btn-upload-docs" data-lfr-editable-type="link">Upload a document</a>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-list-docs" data-lfr-editable-type="text">Statements</h3>
+            <div class="field" style="margin:0;width:240px"><input type="text" placeholder="🔍 Search documents…"></div>
+          </div>
+          <table class="tbl">
+            <thead>
+              <tr><th>Document</th><th>Type</th><th>Date</th><th>Size</th><th></th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="t-strong">April 2026 Statement</td><td>Statement</td><td>Apr 28, 2026</td><td>142 KB</td><td><a class="link" href="#">Download</a></td></tr>
+              <tr><td class="t-strong">March 2026 Statement</td><td>Statement</td><td>Mar 28, 2026</td><td>140 KB</td><td><a class="link" href="#">Download</a></td></tr>
+              <tr><td class="t-strong">February 2026 Statement</td><td>Statement</td><td>Feb 28, 2026</td><td>145 KB</td><td><a class="link" href="#">Download</a></td></tr>
+              <tr><td class="t-strong">January 2026 Statement</td><td>Statement</td><td>Jan 28, 2026</td><td>138 KB</td><td><a class="link" href="#">Download</a></td></tr>
+              <tr><td class="t-strong">2025 Year‑End Summary</td><td>Tax doc</td><td>Jan 15, 2026</td><td>224 KB</td><td><a class="link" href="#">Download</a></td></tr>
+            </tbody>
+          </table>
+          <div class="divider"></div>
+          <div class="row">
+            <span class="muted" style="font-size:12.5px" data-lfr-editable-id="doc-retention-docs" data-lfr-editable-type="text">Documents are retained for 7 years. Need older files? Contact support.</span>
+            <a class="link" href="#" data-lfr-editable-id="link-downloadall-docs" data-lfr-editable-type="link">Download all (ZIP)</a>
+          </div>
+        </div>
+      </div>
+      <p class="req-note" data-lfr-editable-id="reqnote-docs" data-lfr-editable-type="text">Covers: Document Management (repository, statement/receipt archive, document upload) · Core Platform.</p>
+    </section>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div data-lfr-editable-id="footer-copyright" data-lfr-editable-type="text">© 2026 Northern Illinois Gas Company d/b/a Nicor Gas, a Southern Company Gas company. My Account — for illustration only.</div>
+  <div>
+    <a href="#profile" data-nav="profile" data-lfr-editable-id="footer-link-privacy" data-lfr-editable-type="link">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="#profile" data-nav="profile" data-lfr-editable-id="footer-link-terms" data-lfr-editable-type="link">Terms of Service</a> &nbsp;·&nbsp;
+    <a href="#profile" data-nav="profile" data-lfr-editable-id="footer-link-access" data-lfr-editable-type="link">Accessibility</a>
+  </div>
+</footer>
+
+[#if configuration.showAiAssistant]
+<button class="ai-fab" onclick="alert('Nicor Gas Account Assistant\n\nSource-grounded AI help powered by Liferay AI Hub. Ask about your bill, recent usage, payment preferences, or outages — answers are grounded in your account data and Nicor knowledge base.')">
+  <span class="spark">✦</span> <span data-lfr-editable-id="ai-fab-text" data-lfr-editable-type="text">Ask Account Assistant</span>
+</button>
+[/#if]
+
+</div>

@@ -1,30 +1,30 @@
 if (fragmentElement) {
   const navItems = fragmentElement.querySelectorAll('.nav-item');
 
-  function updateActiveNav(key) {
+  function updateActiveNav() {
+    const currentPath = window.location.pathname.toLowerCase();
+    let matched = false;
+
     navItems.forEach(function (n) {
-      const isCurrent = n.getAttribute('data-nav') === key;
+      const key = n.getAttribute('data-nav');
+      // Match if pathname ends with the key or contains it in path segments
+      const isCurrent = currentPath.endsWith('/' + key) || currentPath.includes('/' + key + '/');
       n.classList.toggle('active', isCurrent);
+      if (isCurrent) {
+        matched = true;
+      }
     });
+
+    // Default to dashboard active state if no route matched
+    if (!matched) {
+      navItems.forEach(function (n) {
+        if (n.getAttribute('data-nav') === 'dashboard') {
+          n.classList.add('active');
+        }
+      });
+    }
   }
 
-  // Handle sidebar navigation clicks
-  fragmentElement.addEventListener('click', function (e) {
-    const el = e.target.closest('[data-nav]');
-    if (el) {
-      e.preventDefault();
-      const key = el.getAttribute('data-nav');
-      location.hash = key;
-    }
-  });
-
-  // Highlight navigation item on hashchange
-  window.addEventListener('hashchange', function () {
-    const key = (location.hash || '#dashboard').replace('#', '');
-    updateActiveNav(key);
-  });
-
-  // Highlight initial route
-  const initialKey = (location.hash || '#dashboard').replace('#', '');
-  updateActiveNav(initialKey);
+  // Set active state on load
+  updateActiveNav();
 }

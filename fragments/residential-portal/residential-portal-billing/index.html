@@ -1,0 +1,140 @@
+<div class="lfr-residential-portal">
+<main class="main">
+  <div class="wrap">
+
+    <!-- VIEW: Billing & Payments -->
+    <section class="page-view active" id="view-billing" data-view="billing">
+      <div class="page-head">
+        <div class="breadcrumb"><a href="#dashboard" data-nav="dashboard">Dashboard</a> › Billing &amp; Payments</div>
+        <h1 data-lfr-editable-id="title-billing-view" data-lfr-editable-type="text">Billing &amp; Payments</h1>
+        <p data-lfr-editable-id="desc-billing-view" data-lfr-editable-type="text">View and pay your bill, manage AutoPay and saved payment methods, set up payment plans, and review your full statement history.</p>
+      </div>
+
+      <div class="grid g-2">
+        <!-- Pay card -->
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-due-billing" data-lfr-editable-type="text">Amount Due</h3>
+            <span class="chip chip-amber">Due in 13 days</span>
+          </div>
+          <div class="autopay-badge" data-lfr-editable-id="txt-autopay-billing" data-lfr-editable-type="text">✓ AutoPay enrolled — charges on May 15</div>
+          <div class="bill-amount">$94.20</div>
+          <div class="bill-due" data-lfr-editable-id="txt-billdue-billing" data-lfr-editable-type="text">Due May 15, 2026 · Account 8821‑4459 · Statement period Apr 1 – Apr 30</div>
+          <div class="grid g-2" style="gap:12px;margin-bottom:6px">
+            <a class="btn btn-primary" href="#" data-lfr-editable-id="btn-payfull" data-lfr-editable-type="link">Pay Full Amount</a>
+            <a class="btn btn-ghost" href="#" data-lfr-editable-id="btn-payother" data-lfr-editable-type="link">Pay Other Amount</a>
+          </div>
+          <div class="inline-links">
+            <a href="#" data-lfr-editable-id="link-pdf-billing" data-lfr-editable-type="link">View / download bill PDF</a>
+            <a href="#" data-lfr-editable-id="link-schedule-billing" data-lfr-editable-type="link">Schedule a payment</a>
+            <a href="#programs" data-nav="programs" data-lfr-editable-id="link-plans-billing" data-lfr-editable-type="link">Set up a payment plan</a>
+          </div>
+        </div>
+
+        <!-- Preferences card -->
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-prefs-billing" data-lfr-editable-type="text">Billing Preferences</h3>
+          </div>
+          <div class="toggle-row">
+            <div>
+              <div class="t-label">AutoPay</div>
+              <div class="t-desc">Automatically pay your full balance on the due date.</div>
+            </div>
+            <div class="switch on"></div>
+          </div>
+          <div class="toggle-row">
+            <div>
+              <div class="t-label">Paperless billing</div>
+              <div class="t-desc">Receive statements by email instead of mail.</div>
+            </div>
+            <div class="switch on"></div>
+          </div>
+          <div class="toggle-row">
+            <div>
+              <div class="t-label">Budget Billing</div>
+              <div class="t-desc">Spread costs evenly across the year to avoid winter spikes.</div>
+            </div>
+            <div class="switch"></div>
+          </div>
+          <div class="toggle-row">
+            <div>
+              <div class="t-label">Due‑date reminders</div>
+              <div class="t-desc">Get a reminder 5 days before each due date.</div>
+            </div>
+            <div class="switch on"></div>
+          </div>
+          <a class="btn btn-navy btn-block" href="#" data-lfr-editable-id="btn-saveprefs-billing" data-lfr-editable-type="link">Save Preferences</a>
+        </div>
+      </div>
+
+      <!-- Saved methods full width -->
+      <div class="card section-gap">
+        <div class="card-header">
+          <h3 data-lfr-editable-id="header-methods-billing" data-lfr-editable-type="text">Saved Payment Methods</h3>
+          <a class="link" href="#" data-lfr-editable-id="link-addmethod" data-lfr-editable-type="link">+ Add method</a>
+        </div>
+        <div class="grid g-2" style="gap:14px">
+          <div style="display:flex;align-items:center;gap:12px;border:1px solid var(--border);border-radius:10px;padding:14px 16px">
+            <span class="media-ico mi-info" style="width:36px;height:36px;margin:0">🏛</span>
+            <div style="flex:1;min-width:0">
+              <div class="r-title">Bank account •••• 4821</div>
+              <div class="r-sub">Checking · Default for AutoPay</div>
+            </div>
+            <span class="chip chip-green">Default</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;border:1px solid var(--border);border-radius:10px;padding:14px 16px">
+            <span class="media-ico mi-ok" style="width:36px;height:36px;margin:0">💳</span>
+            <div style="flex:1;min-width:0">
+              <div class="r-title">Visa •••• 6034</div>
+              <div class="r-sub">Expires 09/27</div>
+            </div>
+            <a class="link" href="#">Manage</a>
+          </div>
+        </div>
+        <p class="req-note" data-lfr-editable-id="pci-compliance-note" data-lfr-editable-type="text">Payments are processed through Nicor Gas's PCI‑compliant payment partner via a secure hosted page — card data never touches the portal.</p>
+      </div>
+
+      <!-- Statement history -->
+      <div class="card section-gap">
+        <div class="card-header">
+          <h3 data-lfr-editable-id="header-history-billing" data-lfr-editable-type="text">Statement &amp; Payment History</h3>
+          <div style="display:flex;gap:10px">
+            <a class="link" href="#documents" data-nav="documents" data-lfr-editable-id="link-viewdocs-billing" data-lfr-editable-type="link">View in Documents →</a>
+          </div>
+        </div>
+        <table class="tbl">
+          <thead>
+            <tr><th>Statement</th><th>Period</th><th>Amount</th><th>Status</th><th>Paid On</th><th></th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="t-strong">Apr 2026</td><td>Apr 1 – Apr 30</td><td class="t-strong">$94.20</td><td><span class="chip chip-amber">Due May 15</span></td><td>—</td><td><a class="link" href="#">PDF</a></td></tr>
+            <tr><td class="t-strong">Mar 2026</td><td>Mar 1 – Mar 31</td><td>$87.50</td><td><span class="chip chip-green">Paid</span></td><td>Mar 31, 2026</td><td><a class="link" href="#">PDF</a></td></tr>
+            <tr><td class="t-strong">Feb 2026</td><td>Feb 1 – Feb 28</td><td>$112.30</td><td><span class="chip chip-green">Paid</span></td><td>Feb 28, 2026</td><td><a class="link" href="#">PDF</a></td></tr>
+            <tr><td class="t-strong">Jan 2026</td><td>Jan 1 – Jan 31</td><td>$128.90</td><td><span class="chip chip-green">Paid</span></td><td>Jan 30, 2026</td><td><a class="link" href="#">PDF</a></td></tr>
+            <tr><td class="t-strong">Dec 2025</td><td>Dec 1 – Dec 31</td><td>$104.10</td><td><span class="chip chip-green">Paid</span></td><td>Dec 29, 2025</td><td><a class="link" href="#">PDF</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="req-note" data-lfr-editable-id="reqnote-billing" data-lfr-editable-type="text">Covers: Billing &amp; Presentment · Payments (pay bill, AutoPay, saved methods, payment confirmations, budget/payment plans) · Document Management.</p>
+    </section>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div data-lfr-editable-id="footer-copyright" data-lfr-editable-type="text">© 2026 Northern Illinois Gas Company d/b/a Nicor Gas, a Southern Company Gas company. My Account — for illustration only.</div>
+  <div>
+    <a href="#profile" data-nav="profile" data-lfr-editable-id="footer-link-privacy" data-lfr-editable-type="link">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="#profile" data-nav="profile" data-lfr-editable-id="footer-link-terms" data-lfr-editable-type="link">Terms of Service</a> &nbsp;·&nbsp;
+    <a href="#profile" data-nav="profile" data-lfr-editable-id="footer-link-access" data-lfr-editable-type="link">Accessibility</a>
+  </div>
+</footer>
+
+[#if configuration.showAiAssistant]
+<button class="ai-fab" onclick="alert('Nicor Gas Account Assistant\n\nSource-grounded AI help powered by Liferay AI Hub. Ask about your bill, recent usage, payment preferences, or outages — answers are grounded in your account data and Nicor knowledge base.')">
+  <span class="spark">✦</span> <span data-lfr-editable-id="ai-fab-text" data-lfr-editable-type="text">Ask Account Assistant</span>
+</button>
+[/#if]
+
+</div>

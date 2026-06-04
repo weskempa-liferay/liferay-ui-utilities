@@ -40,9 +40,7 @@
   --maxw:        1180px;
 
   font-family: var(--font);
-  background: var(--bg);
   color: var(--text);
-  min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   line-height: 1.55;
   box-sizing: border-box;
@@ -62,8 +60,8 @@
 
 
 /* ───────────────────────── Main ───────────────────────── */
-.lfr-residential-portal .main { margin-left: var(--sidebar-w); margin-top: var(--topbar-h); padding: 34px 40px 110px; }
-.lfr-residential-portal .wrap { max-width: var(--maxw); margin: 0 auto; }
+.lfr-residential-portal .main { padding: 0 0 40px; }
+.lfr-residential-portal .wrap { margin: 0 auto; }
 
 .lfr-residential-portal .page-head { margin-bottom: 30px; }
 .lfr-residential-portal .breadcrumb { font-size: 12px; color: var(--text-3); margin-bottom: 10px; }
@@ -248,7 +246,7 @@
 .lfr-residential-portal .req-note { font-size: 11px; color: var(--text-3); margin-top: 14px; font-style: italic; }
 
 /* ───────────────────────── Footer ───────────────────────── */
-.lfr-residential-portal .foot { margin-left: var(--sidebar-w); padding: 22px 40px; border-top: 1px solid var(--border); color: var(--text-3); font-size: 11.5px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; background: var(--surface); }
+.lfr-residential-portal .foot { padding: 22px 0; border-top: 1px solid var(--border); color: var(--text-3); font-size: 11.5px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; background: var(--surface); }
 .lfr-residential-portal .foot a { color: var(--text-3); text-decoration: none; }
 .lfr-residential-portal .foot a:hover { color: var(--blue); }
 

@@ -1,0 +1,130 @@
+<div class="lfr-residential-portal">
+<main class="main">
+  <div class="wrap">
+
+    <!-- VIEW: Service Requests -->
+    <section class="page-view active" id="view-services" data-view="services">
+      <div class="page-head">
+        <div class="breadcrumb"><a href="#dashboard" data-nav="dashboard">Dashboard</a> › Service Requests</div>
+        <h1 data-lfr-editable-id="title-services-view" data-lfr-editable-type="text">Service Requests</h1>
+        <p data-lfr-editable-id="desc-services-view" data-lfr-editable-type="text">Start, stop, or transfer service, submit and track requests, and manage cases — all in one place with real‑time status visibility.</p>
+      </div>
+
+      <!-- Start/Stop/Transfer launcher -->
+      <div class="section-title" data-lfr-editable-id="sectitle-launcher-services" data-lfr-editable-type="text">Start / Stop / Transfer Service</div>
+      <div class="grid g-3">
+        <div class="card">
+          <div class="media-ico mi-ok" style="margin-bottom:14px">🟢</div>
+          <h3 style="font-size:16px;margin-bottom:6px" data-lfr-editable-id="lbl-start-service" data-lfr-editable-type="text">Start Service</h3>
+          <p class="muted" style="font-size:13px;margin-bottom:16px" data-lfr-editable-id="desc-start-service" data-lfr-editable-type="text">Moving in? Set up new natural gas service at your address in minutes.</p>
+          <a class="btn btn-primary btn-sm btn-block" href="#" data-lfr-editable-id="btn-startreq-service" data-lfr-editable-type="link">Start a request</a>
+        </div>
+        <div class="card">
+          <div class="media-ico mi-red" style="margin-bottom:14px">🔴</div>
+          <h3 style="font-size:16px;margin-bottom:6px" data-lfr-editable-id="lbl-stop-service" data-lfr-editable-type="text">Stop Service</h3>
+          <p class="muted" style="font-size:13px;margin-bottom:16px" data-lfr-editable-id="desc-stop-service" data-lfr-editable-type="text">Moving out? Schedule a stop date and get your final statement.</p>
+          <a class="btn btn-ghost btn-sm btn-block" href="#" data-lfr-editable-id="btn-stopreq-service" data-lfr-editable-type="link">Stop a request</a>
+        </div>
+        <div class="card">
+          <div class="media-ico mi-info" style="margin-bottom:14px">🔄</div>
+          <h3 style="font-size:16px;margin-bottom:6px" data-lfr-editable-id="lbl-trans-service" data-lfr-editable-type="text">Transfer Service</h3>
+          <p class="muted" style="font-size:13px;margin-bottom:16px" data-lfr-editable-id="desc-trans-service" data-lfr-editable-type="text">Staying with Nicor Gas? Move your service to a new address.</p>
+          <a class="btn btn-ghost btn-sm btn-block" href="#" data-lfr-editable-id="btn-transreq-service" data-lfr-editable-type="link">Transfer a request</a>
+        </div>
+      </div>
+
+      <!-- Example multi-step workflow -->
+      <div class="card section-gap">
+        <div class="card-header">
+          <h3 data-lfr-editable-id="header-progress-services" data-lfr-editable-type="text">Transfer Service — Application Progress</h3>
+          <span class="chip chip-info">Case #SR‑20461</span>
+        </div>
+        <div class="steps">
+          <div class="step done"><div class="dot-n">✓</div><div class="slab">Details</div></div>
+          <div class="step done"><div class="dot-n">✓</div><div class="slab">New address</div></div>
+          <div class="step active"><div class="dot-n">3</div><div class="slab">Schedule date</div></div>
+          <div class="step"><div class="dot-n">4</div><div class="slab">Review</div></div>
+          <div class="step"><div class="dot-n">5</div><div class="slab">Confirm</div></div>
+        </div>
+        <div class="divider"></div>
+        <div class="grid g-2">
+          <div class="field"><label>Preferred turn‑on date</label><input type="text" value="May 20, 2026" readonly></div>
+          <div class="field"><label>New service address</label><input type="text" value="88 Maple Court, Naperville IL 60540" readonly></div>
+        </div>
+        <div style="display:flex;gap:12px">
+          <a class="btn btn-ghost btn-sm" href="#" data-lfr-editable-id="btn-back-services" data-lfr-editable-type="link">Back</a>
+          <a class="btn btn-primary btn-sm" href="#" data-lfr-editable-id="btn-cont-services" data-lfr-editable-type="link">Continue to scheduling</a>
+        </div>
+      </div>
+
+      <!-- New request + tracker -->
+      <div class="grid g-21 section-gap">
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-cases-services" data-lfr-editable-type="text">My Requests &amp; Cases</h3>
+            <div style="display:flex;gap:8px"><span class="chip chip-gray">All</span><span class="chip chip-amber">Open</span><span class="chip chip-green">Resolved</span></div>
+          </div>
+          <table class="tbl">
+            <thead>
+              <tr><th>Case</th><th>Type</th><th>Submitted</th><th>Status</th><th></th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="t-strong">SR‑20461</td><td>Transfer service</td><td>Apr 29</td><td><span class="chip chip-info">In progress</span></td><td><a class="link" href="#">View</a></td></tr>
+              <tr><td class="t-strong">SR‑20416</td><td>Meter re‑read</td><td>Apr 26</td><td><span class="chip chip-amber">In review</span></td><td><a class="link" href="#">View</a></td></tr>
+              <tr><td class="t-strong">SR‑20388</td><td>Paperless enrollment</td><td>Apr 12</td><td><span class="chip chip-info">Scheduled</span></td><td><a class="link" href="#">View</a></td></tr>
+              <tr><td class="t-strong">SR‑20301</td><td>Billing inquiry</td><td>Mar 30</td><td><span class="chip chip-green">Resolved</span></td><td><a class="link" href="#">View</a></td></tr>
+              <tr><td class="t-strong">SR‑20245</td><td>Appliance safety check</td><td>Mar 14</td><td><span class="chip chip-green">Resolved</span></td><td><a class="link" href="#">View</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3 data-lfr-editable-id="header-newreq-services" data-lfr-editable-type="text">New Request</h3>
+          </div>
+          <div class="field">
+            <label>Request type</label>
+            <select>
+              <option>Meter re‑read</option>
+              <option>Appliance safety check</option>
+              <option>Billing inquiry / dispute</option>
+              <option>Report a gas smell (emergency)</option>
+              <option>Update contact details</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field"><label>Describe your request</label><textarea rows="4" placeholder="Tell us what you need…"></textarea></div>
+          <div class="field">
+            <label>Preferred contact</label>
+            <select>
+              <option>Email — james.m@email.com</option>
+              <option>Phone — (630) 555‑0148</option>
+              <option>Text message</option>
+            </select>
+          </div>
+          <a class="btn btn-primary btn-block" href="#" data-lfr-editable-id="btn-subreq-services" data-lfr-editable-type="link">Submit Request</a>
+          <p class="req-note" data-lfr-editable-id="smellgas-warn-services" data-lfr-editable-type="text">⚠️ Smell gas? Leave the area and call 1‑888‑Nicor‑4U immediately.</p>
+        </div>
+      </div>
+      <p class="req-note" data-lfr-editable-id="reqnote-services" data-lfr-editable-type="text">Covers: Service Requests &amp; Applications (start/stop/transfer, digital forms &amp; workflows, case &amp; dispute management, status tracking &amp; request visibility).</p>
+    </section>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div data-lfr-editable-id="footer-copyright" data-lfr-editable-type="text">© 2026 Northern Illinois Gas Company d/b/a Nicor Gas, a Southern Company Gas company. My Account — for illustration only.</div>
+  <div>
+    <a href="#profile" data-nav="profile" data-lfr-editable-id="footer-link-privacy" data-lfr-editable-type="link">Privacy Policy</a> &nbsp;·&nbsp;
+    <a href="#profile" data-nav="profile" data-lfr-editable-id="footer-link-terms" data-lfr-editable-type="link">Terms of Service</a> &nbsp;·&nbsp;
+    <a href="#profile" data-nav="profile" data-lfr-editable-id="footer-link-access" data-lfr-editable-type="link">Accessibility</a>
+  </div>
+</footer>
+
+[#if configuration.showAiAssistant]
+<button class="ai-fab" onclick="alert('Nicor Gas Account Assistant\n\nSource-grounded AI help powered by Liferay AI Hub. Ask about your bill, recent usage, payment preferences, or outages — answers are grounded in your account data and Nicor knowledge base.')">
+  <span class="spark">✦</span> <span data-lfr-editable-id="ai-fab-text" data-lfr-editable-type="text">Ask Account Assistant</span>
+</button>
+[/#if]
+
+</div>

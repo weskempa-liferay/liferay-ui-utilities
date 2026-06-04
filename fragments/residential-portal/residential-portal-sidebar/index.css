@@ -55,7 +55,7 @@
 
 /* ───────────────────────── Sidebar ───────────────────────── */
 .lfr-residential-portal .sidebar {
-  position: fixed; top: var(--topbar-h); left: 0; bottom: 0; width: var(--sidebar-w);
+  position: relative; width: var(--sidebar-w);
   background: var(--surface); border-right: 1px solid var(--border);
   overflow-y: auto; padding: 18px 14px 28px; z-index: 90;
 }
