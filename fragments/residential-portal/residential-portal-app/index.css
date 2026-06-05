@@ -211,7 +211,7 @@
 
 /* ───────────────────────── Forms ───────────────────────── */
 .lfr-residential-portal .field { margin-bottom: 18px; }
-.lfr-residential-portal .field label { display: block; font-size: 12.5px; font-weight: 700; color: var(--text-2); margin-bottom: 7px; }
+.lfr-residential-portal .field label { display: block; font-size: 12.5px; font-weight: 700; color: var(--text-2); margin-bottom: 7px; border-color: transparent; }
 .lfr-residential-portal .field input, .lfr-residential-portal .field select, .lfr-residential-portal .field textarea { width: 100%; padding: 11px 13px; border: 1.5px solid var(--border); border-radius: 9px; font-family: var(--font); font-size: 13.5px; color: var(--text); background: var(--surface); }
 .lfr-residential-portal .field input:focus, .lfr-residential-portal .field select:focus, .lfr-residential-portal .field textarea:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px var(--blue-soft); }
 .lfr-residential-portal .field .hint { font-size: 11.5px; color: var(--text-3); margin-top: 6px; }
