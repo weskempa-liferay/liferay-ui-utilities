@@ -1,0 +1,133 @@
+{
+  "enableComments": false,
+  "objectRelationships": [],
+  "enableObjectEntryVersioning": false,
+  "enableCategorization": true,
+  "enableFriendlyURLCustomization": false,
+  "scope": "company",
+  "portlet": true,
+  "friendlyURLSeparator": "c_transferservicerequest",
+  "modifiable": true,
+  "enableObjectEntryHistory": false,
+  "active": true,
+  "defaultLanguageId": "en_US",
+  "enableIndexSearch": true,
+  "label": {
+    "en_US": "Transfer Service Request"
+  },
+  "pluralLabel": {
+    "en_US": "Transfer Service Requests"
+  },
+  "name": "TransferServiceRequest",
+  "storageType": "default",
+  "restContextPath": "/o/c/transferservicerequests",
+  "titleObjectFieldName": "id",
+  "externalReferenceCode": "transfer-service-request-erc",
+  "objectFields": [
+    {
+      "indexed": true,
+      "defaultValue": "null",
+      "localized": false,
+      "objectFieldSettings": [],
+      "readOnly": "false",
+      "DBType": "String",
+      "label": {
+        "en_US": "Account Number"
+      },
+      "type": "String",
+      "required": true,
+      "name": "accountNumber",
+      "businessType": "Text"
+    },
+    {
+      "indexed": true,
+      "defaultValue": "null",
+      "localized": false,
+      "objectFieldSettings": [],
+      "readOnly": "false",
+      "DBType": "String",
+      "label": {
+        "en_US": "Current Address"
+      },
+      "type": "String",
+      "required": true,
+      "name": "currentAddress",
+      "businessType": "Text"
+    },
+    {
+      "indexed": true,
+      "defaultValue": "null",
+      "localized": false,
+      "objectFieldSettings": [],
+      "readOnly": "false",
+      "DBType": "Date",
+      "label": {
+        "en_US": "Preferred Stop Date"
+      },
+      "type": "Date",
+      "required": true,
+      "name": "preferredStopDate",
+      "businessType": "Date"
+    },
+    {
+      "indexed": true,
+      "defaultValue": "null",
+      "localized": false,
+      "objectFieldSettings": [],
+      "readOnly": "false",
+      "DBType": "String",
+      "label": {
+        "en_US": "New Address"
+      },
+      "type": "String",
+      "required": true,
+      "name": "newAddress",
+      "businessType": "Text"
+    },
+    {
+      "indexed": true,
+      "defaultValue": "null",
+      "localized": false,
+      "objectFieldSettings": [],
+      "readOnly": "false",
+      "DBType": "Date",
+      "label": {
+        "en_US": "Preferred Start Date"
+      },
+      "type": "Date",
+      "required": true,
+      "name": "preferredStartDate",
+      "businessType": "Date"
+    },
+    {
+      "indexed": true,
+      "defaultValue": "null",
+      "localized": false,
+      "objectFieldSettings": [],
+      "readOnly": "false",
+      "DBType": "String",
+      "label": {
+        "en_US": "Contact Email"
+      },
+      "type": "String",
+      "required": false,
+      "name": "contactEmail",
+      "businessType": "Text"
+    },
+    {
+      "indexed": true,
+      "defaultValue": "null",
+      "localized": false,
+      "objectFieldSettings": [],
+      "readOnly": "false",
+      "DBType": "String",
+      "label": {
+        "en_US": "Contact Phone"
+      },
+      "type": "String",
+      "required": false,
+      "name": "contactPhone",
+      "businessType": "Text"
+    }
+  ]
+}

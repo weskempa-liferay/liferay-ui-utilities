@@ -1,1 +1,18 @@
 /* Residential Portal Services specific layout overrides */
+
+.lfr-residential-portal .case-filter-chip {
+  cursor: pointer;
+  user-select: none;
+  opacity: 0.5;
+  transition: opacity 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.lfr-residential-portal .case-filter-chip:hover {
+  opacity: 0.85;
+}
+
+.lfr-residential-portal .case-filter-chip.active {
+  opacity: 1;
+  box-shadow: 0 0 0 2px var(--navy);
+  font-weight: 800;
+}
