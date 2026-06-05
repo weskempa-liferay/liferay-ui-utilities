@@ -174,11 +174,12 @@
   max-width: 480px;
 }
 
-#content .hero-cta {
+#content .hero-cta,
+#content a.hero-cta {
   position: relative;
   z-index: 1;
   background: var(--red);
-  color: #fff;
+  color: #fff !important;
   border: none;
   padding: 13px 26px;
   border-radius: 9px;
@@ -192,10 +193,8 @@
   display: inline-block;
 }
 
-#content .hero-cta:hover {
-  background: var(--red-dark);
-  transform: translateY(-1px);
-}
+#content .hero-cta:hover,
+#content a.hero-cta:hover { background: var(--red-dark); color: #fff !important; transform: translateY(-1px); }
 
 /* Section Title */
 #content .section-title {
@@ -369,25 +368,17 @@
   transition: background .15s, transform .15s, box-shadow .15s;
 }
 
-#content .btn-primary {
-  background: var(--red);
-  color: #fff;
-}
+#content .btn-primary,
+#content a.btn-primary { background: var(--red); color: #fff !important; }
 
-#content .btn-primary:hover {
-  background: var(--red-dark);
-  transform: translateY(-1px);
-}
+#content .btn-primary:hover,
+#content a.btn-primary:hover { background: var(--red-dark); color: #fff !important; transform: translateY(-1px); }
 
-#content .btn-navy {
-  background: var(--navy);
-  color: #fff;
-}
+#content .btn-navy,
+#content a.btn-navy { background: var(--navy); color: #fff !important; }
 
-#content .btn-navy:hover {
-  background: var(--navy-mid);
-  transform: translateY(-1px);
-}
+#content .btn-navy:hover,
+#content a.btn-navy:hover { background: var(--navy-mid); color: #fff !important; transform: translateY(-1px); }
 
 #content .btn-ghost {
   background: var(--surface);
@@ -978,7 +969,8 @@
 }
 
 /* AI Assistant floating widget */
-#content .ai-fab {
+#content .ai-fab,
+#content button.ai-fab {
   position: fixed;
   right: 28px;
   bottom: 28px;
@@ -987,7 +979,7 @@
   align-items: center;
   gap: 10px;
   background: var(--navy);
-  color: #fff;
+  color: #fff !important;
   border: none;
   padding: 13px 20px;
   border-radius: 30px;
@@ -999,10 +991,8 @@
   transition: transform .15s, background .15s;
 }
 
-#content .ai-fab:hover {
-  transform: translateY(-2px);
-  background: var(--navy-mid);
-}
+#content .ai-fab:hover,
+#content button.ai-fab:hover { transform: translateY(-2px); color: #fff !important; background: var(--navy-mid); }
 
 #content .ai-fab .spark {
   font-size: 16px;

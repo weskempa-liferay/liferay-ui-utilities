@@ -83,8 +83,10 @@
 .lfr-residential-portal .hero-badge { background: rgba(255,255,255,.12); border-radius: 20px; padding: 5px 13px; font-size: 11.5px; color: #BFE0FF; font-weight: 600; margin-bottom: 12px; display: inline-block; }
 .lfr-residential-portal .hero-text h2 { font-size: 23px; font-weight: 700; color: #fff; margin-bottom: 8px; letter-spacing: -.2px; }
 .lfr-residential-portal .hero-text p { font-size: 13.5px; color: #B8C6DD; max-width: 480px; }
-.lfr-residential-portal .hero-cta { position: relative; z-index: 1; background: var(--red); color: #fff; border: none; padding: 13px 26px; border-radius: 9px; font-size: 13.5px; font-weight: 700; cursor: pointer; white-space: nowrap; font-family: var(--font); transition: background .15s, transform .15s; text-decoration: none; display: inline-block; }
-.lfr-residential-portal .hero-cta:hover { background: var(--red-dark); transform: translateY(-1px); }
+.lfr-residential-portal .hero-cta,
+.lfr-residential-portal a.hero-cta { position: relative; z-index: 1; background: var(--red); color: #fff !important; border: none; padding: 13px 26px; border-radius: 9px; font-size: 13.5px; font-weight: 700; cursor: pointer; white-space: nowrap; font-family: var(--font); transition: background .15s, transform .15s; text-decoration: none; display: inline-block; }
+.lfr-residential-portal .hero-cta:hover,
+.lfr-residential-portal a.hero-cta:hover { background: var(--red-dark); color: #fff !important; transform: translateY(-1px); }
 
 /* ───────────────────────── Section title ───────────────────────── */
 .lfr-residential-portal .section-title { font-size: 12px; font-weight: 700; color: var(--text-3); text-transform: uppercase; letter-spacing: 1px; margin: 0 0 16px; }
@@ -121,10 +123,14 @@
 
 /* ───────────────────────── Buttons ───────────────────────── */
 .lfr-residential-portal .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: none; cursor: pointer; font-family: var(--font); font-weight: 700; font-size: 13.5px; padding: 12px 22px; border-radius: 9px; text-decoration: none; transition: background .15s, transform .15s, box-shadow .15s; }
-.lfr-residential-portal .btn-primary { background: var(--red); color: #fff; }
-.lfr-residential-portal .btn-primary:hover { background: var(--red-dark); transform: translateY(-1px); }
-.lfr-residential-portal .btn-navy { background: var(--navy); color: #fff; }
-.lfr-residential-portal .btn-navy:hover { background: var(--navy-mid); transform: translateY(-1px); }
+.lfr-residential-portal .btn-primary,
+.lfr-residential-portal a.btn-primary { background: var(--red); color: #fff !important; }
+.lfr-residential-portal .btn-primary:hover,
+.lfr-residential-portal a.btn-primary:hover { background: var(--red-dark); color: #fff !important; transform: translateY(-1px); }
+.lfr-residential-portal .btn-navy,
+.lfr-residential-portal a.btn-navy { background: var(--navy); color: #fff !important; }
+.lfr-residential-portal .btn-navy:hover,
+.lfr-residential-portal a.btn-navy:hover { background: var(--navy-mid); color: #fff !important; transform: translateY(-1px); }
 .lfr-residential-portal .btn-ghost { background: var(--surface); color: var(--navy); border: 1.5px solid var(--border); }
 .lfr-residential-portal .btn-ghost:hover { border-color: var(--blue); color: var(--blue); }
 .lfr-residential-portal .btn-block { width: 100%; }
@@ -234,8 +240,10 @@
 .lfr-residential-portal .banner .b-close { margin-left: auto; cursor: pointer; opacity: .6; background: none; border: none; font-size: 16px; }
 
 /* ───────────────────────── AI assistant widget ───────────────────────── */
-.lfr-residential-portal .ai-fab { position: fixed; right: 28px; bottom: 28px; z-index: 95; display: flex; align-items: center; gap: 10px; background: var(--navy); color: #fff; border: none; padding: 13px 20px; border-radius: 30px; font-family: var(--font); font-size: 13.5px; font-weight: 700; cursor: pointer; box-shadow: var(--shadow-lg); transition: transform .15s, background .15s; }
-.lfr-residential-portal .ai-fab:hover { transform: translateY(-2px); background: var(--navy-mid); }
+.lfr-residential-portal .ai-fab,
+.lfr-residential-portal button.ai-fab { position: fixed; right: 28px; bottom: 28px; z-index: 95; display: flex; align-items: center; gap: 10px; background: var(--navy); color: #fff !important; border: none; padding: 13px 20px; border-radius: 30px; font-family: var(--font); font-size: 13.5px; font-weight: 700; cursor: pointer; box-shadow: var(--shadow-lg); transition: transform .15s, background .15s; }
+.lfr-residential-portal .ai-fab:hover,
+.lfr-residential-portal button.ai-fab:hover { transform: translateY(-2px); color: #fff !important; background: var(--navy-mid); }
 .lfr-residential-portal .ai-fab .spark { font-size: 16px; }
 
 /* ───────────────────────── Misc ───────────────────────── */
